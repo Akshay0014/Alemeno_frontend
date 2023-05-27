@@ -22,7 +22,7 @@ mealtimeGamificationButton.addEventListener('click', function() {
   removeActiveClass();
   mealtimeGamificationButton.classList.add('active');
   mealtimeGamificationButton.style.color = 'green';
-  projectImage.src = "{% static 'assets/images/bg-1.png' %}";
+  projectImage.src = "static/assets/images/bg-1.png";
   projectNameHeading.textContent = 'AI For X-Ray TB Detection';
   projectDescription.textContent = 'AI for X-Ray TB detection is a medical imaging software that uses AI algorithms to quickly and accurately analyze chest X-ray images and detect tuberculosis. It can help healthcare professionals detect TB early, reduce human error, and improve patient outcomes, particularly in areas with limited access to specialized equipment or radiologists.';
 });
@@ -32,7 +32,7 @@ project2Button.addEventListener('click', function() {
   removeActiveClass();
   project2Button.classList.add('active');
   project2Button.style.color = 'green';
-  projectImage.src = "{% static 'assets/images/bg-2.png' %}";
+  projectImage.src = "static/assets/images/bg-2.png";
   projectNameHeading.textContent = 'AI For Rapid Diagnostic Tests';
   projectDescription.textContent = 'AI for rapid diagnostic tests uses artificial intelligence algorithms to quickly and accurately analyze lateral flow assay results. This technology can reduce human error, increase diagnostic accuracy, and improve patient outcomes, particularly in low-resource settings.';
 });
@@ -42,7 +42,7 @@ project3Button.addEventListener('click', function() {
   removeActiveClass();
   project3Button.classList.add('active');
   project3Button.style.color = 'green';
-  projectImage.src = "{% static 'assets/images/bg-3.png' %}";
+  projectImage.src = "static/assets/images/bg-3.png";
   projectNameHeading.textContent = 'Urine Diagnostics Automation';
   projectDescription.textContent = 'Image processing based urine sample detection is a technology that automatically detects and analyzes urine samples using digital images and advanced algorithms. It can identify various parameters such as Ascorbic Acid, Glucose, Bilirubin, Ketone, Specific Gravity, Blood, pH, Protein, Urobilinogen, Nitrite and Leukocytes';
 });
@@ -52,7 +52,7 @@ project4Button.addEventListener('click', function() {
   removeActiveClass();
   project4Button.classList.add('active');
   project4Button.style.color = 'green';
-  projectImage.src = "{% static 'assets/images/bg-4.png' %}";
+  projectImage.src = "static/assets/images/bg-4.png";
   projectNameHeading.textContent = 'Fieldstudy';
   projectDescription.textContent = 'Field study apps for crop quality, clinical trials and sales software applications that help researchers and practitioners conduct research studies more efficiently and accurately. These apps enable data collection, management, and analysis in real-time, providing insights into crop growth factors and streamlining process. They are essential tools for improving the accuracy of results and reducing the time and resources required for data collection and analysis.';
 });
@@ -62,7 +62,7 @@ project5Button.addEventListener('click', function() {
   removeActiveClass();
   project5Button.classList.add('active');
   project5Button.style.color = 'green'; 
-  projectImage.src = "{% static 'assets/images/bg-5.png' %}";
+  projectImage.src = "static/assets/images/bg-5.png";
   projectNameHeading.textContent = 'Apps For Devices Like Glucometers';
   projectDescription.textContent = 'Apps for devices like glucometers enable users to monitor and manage their health conditions, like diabetes, using a smartphone or tablet. These apps work with medical devices, allowing users to record and track blood sugar levels, set reminders, and receive notifications. The apps provide personalized insights and suggestions based on user data, improving the accuracy of monitoring and helping users manage their condition more effectively.';
 });

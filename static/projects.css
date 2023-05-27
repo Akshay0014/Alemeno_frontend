@@ -1,16 +1,21 @@
 /* Center the project heading */
 .projects-root {
+  padding-top: 2%;
   background-color: rgba(63, 0, 111, 0.06);
+  padding-bottom: 0.5%;
+  padding-right: 3%;
 }
 .lorem-ipsum-dolor-sit-amet-co-group {
-  text-align: center; /* Add this line to center the heading horizontally */
+  text-align: justify; /* Add this line to center the heading horizontally */
 }
 
 .group-child4 {
   border-radius: 12px;
-  width: 30%; /* Adjust the width as per your preference */
+  margin-left: 5%;
+  align-items: left;
+  width: 40%; /* Adjust the width as per your preference */
   height: auto; 
-margin-right: 20px;  /* Add some spacing between the image and text */
+margin-right: 3.75rem;  /* Add some spacing between the image and text */
 }
 .mealtime-gamification3 {
   font-family: 'Poppins', sans-serif;
@@ -24,9 +29,11 @@ margin-right: 20px;  /* Add some spacing between the image and text */
   text-align: center;
   flex: 1;
   position: relative;
+  font-family: Poppins;
   font-size: 24px;
-  line-height: 36px;
   font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0em;
   margin-bottom: 20px;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
   color: #C53F00;
@@ -36,6 +43,8 @@ margin-right: 20px;  /* Add some spacing between the image and text */
   justify-content: space-between;
   color: #707070;
   margin-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
   gap: 10px;
 }
 
@@ -59,7 +68,7 @@ margin-bottom: 10px;
   font-size: 16px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.6);
-  margin-right: 20px; /* Adjust the margin as per your preference */
+  /* margin-right: 1.25rem; Adjust the margin as per your preference */
 }
 .group-parent7 {
   display: flex;
@@ -81,7 +90,8 @@ margin-bottom: 10px;
 @media (min-width: 768px) {
   /* Align buttons in a row */
   .lorem-ipsum-dolor-sit-amet-co-group {
-      text-align: left; /* Reset text alignment for mobile */
+      text-align: left;
+      margin-left: 20px; /* Reset text alignment for mobile */
     }
     .frame-parent2 {
       flex-direction: row;
@@ -94,11 +104,6 @@ margin-bottom: 10px;
   .group-parent7 {
     display: flex;
     align-items: center;
-  }
-
-  /* Adjust spacing */
-  .lorem-ipsum-dolor-sit-amet-co-group {
-    margin-left: 20px;
   }
 }
 
@@ -116,9 +121,22 @@ margin-bottom: 10px;
     align-items: center;
     gap: 10px; /* Add gap between buttons */
   }
+  .lorem-ipsum-dolor-sit-amet-co-group {
+    text-align: center;
+    margin-left: 20px;
+    padding-left: 2%;
+    padding-right: 2%; /* Reset text alignment for mobile */
+  }
 }
 /* Justify the project description */
 .lorem-ipsum-dolor1 {
+  padding-top: 15px;
   text-align: justify;
-  margin-left: 20px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+
 }
