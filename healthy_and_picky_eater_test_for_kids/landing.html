@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+{% block meta %}
+
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+      name="description">
+<meta content="" name="author">
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" name="title">
+
+<title>Find out if your kid has healthy eating habits or if your kid is a picky eater</title>
+<!-- Facebook MetaTags -->
+
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" property="og:title">
+<meta content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+      property="og:description">
+<meta content="https://firebasestorage.googleapis.com/v0/b/alemeno-7c797.appspot.com/o/misc%2Ftest.png?alt=media&token=192e1c6c-a9f2-48b0-a965-3f3cc20063ca"
+      property="og:image">
+<meta content="https://www.alemeno.com/healthy_and_picky_eater_test_for_kids" property="og:url">
+<meta content="article" property="og:type"/>
+
+{% endblock %}
+
+{% block content %}
+
+
+<body style="background-color: white; height: 100vh; overflow: scroll;">
+<div class=" make-visible scroll get_email_container container-fluid p-0" id="get_email_container"
+     style="padding-bottom: 1em; background-color: white;">
+    <div class="row h-100 w-100 scroll ml-0 mr-0">
+        <div class="col-12 col-md-12 scroll p-0" style="display: flex; flex-direction: column;">
+            <div class="container-fluid mb-4">
+                <div class="row m-r-0 mt-4">
+                    <div class="col-lg-6 mx-2 mx-sm-4 mx-md-0 justify-content-center ">
+                        <div class="bg_image ml-lg-5 ml-sm-2 mr-sm-2">
+                            <div class="page-title mt-4" style="max-width: 100%;line-height: normal">Does your kid have
+                                healthy eating habits?
+                            </div>
+                            <div style="font-size: 1.1em; font-weight: 500; margin-top: 1em;margin-bottom:0.5em;line-height:40px">
+                                Two minutes test to
+                                get <br></div>
+                            <div style="font-size: 1em; margin-left: 0.5em; margin-bottom: 0.3em;line-height:1.5em">
+                                <span class="text-success"> ✓ </span>
+                                Expert assessment on kid's eating habits <br/>
+                                <span class="text-success"> ✓ </span>
+
+                                Customized report <br>
+                                <span class="text-success"> ✓ </span>
+
+                                Personalized tips for your healthy kid<br>
+                            </div>
+                            <div class="pt-4"
+                                 style="width: 100%; display: flex; flex-direction: column; align-items: left;max-width:500px">
+
+                                <div class="carousel">
+                                    <div>Recommended by</div>
+                                    <div class="change_outer">
+                                        <div class="change_inner">
+                                            <div class="element">Psychologists</div>
+                                            <div class="element">Doctors</div>
+                                            <div class="element">Nutritionists</div>
+                                            <div class="element">Psychologists</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="button text-white justify-content-center mt-2" id="go-button"
+                                        style="font-size: 1.3em;font-weight: 550;">Start Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image row justify-content-center mr-3 mr-sm-5  mt-5">
+                            <img id="landingImage" alt=""
+                                 style="width:100%;max-width:600px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="hero-image mt-4 justify-content-left">
+                <img src="/static/assets/images/does_your_kid_have_healthy_eating_habits.png" alt="" class="w-100" style="max-width:600px">
+            </div> -->
+            <div class="scroll pt-5 pb-5" style="background: #5ea45130!important;">
+                <div class="container-fluid ml-2 mr-2 ml-lg-5 mr-lg-5">
+                    <div style="font-weight: 550; font-size: 1.5em; color:#3c3c3c;margin-bottom: 0.5em;">About the test
+                    </div>
+                    <div style="margin-left: 0.5em; margin-bottom: 0.3em;">1. Test is prepared with the help of
+                        pediatricians and child psycologists.
+                    </div>
+                    <div style="margin-left: 0.5em; margin-bottom: 0.3em;">2. Test consists of 6-7 questions related to
+                        yout mealtime experience and kid's overall behaviour
+                    </div>
+                    <div style="margin-left: 0.5em; margin-bottom: 0em;">3. On completion of the test, we will share a
+                        detailed report on eating habits ofyour kid and action items to ensure your kid eats healthy
+                        regularly.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-md-block col-4"></div>
+    </div>
+</div>
+<!-- <div class="hero-image row justify-content-center d-lg-none">
+    <img src="/static/assets/images/Alemeno-02.png" alt="" style="width: 100%;">
+</div> -->
+</body>
+<style>
+    /* @media only screen and (min-width: 992px) {
+        .bg_image {
+            background-image: url("static/assets/images/Wide_image_Test.png");
+            background-size: cover;
+        } */
+</style>
+<script>
+    mixpanel.track('HealthyEatingCalculatorVisit');
+    const url = new URL(window.location.href)
+
+    var urlParams = url.searchParams;
+    utmSource = urlParams.get('utm_source');
+    document.getElementById("go-button").addEventListener('click', onGoButtonClick);
+    if (utmSource === 'subscribe_customize_may_experiment2') {
+        imageUrl =  "/static/assets/images/does_your_kid_have_healthy_eating_habits2.png"
+    }
+    else if (utmSource === 'subscribe_customize_BA_May') {
+        imageUrl =  "/static/assets/images/does_your_kid_have_healthy_eating_habits_new.png"
+    } else  {
+        imageUrl =  "/static/assets/images/does_your_kid_have_healthy_eating_habits.png"
+    }
+    document.getElementById("landingImage").src = imageUrl;
+
+
+    function onGoButtonClick() {
+        console.log("ongobutton");
+        document.getElementById("go-button").removeEventListener('click', onGoButtonClick);
+        email = (Math.random()).toString(36).substring(2);
+        const url = new URL(window.location.href)
+
+        var urlParams = url.searchParams;
+        utmSource = urlParams.get('utm_source');
+        urlParams.set('utm_source', utmSource);
+        url.search = urlParams.toString();
+        var new_url = url.toString();
+
+        if(new_url.includes("healthy_and_picky_eater_test_for_kids")){
+            new_url = new_url.replace('healthy_and_picky_eater_test_for_kids', 'questions_healthy_and_picky_eater_test_for_kids')
+        }else if(new_url.includes("picky-kids-test-for-schools")){
+            new_url = new_url.replace('picky-kids-test-for-schools', 'questions_picky-kids-test-for-schools')
+        }
+
+        window.location.href = new_url;
+
+    }
+</script>
+{% endblock %}
+
+</html>

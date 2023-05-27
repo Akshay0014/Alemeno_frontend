@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+
+	<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="{% static 'doctor.css' %}" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+        <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+
+    <title>Doctor {{ doctors_name }}</title>
+  </head>
+  <body>
+    <section class="container mb-5">
+      <section class="left">
+        <div class="middle">
+          <div class="title mt-2">
+            <p class="text my-4">
+	    <span id="ben-head"> </span> Healthy eating program
+	    
+	     
+            </p>
+
+          
+	  </div>
+          <div class="px-4">
+            <p class="ben-head">Program Details</p>
+            <ul>
+		    <span>1. Get telephonic consultation </span> <br>
+		    <span>2. Get diet plan to match kid’s health status</span> <br>
+		    <span>3. Implement the plan using award winning app</span><br>
+            </ul>
+          </div>
+
+          <div class="benefit px-4">
+            <p class="ben-head">Benefits</p>
+            <ul>
+              <li>Achieve optimum <span class="greened"> Height/Weight </span></li>
+              <li>Imbibe healthy eating habits</li>
+              <li>Build immunity and support growth</li>
+            </ul>
+          </div>
+          <div class="btn">
+            <div class="video how-it-works" >
+              <div style="text-align: left">
+                <p
+                  style="
+		    margin-top: 20px;
+                    font-weight: 600;
+                    color: #606060;
+                    font-size: 18px;
+                  "
+                >
+                  How it works
+                </p>
+              </div>
+
+              <iframe
+                width="350"
+                height="200"
+                src="https://www.youtube.com/embed/0Bnk80sQQso"
+                title="Get most out of Alemeno"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+	      
+            </div>
+            <div class="button-section-big">
+                <div class="price mx-2" >
+                  <span class="greened" id="amountD" style="font-weight: 600; font-size: 22px"
+					>Rs99</span
+                  ><span style="text-decoration: line-through; color: #bebebe"
+                    >Rs500</span
+                  >
+                </div>
+                <button class="payment button btn-inner rzp-button1 my-2 w-75" style="font-weight:600">
+                  Subscribe
+                </button>
+                <div class="review">
+                  <p class="review-text">
+                    <span style="color: #dfb300">&#9733;</span>4.7 |
+                    <span style="font-weight: 600">25000+</span>happy parents
+                  </p>
+                </div>
+              </div>
+            </div>
+
+      </section>
+      <section class="right">
+        <div class="imageText">
+          <p>How it works</p>
+              <iframe
+                width="375"
+                height="350"
+                src="https://www.youtube.com/embed/0Bnk80sQQso"
+                title="Get most out of Alemeno"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+        </div>
+      </section>
+    </section>
+        <div class="row0 d-md-none" style="  position: fixed;
+		  bottom: 25px;
+		  padding-top: 10px;
+		  background: white;
+		  width: 100%;
+		  height: 70px;
+		  display: flex;
+		  justify-content: space-around;
+		  align-items: center;
+		"
+		      >
+	
+                <div class="button-section col-7 m-0 p-0">
+                  <div class="price mx-3">
+                    <span class="greened" id="amountM" style="font-weight: 600; font-size: 22px"
+					  > ₹99</span
+                    ><span style=" color: #bebebe"
+                    > (for 1 month)</span
+                    >
+                  </div>
+                  <div class="review">
+                    <p class="review-text">
+                      <span style="color: #dfb300">&#9733;</span>4.7 |
+                      <span style="font-weight: 600">25000+</span>happy parents
+                    </p>
+                  </div>
+                </div>
+              <button style="justify-content: center;" class="payment btn-inner button rzp-button1 col-4 mt-2">
+                  Subscribe
+              </button>
+
+            </div>
+
+            <div class="row d-md-none" style="background:white;justify-content: center;position: fixed;bottom: 0px;width: 100%;display: flex;justify-content: end;font-size:14px">
+		    <div class="col-5 p-0" style=" display: flex;justify-content: flex-end;">
+		    <img src="/static/assets/images/phone_blue.png" style="width: 16px;height: 16px;padding-top: 5px;">
+		      +91 7042835383 </div> 
+		    <div class="col-7 p-0" style=" display: flex;justify-content: flex-end;"> No questions asked refund</div>
+  </body>
+
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="{% static 'assets/js/jquery.min.js' %}" type="text/javascript"></script>
+
+<script>
+
+
+    var urlParams = new URLSearchParams(window.location.search);
+        amount = 99    
+
+
+
+
+    $(".rzp-button1").on('click', function () {
+        data = {}
+        data["name"] = name
+	data["amount"] = amount
+        data["doctor"] = "Pediatrician"
+        data["email"] = ""
+                if ( urlParams.get('number')) {
+                    data["phone_number"] = "91" + urlParams.get('number')
+        } else {
+           data["phone_number"] = "917705099775";
+        }
+	    $.ajax({
+            type: 'POST',
+            url: '/payment/create-order-doctor',
+            data: JSON.stringify(data)
+        }).done(function (data) {
+            console.log(data);
+            var options = {
+                "key": data["key"], // Enter the Key ID generated from the Dashboard
+                "amount": data["amount"], // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "currency": data["currency"],
+                "name": "Pediatrician led program",
+
+		    "contact": data["phone_number"],
+                "email": "deepak@alemeno.com",
+                "description": "DigitalTherapeutics",
+                "image":  data["image"] ,
+                "order_id": data["order_id"], //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "callback_url": "https://alemeno.com/payment/post-doctor-payment" + window.location.search,
+                "prefill": {
+                    "email":  "deepak@alemeno.com",
+                    "name": data["name"],
+		    "contact": "+919920292255", //data["phone_number"],
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+        let rzp1 = new Razorpay(options);
+        rzp1.open();
+        e.preventDefault();
+
+    })
+
+
+
+
+        var request = new XMLHttpRequest();
+        request.open('POST', "/survey/subscribe-clicked'?", true);
+        request.onload = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                var res = JSON.parse(request.response);
+                console.log(res)
+            }
+        }
+        request.setRequestHeader("Content-Type", "application/json");
+
+        email = urlParams.get('email');
+        survey_id = urlParams.get('survey_id');
+        const data2 = {
+		
+            "email": email,
+            "survey_id": survey_id,
+        };
+        request.send(JSON.stringify(data2));
+
+    });
+
+
+
+
+
+
+</script>
+{% endblock %}
+
+</html>

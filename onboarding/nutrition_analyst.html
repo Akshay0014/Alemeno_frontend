@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+
+
+{% block meta %}
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        name="description">
+<meta content="" name="author">
+
+<title>A fun way inculcate healthy eating habits in kids</title>
+<!-- Facebook MetaTags -->
+
+<meta content="A fun way inculcate healthy eating habits in kids" property="og:title">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+<body class="register-background">
+<div class="container">
+    <div class="d-none d-sm-block" style="margin-top: 2em;"></div>
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-8 shadow" style="background-color: white;">
+            <div class="justify-content-center row">
+                <div class="lilita green top-text" style="font-size: 2em;margin-top: 1em;margin-bottom:0.3em">7 day FREE
+                    PROGRAM
+                </div>
+            </div>
+            <div class="details-block" style="margin-left: 1.5em; margin-right: 1.5em;">
+                <div class="head-text" id="head_text"></div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <div class="container" style="display: flex; flex-direction: column;">
+                        <div class="row d-none" id="1" style="margin-bottom: 1em;">
+                            <div style="display: flex; flex-direction: column;justify-content: center;">
+                                <img src="/static/assets/images/tick.png"
+                                     style="height: max-content; width: max-content;">
+                            </div>
+                            <div class="benefits" id="text-1"></div>
+                        </div>
+                        <div class="row d-none" id="3">
+                            <div style="display: flex; flex-direction: column;justify-content: center;">
+                                <img src="/static/assets/images/tick.png"
+                                     style="height: max-content; width: max-content;">
+                            </div>
+                            <div class="benefits" id="text-3"></div>
+                        </div>
+                    </div>
+                    <div class="container" style="display: flex; flex-direction: column;">
+                        <div class="row d-none" id="2" style="margin-bottom: 1em;">
+                            <div style="display: flex; flex-direction: column;justify-content: center;">
+                                <img src="/static/assets/images/tick.png"
+                                     style="height: max-content; width: max-content;">
+                            </div>
+                            <div class="benefits" id="text-2"></div>
+                        </div>
+                        <div class="row d-none" id="4">
+                            <div style="display: flex; flex-direction: column;justify-content: center;">
+                                <img src="/static/assets/images/tick.png"
+                                     style="height: max-content; width: max-content;">
+                            </div>
+                            <div class="benefits" id="text-4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-text" style="font-size: 1.2em;">This program will be led by
+                    your personal nutrition analyst.
+                </div>
+            </div>
+            <div class="container justify-content-center card-container">
+                <div class="container"
+                     style="background: #F0F0F0;border-radius: 10px;box-shadow: 3px 3px 0px #C4C4C4;">
+                    <div class="row justify-content-center">
+                        <div style="height: 2em; margin-top: 1em; margin-bottom: 1em; width: 5em; background-color: white; border-radius: 1em;
+                    box-shadow: inset 3px 3px 0px #C4C4C4;"></div>
+                    </div>
+                    <div class="row" style="display: flex; justify-content: space-around;margin-bottom: 1em;">
+                        <img src="/static/assets/images/nutritionist_photo.jpeg"
+                             style="max-width: 100px; border: 3px solid #C4C4C4; border-radius: 5px;">
+                        <div style="display: flex; flex-direction: column; justify-content: space-around;">
+                            <img src="/static/assets/images/Logo1.png" style="height: 28px;width: 122px">
+                            <div style="font-size: 1.5em; border-bottom: 2px solid #C4C4C4;">Rakhi S.</div>
+                            <div style="border-bottom:2px solid #C4C4C4;">Nutrition Analyst</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center row justify-content-center mx-0" style="margin-bottom: 3.5em;">
+                <button class="book-button button justify-content-center text-white" click="openKidAge()"
+                        id="next_button">Get Program Details
+                </button>
+            </div>
+            <!-- </form> -->
+        </div>
+</body>
+
+<style>
+    .container {
+        font-family: 'Andika', sans-serif;
+    }
+
+    .lilita {
+        font-family: 'Lilita One', cursive;
+    }
+
+    @media only screen and (max-height: 700px) {
+        .book-button {
+            margin-top: 1.5em;
+        }
+
+        .top-text {
+            margin-top: 00.5em;
+        }
+
+        .head-text {
+            margin-bottom: 0.5em;
+        }
+
+        .main-text {
+            margin-top: 1em;
+        }
+
+        .card-container {
+            margin-top: 2em;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .card-container {
+            padding-left: 3em;
+            padding-right: 3em;
+        }
+    }
+
+    @media only screen and (min-height: 700px) {
+        .book-button {
+            margin-top: 3em;
+        }
+
+        .top-text {
+            margin-top: 1em;
+        }
+
+        .details-block {
+            margin-top: 1em;
+        }
+
+        .head-text {
+            margin-bottom: 1em;
+        }
+
+        .main-text {
+            margin-top: 1.5em;
+        }
+
+        .card-container {
+            margin-top: 2em;
+        }
+    }
+
+    .register-button {
+        padding: 0%;
+        margin-bottom: 3em;
+    }
+
+    .green {
+        color: #5EA451;
+    }
+
+    .benefits {
+        margin-left: 0.5em;
+        font-size: 0.8em;
+    }
+
+    .head-text {
+        font-size: 1.2em;
+    }
+
+    .book-button {
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        padding: 0.2em 1em 0.2em 1em !important;
+        font-size: 1.6em;
+        background-color: #5EA451;
+        border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+        width: max-content;
+        border-radius: 2em;
+        text-align: center;
+        color: white;
+    }
+</style>
+
+<script>
+    var problems = ["Required quantity", "Variety of food", "With own hands", "In desired time"]
+    $(".base-header").hide();
+    const urlParams = new URLSearchParams(window.location.search);
+    var data = urlParams.get('data');
+    const prefs = JSON.parse(data)
+    var p = prefs["problems"].toString();
+    mixpanel.track('RegisterUserNutritionAnalyst', prefs);
+    for (var i in p) {
+        var index = parseInt(p[i]);
+        if (index <= problems.length) {
+            document.getElementById(index).classList.remove("d-none");
+            document.getElementById("text-" + index).innerHTML = problems[index - 1];
+        }
+    }
+    if (prefs == null) {
+        window.location.pathname = "register"
+    }
+    if (prefs['kid_name'] == null) {
+        window.location.pathname = "kid_name"
+    }
+    if (prefs['age'] == null) {
+        window.location.pathname = "kid_age"
+    }
+    document.getElementById('head_text').innerHTML = "Designed to help " + prefs['kid_name'] + " eat"
+    document.getElementById('next_button').addEventListener('click', openProgramDetails)
+
+    function openProgramDetails() {
+        const url = new URL(window.location.href)
+        var new_url = url.toString();
+        new_url = new_url.replace('nutrition_analyst', 'program_details')
+        window.location.href = new_url;
+        webView.saveUrl();
+    }
+</script>
+
+{% endblock %}
+
+
+</html>

@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="description" content="">-->
+<!--<meta name="keywords" content="">-->
+<!--<meta name="author" content=>-->
+<!--<title> </title>-->
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--</head>-->
+
+{% block meta %}
+
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta
+    content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+    name="description">
+<meta content="" name="author">
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" name="title">
+
+<title>Find out if your kid has healthy eating habits or if your kid is a picky eater</title>
+<!-- Facebook MetaTags -->
+
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" property="og:title">
+<meta
+    content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+    property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+
+<body style="background-color: white; height: 100vh; overflow: scroll;">
+
+    <div class="visible row" id="result-container" style="height: 100vh;text-align: center;">
+        <div class="col-lg-3 col-md-2 col-sm-0 display-sm-none"></div>
+        <div class="col-lg-6 col-md-8 col-sm-12">
+            <div class="mt-3" id="eater_type" style="color: var(--primaryColor); font-size: 24px;    font-weight: 600;">
+                Extreme picky eater
+            </div>
+            <div class="">
+                <div class="px-4 container" style="background-color: rgb(240, 236, 236);">
+                    <div class="mt-3 pt-3" style="text-align: left;font-size:1rem">Eating Test Score</div>
+                    <div class="container">
+                        <div class="row mt-2 mb-2">
+                            <div class="score-container-result" id="progress_container" style="height: 15px">
+                                <div class="score-result" id="progress"></div>
+                            </div>
+                            <div class="score-percent" id="score_percent" style="font-weight:900;font-size: 1rem">0%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 mb-3 pb-3" style="text-align: center; font-size: 0.7em;color: #3c3c3c">Healthy
+                        eaters
+                        score 80% and
+                        above
+                    </div>
+                </div>
+            </div>
+            <div class="container scroll px-4">
+
+                <div class="problem mt-4 w-100" id="problem"
+                    style="text-align: justify;color: #3c3c3c;font-size: 0.9rem;">
+                    Poor habits cost millions over a lifetime. At Alemeno we gamify mealtime to motivate kids to eat
+                    healthy
+                    every day to help them achieve their true
+                    potential.
+                </div>
+
+
+                <div class="problem w-100 mt-4" style="text-align: center; font-size: 1rem;">
+                    Transform your kid into healthy eater effortlessly
+                </div>
+                <div class="w-100">
+
+                    <div class="w-100 vertical-center" style="margin-bottom:10em;">
+
+                        <button class="d-none register-button button justify-content-center text-white" id="customize"
+                            onclick="downloadClick('customize');"
+                            style="font-size: 17px;max-width: 600px; min-width: 260px;height:max-content; width:90%;margin-left: 0px;display: initial; height: max-content;"
+                            type="button">
+                            Start your free program
+                        </button>
+
+
+                        <div
+                            style="width: 100%; display: flex; flex-direction: column; align-items: left;max-width:500px">
+
+
+                            <button class="d-none register-button button justify-content-center text-white mt-2"
+                                id="install" onclick="downloadClick('install');"
+                                style="font-size: 17px;max-width: 600px; min-width: 260px;height:max-content; width:100%;margin-left: 0px;display: initial; height: max-content;"
+                                type="button">
+                                <img id="appleLogo" class="mb-2 mr-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/800px-Apple_logo_white.svg.png" 
+                                width="20" height="20">
+                                Install now 
+			    </button>
+
+                        </div>
+                    <button type="button" class="d-none register-button button justify-content-center text-white"
+                        style="font-size: 17px;max-width: 600px; min-width: 260px;height:max-content; width:90%;margin-left: 0px;display: initial; height: max-content;"
+                        id="install" onclick="downloadClick('install');">
+                        Install now - it's FREE
+
+                    </button>
+ 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style type="text/css">
+    @media only screen and (max-width: 991px) {
+        .display-sm-none {
+            display: none;
+        }
+    }
+</style>
+
+<script src="{% static 'assets/js/survey.js' %}" type="text/javascript"></script>
+<script>
+
+    mixpanel.track('HealthyEatingCalculatorResultVisit');
+    const urlParams = new URLSearchParams(window.location.search);
+    email = urlParams.get("email");
+    _email = urlParams.get("_email");
+    phone_number = urlParams.get("_phone_number");
+    age = urlParams.get("age");
+    score = parseInt(urlParams.get("score"));
+    selectedAnswers = urlParams.get("selected_answers");
+    action = urlParams.get("action");
+    selectedAnswers = selectedAnswers.split(',');
+    // if(email == undefined){
+    //     window.location = "healthy_and_picky_eater_test_for_kids";
+    // }
+    getPickyEaterReports();
+    if (action === "install" | action === null) {
+        document.getElementById("install").classList.remove("d-none");
+    }
+
+    if (action === "customize") {
+        document.getElementById("customize").classList.remove("d-none");
+    }
+
+    function getPickyEaterReports() {
+        var req = new XMLHttpRequest();
+        req.open('GET', "/survey/get-picky-eater-reports?action=" + action, true);
+        req.onload = function () {
+            console.log(req.response);
+            res = JSON.parse(req.response);
+            testResults = res.reports;
+            getTestResult();
+        };
+        req.send();
+    }
+
+    function setProgress(percent) {
+        document.getElementById("score_percent").innerHTML = percent + "%";
+        document.getElementById('progress').style.width = (document.getElementById('progress_container').offsetWidth * (percent / 100)) + "px";
+    }
+
+    function getTestResult() {
+
+        var d = {
+            "ip_alias_email": email,
+            "user_entered_email": _email,
+            "user_entered_phone_number": phone_number
+        };
+        email = _email;
+
+        var eater;
+        var count = 0;
+        for (var i = 0; i < selectedAnswers.length; ++i) {
+            if (selectedAnswers[i] < 3) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            eater = eaterTypes[0];
+        } else if (count == 1) {
+            eater = eaterTypes[1];
+        } else if (count == 2) {
+            eater = eaterTypes[2];
+        } else if (count == 3 || count == 4) {
+            eater = eaterTypes[3];
+        } else if (count > 4) {
+            eater = eaterTypes[4];
+        }
+        document.body.classList.add("overflow-hidden");
+
+        var scorePercent = Math.round(score * 100 / (selectedAnswers.length * 5));
+        kidEaterType = eater.type;
+        document.getElementById('eater_type').innerHTML = kidEaterType;
+        setProgress(scorePercent)
+        // document.getElementById("result-container").classList.remove("make-invisible");
+        // document.getElementById("result-container").classList.add("make-visible");
+
+       // hide logo
+          
+	var images = document.getElementsByTagName('img');
+        if (images.length === 2) {
+            images[1].style.display = "None";
+        }
+        var isIphone = checkIphone();
+        if (isIphone) {
+            document.getElementById('appleLogo').style.display = 'inline'
+        }
+ 
+	var urlParams = new URLSearchParams(window.location.search);
+        d["utm_source"] = urlParams.get('utm_source');
+        d["kidEaterType"] = kidEaterType;
+        d['score'] = scorePercent;
+        d['age'] = age;
+        d["survey_id"] = survey_id;
+        $.ajax({
+            type: 'POST',
+            url: '/survey/update-email-calculator',
+            data: JSON.stringify(d)
+        }).done(function (data) {
+
+        });
+
+    }
+    function checkIphone() {
+        return navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad');
+    }
+
+
+    function downloadClick(action) {
+        var urlParams = new URLSearchParams(window.location.search);
+        var isIphone = checkIphone();
+
+        utmSource = urlParams.get('utm_source');
+        if (action === 'customize') {
+            window.open("https://www.alemeno.com/register?utm_source=test_calculator_" + utmSource + "&utm_medium="
+                + kidEaterType + "&utm_campaign=test_calculator&anid=admob" + "%26email%3D" + email + "%26phone%3D" + phone_number);
+        }
+        if (action === 'install' && isIphone == false) {
+            window.open("https://play.google.com/store/apps/details?id=com.alemeno.alemeno22&referrer=utm_source%3Dtest_calculator_" +
+                utmSource + "%26utm_medium%3D" + kidEaterType + "%26utm_campaign%3Dtest_calculator%26anid%3Dadmob" +
+                "%26email%3D" + email + "%26phone_number%3D" + phone_number);
+        } else {
+            window.open("https://apps.apple.com/us/app/alemeno/id1601278574?ct=utm_source%3Dtest_calculator_" +
+                utmSource + "%26utm_medium%3D" + kidEaterType + "%26utm_campaign%3Dtest_calculator%26anid%3Dadmob");
+        }
+    }
+
+</script>
+
+{% endblock %}
+
+</html>

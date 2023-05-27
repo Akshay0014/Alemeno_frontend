@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+
+
+{% block meta %}
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        name="description">
+<meta content="" name="author">
+
+<title>A fun way inculcate healthy eating habits in kids</title>
+<!-- Facebook MetaTags -->
+
+<meta content="A fun way inculcate healthy eating habits in kids" property="og:title">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+<body class="register-background">
+<div class="container">
+    <div class="d-none d-sm-block" style="margin-top: 2em;"></div>
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-8 shadow" style="background-color: white;">
+            <div class="row mx-3 mt-3 justify-content-center ">
+                <a href="/general/landing">
+                    <img alt="" class="nav-height my-2 " src="/static/assets/images/Logo1.png"
+
+                         style="height: 32px; width: 122px"></a>
+
+
+            </div>
+            <div class="justify-content-center row">
+                <div class="get-age-text" id="get-age-text"></div>
+            </div>
+            <div class="justify-content-center row ages-container img">
+                <div>
+                    <img id="3" onclick="selectAge(3)" src="/static/assets/images/3 colour.png">
+                </div>
+                <div class="col-2"></div>
+                <div>
+                    <img id="4" onclick="selectAge(4)" src="/static/assets/images/4.png">
+                </div>
+                <div class="col-2"></div>
+                <div>
+                    <img id="5" onclick="selectAge(5)" src="/static/assets/images/5.png">
+                </div>
+            </div>
+            <div class="justify-content-center row img">
+                <div>
+                    <img id="6" onclick="selectAge(6)" src="/static/assets/images/6.png">
+                </div>
+                <div class="col-2"></div>
+                <div>
+                    <img id="7" onclick="selectAge(7)" src="/static/assets/images/7.png">
+                </div>
+                <div class="col-2"></div>
+                <div>
+                    <img id="8" onclick="selectAge(8)" src="/static/assets/images/8.png">
+                </div>
+            </div>
+            <div class="justify-content-center row img">
+                <div>
+                    <img id="9" onclick="selectAge(9)" src="/static/assets/images/9.png">
+                </div>
+                <div class="col-2"></div>
+                <div>
+                    <img id="10" onclick="selectAge(10)" src="/static/assets/images/10.png">
+                </div>
+            </div>
+            <div class="justify-content-center row">
+                <div class="green-circle" style="background-color: #5EA451"></div>
+                <div class="green-circle" style="background-color: #5EA451"></div>
+                <div class="green-circle"></div>
+            </div>
+            <div class="text-center row justify-content-center mx-0">
+                <button class="register-button button justify-content-center text-white" id="next_button"
+                        style="font-size: 1.8em;">Next
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<style>
+    .logo-top-kidname {
+        margin-top: 2em
+    }
+
+    .container {
+        font-family: 'Andika', sans-serif;
+    }
+
+
+    @media only screen and (max-height: 700px) {
+        .get-age-text {
+            margin-top: 1em;
+            font-size: 1.5em;
+        }
+
+        .ages-container {
+            margin-top: 2em;
+        }
+
+        .img {
+            margin-top: 2em;
+        }
+
+        .register-button {
+            margin-top: 1.5em;
+        }
+    }
+
+    @media only screen and (min-height: 700px) {
+        .get-age-text {
+            margin-top: 2em;
+            font-size: 1.5em;
+        }
+
+        .ages-container {
+            margin-top: 3em;
+        }
+
+        .register-button {
+            margin-top: 3em;
+        }
+
+        .img {
+            margin-top: 3em;
+        }
+    }
+
+    .img {
+        cursor: pointer;
+    }
+
+    .register-button {
+        margin-bottom: 3em;
+    }
+
+    .green-circle {
+        margin: 3em 0.5em 0 0.5em;
+        height: 1em;
+        width: 1em;
+        border-radius: 0.5em;
+        background-color: #D8F0CE;
+    }
+</style>
+
+<script>
+    $(".base-header").hide();
+    var selectedAge = 3;
+
+    function selectAge(i) {
+        document.getElementById(selectedAge).src = "/static/assets/images/" + selectedAge + ".png"
+        document.getElementById(i).src = "/static/assets/images/" + i + " colour.png"
+        selectedAge = i
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    var data = urlParams.get('data');
+    const prefs = JSON.parse(data)
+    mixpanel.track('RegisterUserKidAge', prefs);
+    if (prefs == null) {
+        window.location.pathname = "register"
+    }
+    if (prefs['kid_name'] == null) {
+        window.location.pathname = "kid_name"
+    }
+    document.getElementById('get-age-text').innerHTML = "How old is " + prefs['kid_name'] + '?'
+    document.getElementById('next_button').addEventListener('click', openFoodPrefrences)
+
+    function openFoodPrefrences() {
+        const url = new URL(window.location.href)
+        var search_params = url.searchParams
+        prefs['age'] = selectedAge
+        search_params.set('data', JSON.stringify(prefs))
+        url.search = search_params.toString()
+        var new_url = url.toString()
+        new_url = new_url.replace('kid_age', 'kid_food_preferences')
+        window.location.href = new_url;
+        webView.saveUrl();
+    }
+</script>
+
+{% endblock %}
+
+
+</html>

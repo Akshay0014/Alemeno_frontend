@@ -1,0 +1,115 @@
+{% extends 'base.html' %} {% load static %}
+<html lang="en">
+{% block content %}
+<head>
+    <title>Pricing</title>
+    <meta content="Pricing" name="title">
+
+</head>
+
+<div>
+    <div class="mx-5 my-4 text-center" style="font-family: Poppins, sans-serif">
+        <span id="plan-expiry">
+        </span>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <h3 class="col-md-5 col-10 mb-4"
+            style="font-family: Poppins, sans-serif; padding-top: 1em; color: var(--primaryColor)"> Features</h3>
+        <div class="w-100"></div>
+        <div class="col-md-5 col-10 ml-md-5 pl-md-5">
+            <div><img class="tick" src="/static/assets/images/tick.gif">Dedicated nutrition analyst</div>
+            <div><img class="tick" src="/static/assets/images/tick.gif">Weekly nutrition report</div>
+            <div><img class="tick" src="/static/assets/images/tick.gif">Free access to new features</div>
+        </div>
+    </div>
+    <div class="container option-container">
+        <div class="row">
+            <div class="col-md-1 d-md-block d-none"></div>
+            <div class="col-7 vertical-center col-md-5" id="option1-container">
+                <div class="option container selected-option" id="option1">
+                    <div class="selected-best-value" id="best-value1">Best value</div>
+                    <p class="month-text selected-month" id="month-text1">+3 Months</p>
+                    <s class="mrp" id="mrp-text1">Rs 1500</s>
+                    <p class="amount" id="amount-text1">Rs 900/Month</p>
+                </div>
+            </div>
+            <div class="col-md-1 d-md-block d-none"></div>
+            <div class="col-5 vertical-center col-md-5" id="option2-container">
+                <div class="option container" id="option2">
+                    <p class="month-text" id="month-text2">+1 Months</p>
+                    <s class="mrp" id="mrp-text2">Rs 500</s>
+                    <p class="amount" id="amount-text2">Rs 400/Month</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position: relative;top:0em;bottom: 3em; width: 100%; left: 0;">
+        <div class="offer-validity">
+            <span id="offer_validity"></span>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <button class="my-button" id="pay-button">Pay Rs 900</button>
+        </div>
+    </div>
+</div>
+<div class="opaque make-invisible" id="opaque"
+     style="position:fixed;top: 0; height: 100%; width: 100%; background-color: slategrey; opacity: 80%;"></div>
+
+
+<div class="popup-container container-fluid make-invisible" id="dialog">
+    <div class="row" style="height: 100%; padding-top: 2em;padding-left: 0.5em;
+    padding-right: 0.5em; padding-bottom: 2em;">
+        <div class="d-none d-md-block col-md-4" style="padding: 0;margin: 0"></div>
+        <div class="popup col-12 col-md-4">
+            <span class="material-icons" id="close-dialog" style="position: absolute; top: 0.5em; right: 0.5em;">
+                close
+            </span>
+            <div class="overview container dialog-blocks light-border">
+                <div class="row">
+                    <div class="total col-6">Order Total:</div>
+                    <span class="total col-6" id="total-amount">Rs 0</span>
+                </div>
+                <div class="row">
+                    <span class="saving col-6">Your savings:</span>
+                    <span class="saving col-6" id="saving-amount">Rs 0</span>
+                </div>
+            </div>
+            <div class="details container dialog-blocks light-border">
+                <span class="plan-name" id="plan-name"></span>
+                <div class="row">
+                    <span class="col-6 actual-price">Actual Price:</span>
+                    <span class="col-6 actual-price" id="actual-price">Rs 0</span>
+                </div>
+                <div class="row">
+                    <span class="col-6 duration">Duratiom:</span>
+                    <span class="col-6 duration-months" id="dialog-month">0 Months</span>
+                </div>
+                <div class="row">
+                    <span class="col-6 created-on">Created on:</span>
+                    <span class="col-6 created-date" id="dialog-date">27 july 2021</span>
+                </div>
+            </div>
+            <div style="width: 100%; position: absolute; bottom: 3em; left: 0; display: flex; justify-content: center;">
+                <button class="my-button" id="r-pay">Pay Rs 0</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="payment-successful make-invisible" id="payment-successful">
+    <div class="text-payment-successful">Payment successful</div>
+    <img class="done" src=" /static/assets/images/tick.gif ">
+    <span class="bottom-text-alemeno">Please restart Alemeno</span>
+</div>
+<div class="payment-failed make-invisible" id="payment-failed">
+    <div class="text-payment-successful">Payment Failed</div>
+    <span class="bottom-text-alemeno">Opps something seems to have gone wrong. Please wait or contacts support
+        alemeno2020@gmail.com or at 7042825383</span>
+</div>
+{%endblock %}
+
+<script>
+    mixpanel.track('PricingPageVisit');
+</script>
+</html>

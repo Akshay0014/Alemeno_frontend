@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+    p {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        background-color: #fdfdfd;
+        font-weight: 400;
+        line-height: 1.8;
+    }
+
+    span {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        background-color: #fdfdfd;
+        font-weight: 400;
+        line-height: 1.8;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta content="{{ post.meta_description }}" name="description">
+    <meta content="{{ post.meta_title }}" name="title">
+    <meta content="{{ post.meta_tags }}" name="keywords">
+    <title> {{ post.meta_title }}</title>
+
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<div class="container">
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8 card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+                <p class=" text-muted">{{ post.created_on|date }} | {{ post.post_author.name }},
+                    {{post.post_author.designation }}</p>
+                <p class="card-text ">{{ object.content | safe }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

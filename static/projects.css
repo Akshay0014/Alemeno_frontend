@@ -1,0 +1,124 @@
+/* Center the project heading */
+.projects-root {
+  background-color: rgba(63, 0, 111, 0.06);
+}
+.lorem-ipsum-dolor-sit-amet-co-group {
+  text-align: center; /* Add this line to center the heading horizontally */
+}
+
+.group-child4 {
+  border-radius: 12px;
+  width: 30%; /* Adjust the width as per your preference */
+  height: auto; 
+margin-right: 20px;  /* Add some spacing between the image and text */
+}
+.mealtime-gamification3 {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 45px;
+}
+.projects1 {
+  margin: 0;
+  text-align: center;
+  flex: 1;
+  position: relative;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+  color: #C53F00;
+}
+.frame-parent2 {
+  display: flex;
+  justify-content: space-between;
+  color: #707070;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.project-name-31 {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #707070;
+  background-color: transparent;
+  margin-bottom: 10px; /* Add space between buttons in column layout */
+  border: none; /* Remove border */
+padding: 0; /* Remove any padding */
+margin-bottom: 10px;
+}
+.lorem-ipsum-dolor1 {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 20px; /* Adjust the margin as per your preference */
+}
+.group-parent7 {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Add this line to center the image horizontally */
+  margin-top: 20px;
+}
+.project-name-5-container {
+  margin-right: 10px; /* Add margin on the right side */
+}
+.mealtime-gamification-group {
+  margin-left: 10px; /* Add margin on the right side */
+}
+.component-51 {
+  margin-bottom: 20px; /* Add margin at the bottom of the image and text container */
+  gap:10px;
+}
+/* Adjust layout for desktop and tablet */
+@media (min-width: 768px) {
+  /* Align buttons in a row */
+  .lorem-ipsum-dolor-sit-amet-co-group {
+      text-align: left; /* Reset text alignment for mobile */
+    }
+    .frame-parent2 {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 0; /* Remove top margin for desktop layout */
+      align-items: flex-start; 
+    }
+
+  /* Position the image on the left */
+  .group-parent7 {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Adjust spacing */
+  .lorem-ipsum-dolor-sit-amet-co-group {
+    margin-left: 20px;
+  }
+}
+
+/* Center the image and adjust layout for mobile */
+@media (max-width: 767px) {
+  .group-parent7 {
+      flex-direction: column;
+      align-items: center;
+    }
+}
+@media (max-width: 495px) {
+  .frame-parent2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add gap between buttons */
+  }
+}
+/* Justify the project description */
+.lorem-ipsum-dolor1 {
+  text-align: justify;
+  margin-left: 20px;
+}

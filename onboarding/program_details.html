@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+
+
+{% block meta %}
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        name="description">
+<meta content="" name="author">
+
+<title>A fun way inculcate healthy eating habits in kids</title>
+<!-- Facebook MetaTags -->
+
+<meta content="A fun way inculcate healthy eating habits in kids" property="og:title">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+<body class="register-background">
+<div class="container">
+    <div class="d-none d-sm-block" style="margin-top: 2em;"></div>
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-8 shadow" style="background-color: white;">
+            <div class="main-container">
+                <div class="container">
+                    <div class="justify-content-center row">
+                        <div class="lilita green" style="font-size: 2.5em; margin-top: 0.5em;">Program details</div>
+                    </div>
+                    <div class="row" style="margin-top: 2em;">
+                        <div class="col-4 justify-content-center" style="flex-direction: column;">
+                            <div class="justify-content-center">
+                                <img src="/static/assets/images/Camera.png"
+                                     style="height: max-content; width: max-content;">
+                            </div>
+                        </div>
+                        <div class="col-8" style="font-size: 1.1em;">Kids share photos of their meals in form of fun
+                            activities
+                        </div>
+                    </div>
+                    <div class="row" style="height: 1px; background-color: #E5E5E5; margin: 1em 0 1em 0;"></div>
+                    <div class="row" style="margin-top: 1em;">
+                        <div class="col-8" style="font-size: 1.1em;">Your nutrition analyst, Rakhi, rewards points by
+                            analyzing meals
+                        </div>
+                        <div class="col-4 justify-content-center" style="flex-direction: column;">
+                            <div class="justify-content-center">
+                                <img src="/static/assets/images/nutritionist_photo.jpeg"
+                                     style="height: max-content; width: max-content;max-height: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 1px; background-color: #E5E5E5; margin: 1em 0 1em 0;"></div>
+                    <div class="row" style="margin-top: 1em;">
+                        <div class="col-4 justify-content-center" style="flex-direction: column;">
+                            <div class="justify-content-center">
+                                <img src="/static/assets/images/graph.png"
+                                     style="height: max-content; width: max-content;">
+                            </div>
+                        </div>
+                        <div class="col-8" style="font-size: 1.1em;">Kids learn healthy eating habits as they
+                            progress
+                        </div>
+                    </div>
+                    <div class="row" style="height: 1px; background-color: #E5E5E5; margin: 1em 0 1em 0;"></div>
+                    <div class="row" style="margin-top: 3em;">
+                        <div class="unchecked" id="check_box" style="height: 24px; width: 24px;">
+                            <svg fill="none" height="16" viewBox="0 0 16 16" width="16"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                        d="M13.6847 0.45572C11.3219 3.17225 8.9551 5.88525 6.59225 8.59826C5.17533 7.37917 3.75841 6.1636 2.34148 4.94451C1.76451 4.44771 0.971657 4.34906 0.402532 4.94451C-0.0880926 5.45892 -0.178368 6.48423 0.402532 6.98102C2.18841 8.51722 3.97821 10.0499 5.76408 11.5861C6.32143 12.0653 7.16138 12.2062 7.70303 11.5861C10.3446 8.55245 12.9861 5.52234 15.6276 2.48871C16.8169 1.12516 14.8819 -0.918399 13.6847 0.45572Z"
+                                        fill="white"/>
+                            </svg>
+                        </div>
+                        <div style="margin-left: 0.5em;">Get monthly nutrition report</div>
+                    </div>
+                </div>
+                <div class="text-center row justify-content-center mx-0">
+                    <button class="book-button justify-content-center text-white" click="openKidAge()"
+                            id="next_button">Book my free trial
+                    </button>
+                </div>
+            </div>
+</body>
+
+<style>
+    .container {
+        font-family: 'Andika', sans-serif;
+    }
+
+    .checked {
+        background-color: #5EA451;
+        padding: 0 0.2em 0 0.2em;
+        border-radius: 3px;
+    }
+
+    .unchecked {
+        background-color: white;
+        border: 1px solid rgb(205, 205, 205);
+    }
+
+    .lilita {
+        font-family: 'Lilita One', cursive;
+    }
+
+    @media only screen and (max-height: 700px) {
+        .main-container {
+            margin: 0.5em 0 0;
+        }
+
+        .book-button {
+            margin-top: 1.5em;
+        }
+    }
+
+    @media only screen and (min-height: 700px) {
+        .main-container {
+            margin: 1.5em;
+        }
+
+        .book-button {
+            margin-top: 2em;
+        }
+    }
+
+    .book-button {
+        margin-bottom: 3em;
+    }
+
+    .green {
+        color: #5EA451;
+    }
+
+    .benefits {
+        margin-left: 0.5em;
+        font-size: 0.8em;
+    }
+
+    .head-text {
+        margin-bottom: 1em;
+        font-size: 1.2em;
+    }
+
+    .book-button {
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        padding: 0.2em 1em 0.2em 1em !important;
+        font-size: 1.6em;
+        background-color: #5EA451;
+        border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+        width: max-content;
+        border-radius: 2em;
+        text-align: center;
+        color: white;
+    }
+</style>
+
+<script>
+    var checked = false;
+    $(".base-header").hide();
+    const urlParams = new URLSearchParams(window.location.search);
+    var data = urlParams.get('data');
+    const prefs = JSON.parse(data)
+    mixpanel.track('RegisterUserProgramDetails', prefs);
+    if (prefs == null) {
+        window.location.pathname = "register"
+    }
+    if (prefs['kid_name'] == null) {
+        window.location.pathname = "kid_name"
+    }
+    if (prefs['age'] == null) {
+        window.location.pathname = "kid_age"
+    }
+    document.getElementById('check_box').addEventListener('click', function () {
+        if (checked) {
+            document.getElementById('check_box').classList.remove("checked");
+            document.getElementById('check_box').classList.add("unchecked");
+        } else {
+            document.getElementById('check_box').classList.add("checked");
+            document.getElementById('check_box').classList.remove("unchecked");
+        }
+        checked = !checked;
+    })
+    document.getElementById('next_button').addEventListener('click', openProgramDetails)
+
+    function openProgramDetails() {
+        const url = new URL(window.location.href)
+        var new_url = url.toString();
+        new_url = new_url.replace('program_details', 'get_phone_number')
+        window.location.href = new_url;
+        webView.saveUrl();
+    }
+</script>
+
+{% endblock %}
+
+
+</html>

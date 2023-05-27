@@ -1,0 +1,590 @@
+nav {
+
+    margin-bottom: 60px !important;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input::placeholder {
+    text-align: center; 
+ }
+ 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+/* Apply the font to the body */
+body {
+    font-family: 'Poppins', sans-serif;
+  
+}
+
+
+.whatWeDoText{
+    color :rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+}
+
+#business {
+    color: rgba(197, 63, 0, 1);
+}
+
+#tech {
+    color: rgba(0, 136, 123, 1);
+}
+
+
+.heading {
+    color: rgba(197, 63, 0, 1);
+    ;
+}
+#form-input-btn{
+    font-weight: bold;
+    background-color: rgba(197, 63, 0, 1);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+#banner-btn {
+    font-weight: bold;
+    background-color: rgba(197, 63, 0, 1);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+#banner-img {
+    padding-top: 100px;
+    
+    
+}
+
+
+.card-p,
+#intro-block>h5 {
+    color: rgba(0, 0, 0, 0.6)
+}
+.heroSection{
+    font-weight: bolder;
+}
+.heroSectionMain{
+    color: rgba(0, 0, 0, 1);
+    font-weight: bolder;
+    font-size: 45px !important;
+}
+.cardPading {
+    padding: 10px;
+
+}
+
+.clientImg {
+    position: relative;
+    bottom: 50px;
+    height: 90px;
+    width: 90px;
+}
+
+.client-balance{
+    height: 295px !important;
+}
+.clientComa {
+    position: relative;
+    bottom: 60px;
+    right: 20px;
+    height: 40px;
+    width: 40px!important;
+}
+
+.clent-position {
+    position: relative;
+    bottom: 68px;
+}
+
+
+.bgWhite{
+    background-color: white;
+}
+.WhatWeDoBlock{
+    background-color: rgba(63, 0, 111, 0.06);
+    margin-bottom: 30px;
+    padding-top: 60px;  
+    padding-bottom: 40px;
+   
+     
+}
+
+.removeLeftRightMargin{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.footer-bg-color {
+    color: white;
+    /* height: 200px; */
+    background-color: rgba(0, 54, 82, 1);
+    padding-top: 30px;
+    margin-bottom: 0 !important;
+}
+
+.commonMargin {
+   
+    margin-bottom: 50px;
+}
+#pastWorkMob{
+    display: none;
+}
+
+#pastWork {
+   
+    margin-left: -10 !important;
+    margin-right: -10 !important;
+    padding-top: 60px;
+
+
+}
+#mobileViewWork{
+    display: none;
+}
+#copyRight-mob{
+    display: none;
+}
+#banner{
+    margin-top: 15px;
+    margin-bottom: 80px;
+}
+.cardBox{
+    width: 95%;
+    padding: 35px !important;
+
+}
+.form-input-thanks{
+    display: none
+    ;}
+
+.form-input{
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 1);
+    
+}
+
+.form-padding{
+    padding: 20px;
+}
+.form-heading{
+    font-size: 35 ;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+   font-family: 'Poppins', sans-serif;
+}
+.form-text{
+    font-size: 10;
+}
+
+.form-input-thanks{
+    display: none;
+    z-index: 200;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+   
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 1);
+   
+}
+#footerLink{
+    color: white !important;
+
+}
+
+
+.formm{
+    display : none;
+    position : fixed;
+    top : 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width : 100vw;
+    height : 100vh;
+  background: rgba(0, 0, 0, 0.5);
+    
+    z-index : 7;
+}
+
+.form-margin{
+    margin-top: 20px;
+}
+.success{
+    height: 150px;
+    width: 150px;
+    margin-bottom: 0px !important;
+    
+}
+.success-block{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.cardMargin{
+    margin-top:0px;
+    margin-bottom: 38px;
+}
+
+.text{
+    padding-left: 15px;
+}
+
+#grid-block-1{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+#grid-block-2 {
+    display: flex;
+    /* margin-top: 0px !important; */
+   
+    justify-content: center;
+    gap: 80px;
+}
+.cardBoxDiv{
+    padding: 30px;
+    width: 37.5vmax;
+    
+}
+.cardTitle{
+    font-weight: 600;
+}
+
+.alignCenter{
+    display: flex;
+    align-items:center;
+    margin-top: 0px !important;
+}
+
+.copyRight{
+    font-size: 14px !important;
+}
+.cardTopBox{
+    height: 150px !important;
+}
+#cardSlide{
+    margin-bottom: 0px !important;
+}
+.allSectionHeading {
+    font-size: 24px;
+}
+
+
+.error{
+   
+    margin-top: 5px;
+    padding: 5px !important;
+    margin-bottom: 2px;
+    font-size: 13px !important;
+   text-align: start;
+    color: red;
+    display: none;
+    cursor: pointer;
+}
+
+#form-input-cut-btn{
+    padding-left: 340px;
+}
+
+@media (max-width: 768px) {
+    #form-input-cut-btn{
+        padding-left: 20px;
+    }
+    .success{
+        height: 150px;
+        width: 150px;
+        margin-bottom:11px !important;
+        
+    }
+    .form-text{
+        font-size: 12px;
+        margin-bottom: 54px;
+    }
+    .cardTitle{
+        margin-left: -20px !important;
+       
+    }
+    .cardIcon{
+        height: 35px;
+        width: 35px;
+    }
+    
+    
+    .error{
+        font-size: 12px !important;
+        margin-top: 0px !important;
+    }
+    .alignCenter{
+        width: 25%;
+        
+    }
+   
+    
+    .feedbackText{
+        margin: auto;
+        margin-bottom: 20px;  
+        width: 300px;
+        font-size: 17px !important;
+    }
+    nav{
+        margin-bottom: 29px !important;
+    }
+    
+    .whatWeDoText{
+        font-size: 17px !important;
+    }
+   
+    .copyRight{
+        display: none ;
+    }
+    .heroSectionMain{
+        font-weight: 720;
+        font-size: 25px !important;
+    }
+    .WhatWeDoBlock{
+        padding: 15px !important;
+        padding-top: 50px !important;
+        padding-bottom: 40px !important;
+    }
+    .cardBoxDiv{
+        padding: 15px;
+        width: auto;
+        
+    }
+    .cardMargin{
+       margin-top: 1px;
+
+    }
+    #pastWork{
+        display: none;
+    }
+
+  
+
+    #banner-text {
+        text-align: center;
+    }
+
+    #banner-img {
+      
+        padding-bottom: 20px;
+     
+    }
+
+    #followDiv {
+        text-align: left;
+
+    }
+
+    .followHead h3 {
+
+        text-align: left;
+        display: flex;
+        justify-content: left;
+
+
+    }
+ 
+
+    .followBody {
+
+        display: flex !important;
+        justify-content: left !important;
+
+
+
+    }
+
+    .followBody div {
+
+        display: flex;
+        justify-content: left;
+
+        text-align: left;
+    }
+
+    #grid-block-1 {
+        flex-direction: column;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 2px;
+        margin-bottom:1px !important;
+        margin-bottom: 20px !important;
+    }
+    #grid-block-2 {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 2px;
+        margin-bottom:1px !important;
+        margin-bottom: 20px !important;
+    }
+
+    
+
+    #cardSlide{
+      
+       display: flex !important;
+       gap: 10px !important;
+       cursor: grab;  
+       flex-direction: row !important;
+       overflow-x: scroll;
+       margin-bottom: 0px !important;
+       
+    }
+   
+    .cardTopBox{
+        
+        padding: auto;
+        height: 130px; 
+        width: 100%;
+    }
+
+    .cardBox{
+        padding: 25px !important;
+        
+        
+    }
+
+   .footer-icon{
+    height: 20px;
+    width: 20px;
+   }
+    #mobileViewWork{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-around !important;
+        padding-top: 40px;
+        padding-bottom: 30px;
+       
+       margin-bottom: -35px;
+        cursor: grab;
+
+    }
+    #pastWorkMob{
+        padding-top: 20px;
+        display: block;
+        
+        margin-bottom: 0px;
+    }
+    .footer-bg-color{
+        height: 500px;
+      
+    }
+  
+
+    #copyRight-mob{
+        display: block;
+       font-size: 15px;
+       
+    }
+
+    .form-input-thanks{ 
+        
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 400px;
+        width: 340px;   
+        padding-right: 10px;   
+        padding-bottom: 2px !important;
+        
+    }
+
+    .form-input{ 
+        top: 0;
+        left: 0;
+        right: 0;
+bottom: 0; 
+        height: 400px;
+        width: 340px;      
+    }
+    .form-padding{       
+        margin-top: -10px !important;
+    }
+    input::placeholder {
+        font-size: 15px !important;
+    }
+   
+    .cut-btn-icon2{
+        
+        display: flex;
+        margin-top: 4px !important;
+        justify-content: end;
+        margin-right: 4px !important;
+    }
+  
+   
+
+    #banner-img{
+        padding-top: 10px !important;
+        /* border: 1px solid red; */
+    }
+
+    #banner-btn{
+        /* padding: 30px !important; */
+        padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+        margin-bottom:0 !important;
+    }
+
+    
+.cardTopBox{
+    height: 100px !important;
+    /* width: 300px; */
+}
+.cardPading {
+    padding: 5px;
+
+}
+
+.text{
+    display: flex;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+   
+    
+}
+
+
+
+

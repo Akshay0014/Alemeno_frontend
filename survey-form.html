@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+
+
+{% block content %}
+
+<body style="background-color: #F7F7FC">
+
+
+<div class="show open" id="myModal" role="dialog" style="display: block;overflow-y: scroll" tabindex="-1">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content survey-text">
+
+
+            <form id="surveyForm" name="surveyForm">
+                <div class="container modal-body rounded bg-white m-2">
+
+
+                    <h2 dir="ltr">
+                        <div class="survey-header align-items-center">Avail FREE consultation call from experts</div>
+                    </h2>
+
+                    <br>
+
+                    <div class="card border-0" style="padding: 0px 20px;">
+                        Please fill up the form below to avail a FREE consultation call to address eating habits of your
+                        kids. This information will help our experts your in understanding your needs better.
+                    </div>
+
+                    <br>
+
+                    <!--                    The first item in the form is handelled differently-->
+                    <div class="card border-0" style="padding: 0px 20px;display: none">
+                        <input class="form-control validate input-style" name="ignorethis" type="text">
+
+                    </div>
+
+
+                    <div class="card border-0" style="padding: 0px 20px;">
+                        <p>Please share your Mobile number?*</p>
+                        <input class="form-control validate input-style" id="mobileNumber" name="mobileNumber"
+                               required type="text">
+
+                    </div>
+
+                    <br>
+
+                    <div class="card border-0 " style="padding: 0px 20px;">
+                        <p>How old is your kid?*</p>
+                        <input class="form-control validate input-style w-25" name="age" required type="text">
+
+                    </div>
+
+                    <br>
+
+                    <div class="card border-0" style="padding: 0px 20px;">
+                        <p>Gender of your child?*</p>
+                        <div class="row border rounded" style="max-width: 500px">
+                            <input class="col-2 mt-2" id="male" name="gender" type="radio" value="male">
+                            <label class="form-check-label col-4" for="male">Male</label>
+
+                            <input class="col-2 mt-2" id="female" name="gender" required type="radio" value="female">
+                            <label class="form-check-label col-4" for="female">Female</label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="card border-0 survey-header text-left" style="padding: 20px;">
+                        On a scale of 1-5, rate following eating behavior that may appropriately describe your
+                        child
+                    </div>
+
+                    <br>
+
+                    <div class="card border-0 col-12 overflow-auto" style="padding: 20px;">
+                        <p>My kid often does not eat enough portions of food?*</p>
+                        <div class="row  border rounded" style="padding: 0px  20px;max-width: 500px; min-width: 500px;">
+                            <span class="col-3 p-0 "> Not a problem </span>
+                            <div class="col-5 text-center">
+                                <input class="" id="1portion" name="enoughPortion" required type="radio"
+                                       value="1">
+                                <label class="form-check-label" for="1portion"></label>
+                                <input class="" id="2portion" name="enoughPortion" type="radio" value="2">
+                                <label class="form-check-label" for="2portion"></label>
+                                <input class="" id="3portion" name="enoughPortion" type="radio" value="3">
+                                <label class="form-check-label" for="3portion"></label>
+                                <input class="" id="4portion" name="enoughPortion" type="radio" value="4">
+                                <label class="form-check-label" for="4portion"></label>
+                                <input class="" id="5portion" name="enoughPortion" type="radio" value="5">
+                                <label class="form-check-label" for="5portion"></label>
+                            </div>
+                            <span class="col-3 p-0">  Big Problem </span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card border-0 col-12 overflow-auto" style="padding: 20px;">
+                        <p>My kid only eats food that they like. But, does not eat variety of food that I would
+                            like
+                            them to eat?*</p>
+                        <div class="row border rounded" style="padding: 0px  20px;max-width: 500px; min-width: 500px">
+                            <span class="col-3 p-0"> Not a problem </span>
+                            <div class="col-5 text-center">
+                                <input class="" id="1variety" name="enoughVariety" required type="radio"
+                                       value="1">
+                                <label class="form-check-label" for="1variety"></label>
+                                <input class="" id="2variety" name="enoughVariety" type="radio" value="2">
+                                <label class="form-check-label" for="2variety"></label>
+                                <input class="" id="3variety" name="enoughVariety" type="radio" value="3">
+                                <label class="form-check-label" for="3variety"></label>
+                                <input class="" id="4variety" name="enoughVariety" type="radio" value="4">
+                                <label class="form-check-label" for="4variety"></label>
+                                <input class="" id="5variety" name="enoughVariety" type="radio" value="5">
+                                <label class="form-check-label" for="5variety"></label>
+                            </div>
+                            <span class="col-3 p-0 ">  Big Problem </span>
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <div class="card border-0 col-12" style="padding: 0px 20px;">
+                        <p>How do you deal with the problem mentioned above?</p>
+                        <!--                        <input type="text" name="deal" class="form-control validate input-style">-->
+                        <textarea class="form-control validate input-style" cols="33"
+                                  id="story" name="deal" rows="2">
+                        </textarea>
+                    </div>
+
+
+                    <br>
+
+                    <div class="card border-0 col-12" style="padding: 0px 20px;">
+                        <p>What is the biggest pain point in how you deal with the problem?</p>
+                        <!--                        <input type="text" name="painPoint" class="form-control validate input-style">-->
+                        <textarea class="form-control validate input-style" cols="33"
+                                  id="painPoint" name="painPoint" rows="2">
+                        </textarea>
+                    </div>
+
+                    <br>
+
+                    <div class="card border-0 col-12" style="padding: 0px 20px;">
+                        <p>If you could wave a magic wand and change anything with regard to this problem and
+                            how
+                            you
+                            manage it
+                            currently, what would you do?</p>
+                        <!--                        <input type="text" name="wand" class="form-control validate input-style">-->
+                        <textarea class="form-control validate input-style" cols="33"
+                                  id="wand" name="wand" rows="2">
+                        </textarea>
+                    </div>
+
+                    <div class="card border-0" style="padding: 0px 20px">
+
+                        <br>
+                        <p>We are almost done. Couple of questions to know your kid better.</p>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn register-button" id="continue-button" onclick="expand()"
+                                type="button  ">Continue
+                        </button>
+                    </div>
+
+                    <div id="expand" style="display: none">
+                        <div class="card border-0 survey-header text-left" style="padding: 0px 20px;">
+                            <p> On a scale of 1-5, rate following eating behavior that may appropriately
+                                describe your
+                                child?</p>
+                        </div>
+
+
+                        <div class="card border-0 overflow-auto" style="padding: 20px;">
+                            <p>My kid does not eat food with their own hand?*</p>
+                            <div class="row border rounded"
+                                 style="padding: 0px  20px;max-width: 500px; min-width: 500px">
+                                <span class="col-3 p-0"> Not a problem </span>
+                                <div class="col-5 text-center">
+                                    <input class="" id="1hand" name="ownHand" type="radio" value="1">
+                                    <label class="form-check-label" for="male"></label>
+                                    <input class="" id="2hand" name="ownHand" type="radio" value="2">
+                                    <label class="form-check-label" for="female"></label>
+                                    <input class="" id="3hand" name="ownHand" type="radio" value="3">
+                                    <label class="form-check-label" for="female"></label>
+                                    <input class="" id="4hand" name="ownHand" type="radio" value="4">
+                                    <label class="form-check-label" for="female"></label>
+                                    <input class="" id="5hand" name="ownHand" required type="radio" value="5">
+                                    <label class="form-check-label" for="female"></label>
+                                </div>
+                                <span class="col-3 p-0">  Big Problem </span>
+                            </div>
+
+                        </div>
+
+                        <br>
+
+                        <div class="card border-0 overflow-auto" style="padding: 0px 20px;">
+                            <p>My kid takes longer time than required to finish the meals?*</p>
+                            <div class="row border rounded"
+                                 style="padding: 0px 20px;max-width: 500px; min-width: 500px">
+
+                                <span class="col-3 p-0"> Not a problem </span>
+                                <div class="col-5 text-center">
+                                    <input class="" id="finish1" name="finishTime" type="radio" value="1">
+                                    <label class="form-check-label" for="male"></label>
+                                    <input class="" id="finish2" name="finishTime" type="radio" value="2">
+                                    <label class="form-check-label" for="female"></label>
+                                    <input class="" id="finish3" name="finishTime" type="radio" value="3">
+                                    <label class="form-check-label" for="female"></label>
+                                    <input class="" id="finish4" name="finishTime" type="radio" value="4">
+                                    <label class="form-check-label" for="female"></label>
+                                    <input class="" id="finish5" name="finishTime" required type="radio"
+                                           value="5">
+                                    <label class="form-check-label" for="female"></label>
+                                </div>
+                                <span class="col-3 p-0">  Big Problem </span>
+                            </div>
+
+                        </div>
+
+                        <br>
+
+
+                        <br>
+
+                        <div class="text-center">
+                            <button class="btn register-button" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+
+</div><!-- /.modal -->
+</body>
+
+<script src="{% static 'assets/js/jquery.min.js' %}" type="text/javascript"></script>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    mobileNumber = urlParams.get('mobile-number')
+    $("#mobileNumber").val(mobileNumber);
+
+
+    $('#surveyForm').submit(function (e) {
+        // $('#myModal').modal('show');
+        e.preventDefault();
+        var data = $(this).serializeArray().reduce(function (obj, item) {
+            obj[item.name] = item.value;
+            return obj;
+        });
+        console.log(data)
+        $.ajax({
+            type: 'POST',
+            url: 'updateSurvey',
+            data: data,
+        }).done(function (data) {
+        });
+        window.location.replace("/general/landing?share-popup=true");
+        //
+    });
+
+    function expand() {
+        document.getElementById('expand').style.display = 'block';
+        document.getElementById('continue-button').style.display = 'none';
+        var element = document.getElementById("expand");
+        element.scrollIntoView();
+    }
+
+
+</script>
+
+{% endblock %}
+
+
+</html>

@@ -1,0 +1,915 @@
+@media only screen and (max-width: 991px) {
+    .bg-cover {
+        background-color: var(--primaryColor);
+        height: 384px;
+        /*width:auto;*/
+        background-size: cover;
+        /*background-attachment: fixed;*/
+        background-position: center;
+        background-repeat: no-repeat;
+        max-width: 2500px;
+
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .bg-cover {
+        background-color: var(--primaryColor);
+        height: 400px;
+        /*width:auto;*/
+        background-size: cover;
+        /*background-attachment: fixed;*/
+        background-position: center;
+        background-repeat: no-repeat;
+        max-width: 2500px;
+
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .bg-title {
+        /* Now your kids will run after you for food! */
+        z-index: 10;
+        height: 48px;
+        /*left: calc(50% - 345px / 2);*/
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        /* or 100% */
+        text-align: center;
+        letter-spacing: 0.15px;
+        margin-top: 30px;
+
+        /* off white */
+        color: #EFF0F6;
+        width: inherit;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .bg-title {
+        /* Now your kids will run after you for food! */
+        z-index: 10;
+        /*left: calc(50% - 345px / 2);*/
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        /* or 100% */
+        letter-spacing: 0.15px;
+
+        /* off white */
+        color: #EFF0F6;
+
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .sec-title {
+        /* A fun way to ensure your kids. */
+        /*left: calc(50% - 304px / 2 - 0.5px);*/
+        top: 620px;
+        /* H3/Medium/20px */
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 60px;
+        /* identical to box height, or 120% */
+        text-align: center;
+        letter-spacing: 0.1px;
+        color: var(--primaryColor);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .sec-title {
+        /* A fun way to ensure your kids. */
+        /*left: calc(50% - 304px / 2 - 0.5px);*/
+        top: 620px;
+        /* H3/Medium/20px */
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        margin-top: 60px;
+        /* identical to box height, or 120% */
+        text-align: center;
+        letter-spacing: 3px;
+        color: var(--primaryColor);
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .icon {
+
+        /* eating 1 */
+
+        /*width: 48px;*/
+        display: block;
+        width: 48px;
+        height: 48px;
+        margin-top: 48px;
+        margin-bottom: 36px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    }
+
+    .icon-flex {
+        /* d-flex */
+        display: -ms-flexbox !important;
+        display: flex !important;
+        /* align center */
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .icon {
+
+        /* eating 1 */
+        display: block;
+        width: 48px;
+        height: 48px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    }
+
+    .icon-flex {
+        /*!* d-flex *!*/
+        display: -ms-flexbox !important;
+        display: flex !important;
+        /* align center */
+        -ms-flex-pack: end !important;
+        justify-content: flex-end !important;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+
+    .content-text {
+        /* Enjoy having variety of food */
+
+        /* Medium/14px */
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        /* identical to box height, or 171% */
+        text-align: center;
+        letter-spacing: 0.1px;
+        /*background: #F3EFFF;*/
+
+        /* label */
+        color: #4E4B66;
+
+        /*!* d-flex *!*/
+        /*display: -ms-flexbox !important;*/
+        /*display: flex !important;*/
+
+        /*!* align center *!*/
+        /*-ms-flex-pack: center !important;*/
+        /*justify-content: center !important;*/
+
+
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+        max-width: 360px;
+
+
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .content-text {
+        /* Enjoy having variety of food */
+
+        /* Medium/14px */
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        /*background: #F3EFFF;*/
+        /*line-height: 24px;*/
+        /*!* identical to box height, or 171% *!*/
+        text-align: center;
+        letter-spacing: 0.1px;
+
+        /*!* label *!*/
+        color: #4E4B66;
+
+        /*!*!* d-flex *!*!*/
+        /*display: -ms-flexbox !important;*/
+        /*display: flex !important;*/
+
+        /*!* align center *!*/
+        /*-ms-flex-pack: start !important;*/
+        /*justify-content: flex-start !important;*/
+
+        margin: auto;
+
+
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+        max-width: 360px;
+
+    }
+}
+
+.bg-pricing {
+    /* Rectangle 3 */
+
+    height: 356px;
+    left: calc(50% - 411px / 2);
+    top: 1328px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    background: var(--primaryColor);
+
+}
+
+.pricing-text {
+    /* We have helped hundreds of parents. Our team is mentored by experts like child psychologist, nutritionist, and doctors. */
+
+    max-height: 120px;
+    left: calc(50% - 374px / 2 + 0.5px);
+
+    font-family: 'Andika', sans-serif !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    /* or 150% */
+    text-align: center;
+    letter-spacing: 0.15px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    /* Input Bg */
+    color: #4E4B66;
+
+}
+
+.cover {
+    background-image: url("assets/images/banner-big.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40vw;
+}
+
+/* Top left text */
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+
+.button:hover {
+    background-color: var(--primaryColor);
+    border: none;
+}
+
+.button:active:focus {
+    color: var(--primaryColor);
+    background-color: var(--primaryColor);
+    border: none;
+}
+
+.button:active:focus {
+    color: var(--primaryColor);
+    background-color: var(--primaryColor);
+    border: none;
+}
+
+
+.hero-image {
+    /*max-width: 375px;*/
+    /*text-indent: -140px;*/
+    margin-left: 10px;
+    /*overflow: hidden;*/
+}
+
+
+.fa-icon {
+    color: white;
+    margin-bottom: 30px;
+    text-shadow: -1px 1px 1px var(--primaryColor),
+    1px 1px 1px var(--primaryColor),
+    1px -1px 0 var(--primaryColor),
+    -1px -1px 0 var(--primaryColor);
+}
+
+.footer-text {
+    /* +91 7042835383 */
+
+    /*width: 129px;*/
+    /*height: 24px;*/
+    /*left: calc(50% - 129px/2 - 24px);*/
+
+    /* Regular/16px */
+    font-family: 'Andika', sans-serif !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.15px;
+
+    /* body */
+    color: #4E4B66;
+
+}
+
+.footer-color {
+    /* Rectangle 2 */
+
+    background: white;
+
+}
+
+@media only screen and (min-width: 991px) {
+
+    .page-title {
+        /* Inculcate healthy eating habits in your kids, effortlessly */
+
+        font-family: 'Poppins', sans-serif !important;
+        font-style: normal;
+        font-weight: 550;
+        line-height: 62px;
+        /* or 155% */
+
+        letter-spacing: 0.18px;
+
+        /* title active */
+
+        color: #3c3c3c;
+
+
+        max-width: 52%;
+        font-size: 3vw;
+    }
+
+    .page-sub-title {
+
+        /* Kids will joyfully eat meals you prepare */
+
+        /*position: absolute;*/
+        /*width: 352px;*/
+        /*height: 24px;*/
+        /*left: 31px;*/
+        /*top: 270px;*/
+
+        /* Regular/16px */
+
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+        /* identical to box height, or 100% */
+
+        letter-spacing: 0.2px;
+
+        /* body */
+
+        color: #4E4B66;
+        max-width: 50%
+
+    }
+
+    .button {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /*padding: 10px 30px;*/
+        /* margin-left: 6rem; */
+
+        width: 320px;
+        height: 65px;
+        /*left: 87px;*/
+        /*top: 326px;*/
+
+
+        background: var(--primaryColor);
+        border: none;
+        border-radius: 8px;
+
+        font-family: 'Andika';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 25px;
+        /* identical to box height, or 104% */
+
+        letter-spacing: 0.2px;
+
+        /* off white */
+
+        color: #FCFCFC;
+
+        /* shadow */
+
+        /*box-shadow: 0 4px 31px rgba(0, 0, 0, 0.15);*/
+    }
+}
+
+@media only screen and (max-width: 578px) {
+    .register-background {
+        background-color: white;
+    }
+}
+
+@media only screen and (min-width: 578px) {
+    .register-background {
+        background-color: #fffbfb;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+
+    .page-title {
+        /* Inculcate healthy eating habits in your kids, effortlessly */
+
+        font-family: 'Poppins', sans-serif !important;
+        font-style: normal;
+        font-weight: 550;
+        font-size: 28px;
+
+        /* or 156% */
+
+        letter-spacing: 0.18px;
+
+        /* title active */
+
+        color: #3c3c3c;
+
+
+    }
+
+    .page-sub-title {
+
+        /* Kids will joyfully eat meals you prepare */
+
+        /*position: absolute;*/
+        /*width: 352px;*/
+        /*height: 24px;*/
+        left: 31px;
+        top: 270px;
+
+        /* Regular/16px */
+
+        font-family: 'Andika';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        /* identical to box height, or 150% */
+
+        text-align: center;
+        letter-spacing: 0.15px;
+
+        /* body */
+
+        color: #4E4B66;
+
+    }
+
+    .button {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 30px;
+
+        width: 241px;
+        height: 65px;
+        /*left: 87px;*/
+        /*top: 326px;*/
+
+        /* Primary */
+
+        background: var(--primaryColor);
+        border: none;
+        border-radius: 8px;
+
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: 25px;
+
+        /* shadow */
+
+        /*box-shadow: 0 4px 31px rgba(0, 0, 0, 0.15);*/
+    }
+}
+
+.skip-this {
+    text-align: center;
+    color: blue;
+}
+
+.ellipse1 {
+
+    /* Ellipse 1 */
+
+    position: absolute;
+    width: 665px;
+    height: 665px;
+    left: 921.9px;
+    top: -221px;
+
+    background: #EE0900;
+    transform: rotate(18.67deg);
+
+}
+
+.copyright-text {
+
+    /* Medium/14px */
+    font-family: 'Andika', sans-serif !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    /*line-height: 24px;*/
+    /*!* identical to box height, or 171% *!*/
+    text-align: center;
+    letter-spacing: 0.1px;
+
+    /*!* label *!*/
+    color: #6E7191;
+
+    margin: auto;
+
+}
+
+@media (max-width: 1199px) {
+    .nav-height {
+        height: 24px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .nav-height {
+        height: 40px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .image-head {
+        max-width: 347px;
+        max-height: 256px;
+        height: inherit;
+    }
+}
+
+@media (min-width: 1200px) {
+    .image-head {
+        max-width: 605px;
+        max-height: 320px;
+        height: inherit;
+    }
+}
+
+.button-text {
+    top: 620px;
+    margin-top: 60px;
+
+    font-family: 'Andika', sans-serif !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height, or 120% */
+
+    text-align: center;
+    letter-spacing: 0.15px;
+
+    color: var(--primaryColor);
+    background-color: white;
+}
+
+.button-text:hover {
+    color: var(--primaryColor);
+    background-color: white;
+}
+
+.button-text:focus {
+    color: var(--primaryColor);
+    background-color: white;
+    box-shadow: none;
+}
+
+.register-button:hover {
+    background-color: var(--primaryColor);
+    color: white;
+    border: none;
+
+}
+
+.register-button:focus {
+    background-color: var(--primaryColor);
+    color: white;
+    box-shadow: none;
+    border: none;
+}
+
+.register-button:before {
+    border: 2px solid var(--primaryColor);
+}
+
+.register-button {
+    font-family: 'Andika', sans-serif !important;
+    font-style: normal;
+    padding: 0.5em 2em 0.5em 2em !important;
+    font-size: 1.8em;
+    background-color: var(--primaryColor);
+    border: none;
+    height: 2em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    width: max-content;
+    border-radius: 2em;
+    text-align: center;
+    color: white;
+}
+
+.input-style {
+    font-size: 14px;
+    font-family: 'Andika', sans-serif !important;
+    color: #6E7191;
+    border: none;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    font-weight: normal;
+    letter-spacing: 0.25px;
+    font-style: normal;
+    background-color: #EFF0F6;
+    height: 56px;
+    border-radius: 8px;
+    /*max-width: 1000px;*/
+
+}
+
+.shadow {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 576px) {
+    .shadow {
+        box-shadow: none !important;
+    }
+}
+
+.oops-text {
+
+    /* Regular/14px */
+
+    font-family: 'Andika', sans-serif !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 32px;
+    /* or 229% */
+
+    letter-spacing: 0.25px;
+
+    /* body */
+
+    color: #4E4B66;
+}
+
+/* mobile */
+@media (max-width: 700px) {
+
+
+    .problem-text {
+        font-size: 12px;
+        font-family: 'Andika', sans-serif !important;
+    }
+
+}
+
+/* desktop */
+@media (min-width: 700px) {
+
+
+    .problem-text {
+        font-size: 1.2vw;
+        font-family: 'Andika', sans-serif !important;
+    }
+
+    .scroll-down {
+        opacity: 1;
+        -webkit-transition: all .5s ease-in 3s;
+        transition: all .5s ease-in 3s;
+        background-color: white;
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        margin-left: -16px;
+        display: block;
+        width: 32px;
+        height: 32px;
+        border: 1px solid grey;
+        background-size: 14px auto;
+        border-radius: 50%;
+        z-index: 2000;
+        -webkit-animation: bounce 2s infinite 2s;
+        animation: bounce 2s infinite 2s;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+    }
+
+    .scroll-down:before {
+        position: absolute;
+        top: calc(50% - 8px);
+        left: calc(50% - 6px);
+        transform: rotate(-45deg);
+        display: block;
+        width: 12px;
+        height: 12px;
+        content: "";
+        border: 6px solid orange;
+        border-width: 0px 0 2px 2px;
+    }
+
+    @keyframes bounce {
+        0%,
+        100%,
+        20%,
+        50%,
+        80% {
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+        }
+        40% {
+            -webkit-transform: translateY(-10px);
+            -ms-transform: translateY(-10px);
+            transform: translateY(-10px);
+        }
+        60% {
+            -webkit-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+        }
+    }
+
+}
+
+.survey-header {
+
+    font-family: 'Andika';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    /* or 120% */
+
+    text-align: center;
+    letter-spacing: 0.15px;
+
+    /* Primary */
+
+    color: var(--primaryColor);
+
+}
+
+.survey-text {
+    font-family: 'Andika', sans-serif !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 32px;
+    /* identical to box height, or 229% */
+
+    letter-spacing: 0.25px;
+
+    /* body */
+
+    color: #4E4B66;
+}
+
+video::-webkit-media-controls-panel {
+    background-image: linear-gradient(var(--primaryColor), var(--primaryColor)) !important;
+    opacity: 0.7;
+
+
+    display: flex;
+    direction: ltr;
+    flex-direction: row;
+    align-items: center;
+    -webkit-user-select: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+    height: 16px;
+    text-align: right;
+
+}
+
+
+video::-webkit-media-controls-timeline {
+    display: none;
+}
+
+video::-webkit-media-controls-play-button {
+    display: flex !important;
+}
+
+video::-webkit-media-controls-overlay-play-button {
+    display: none;
+}
+
+/*princing.html*/
+section.pricing {
+    /*background: #007bff;*/
+    /*background: linear-gradient(to right, #0062E6, #33AEFF);*/
+}
+
+.pricing .card {
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+    margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+.pricing .card-price {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.pricing .card-price .period {
+    font-size: 0.8rem;
+}
+
+.pricing ul li {
+    margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+    opacity: 0.7;
+}
+
+.pricing .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: all 0.2s;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+    .pricing .card:hover {
+        margin-top: -.25rem;
+        margin-bottom: .25rem;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .pricing .card:hover .btn {
+        opacity: 1;
+    }
+}

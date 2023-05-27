@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alemeno</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="static/projects.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="static/assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link
+      href="static/favicon_io/favicon.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  </head>
+
+  <body>
+    <div id="bodyBgColor">
+      <div class="container-fluid mainDiv">
+        <!-- banner  -->
+        <div
+          class="row justify-content-center commonMargin mb-2 mt-2"
+          id="banner"
+        >
+          <!-- text data  -->
+          <div class="col-md-6 col-11 commonMargin" id="banner-text">
+            <h1 class="mb-4 heroSectionMain">
+              <nav class="commonMargin">
+                <img
+                  src="static/assets/images/logo.png"
+                  class="fluid-img"
+                />
+              </nav>
+
+              <p>
+                Transform your <span id="business">Business</span><br />
+                using <span id="tech">Technology</span>
+              </p>
+            </h1>
+
+            <div class="mb-4 justify-content-start">
+              We provide technology support to help<br />organizations achieve
+              their vision
+            </div>
+
+            <button
+              type="button"
+              class="btn"
+              data-toggle="modal"
+              id="banner-btn"
+              data-target="#exampleModalCenter"
+            >
+              Book a FREE assessement
+            </button>
+          </div>
+          <!-- frame img  -->
+          <div class="col-md-4" id="banner-img">
+            <img
+              src="static/assets/images/frameImg.jpg"
+              alt="techDev"
+              class="img-fluid mt-3"
+            />
+          </div>
+        </div>
+
+        <!-- form input div  -->
+
+        <div class="formm">
+          <div class="form-input justify-content-center rounded">
+            <div class="row mt-1 ms-1 cut-btn-icon2">
+              <div class="col-11"></div>
+              <div class="col-2">
+                <img
+                  id="form-input-cut-btn"
+                  class="fluid-img"
+                  src="static/assets/images/cutIcon.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="form-padding">
+              <div class="row text-center">
+                <h2 class="form-heading">Book a FREE</h2>
+
+                <h2 class="form-heading">assessment today!</h2>
+              </div>
+              <div class="row text-center mb-md-3">
+                <p class="form-text">
+                  Get a customized plan to solve your business and customer
+                  problems using technology
+                </p>
+              </div>
+
+              <div class="row ps-4 pe-4">
+                <!-- <form method="post" id="myForm" action="{% url 'landing_view_save_mobile_number' %}"> -->
+                <!-- {% csrf_token %} -->
+                <input
+                  class="form-control form-input-field mt-3 p-2 rounded"
+                  type="number"
+                  placeholder="Enter your mobile number"
+                  id="mobileNum"
+                  name="mobile_number"
+                />
+                <div class="error">Enter a valid mobile number</div>
+                <button
+                  type="submit"
+                  id="form-input-btn"
+                  class="btn mt-3 p-2 rounded"
+                >
+                  Book now
+                </button>
+                <!-- </form> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- thanks form  -->
+
+        <div class="form-input-thanks justify-content-center rounded pb-3">
+          <div class="row mt-1 ms-1 cut-btn-icon2">
+            <div class="col-10"></div>
+            <div class="col-1">
+              <img
+                id="form-thanks-cut-btn"
+                class="fluid-img"
+                src="static/assets/images/cutIcon.svg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="success-block">
+            <img
+              class="fluid-img success"
+              src="static/assets/images/success-img.jpg"
+              alt=""
+            />
+          </div>
+          <div class="form-padding form-margin mb-4">
+            <div class="row justify-content-center">
+              <h2 class="form-heading text-center">Thank you!</h2>
+              <center>
+                <p>Our team will get in touch with you</p>
+              </center>
+            </div>
+          </div>
+        </div>
+
+        <div class="WhatWeDoBlock row justify-content-center ps-2 mb-3 mt-3">
+          <div class="row justify-content-center" id="heading-section">
+            <div class="text-center" id="intro-block">
+              <h3 class="heading heroSection commonMargin allSectionHeading">
+                What We Do
+              </h3>
+            </div>
+          </div>
+          <!-- ------card block  -->
+          <!-- row justify-content-around -->
+          <div class="commonMargin" id="grid-block-1">
+            <!-- text data  -->
+            <!-- col-md-4  col-11 mt-2 mb-2  -->
+            <div class="rounded bgWhite card cardBoxDiv">
+              <div class="row mt-3 justify-content-start">
+                <div class="col-2 alignCenter cardIcon">
+                  <img
+                    src="static/assets/images/Vector-1.png"
+                    class="img-fluid cardIcon"
+                  />
+                </div>
+                <div class="col-6 alignCenter">
+                  <h4 class="cardTitle">Product</h4>
+                </div>
+              </div>
+
+              <br />
+              <p class="card-p">
+                Build products from scratch for Healthtech, Ed-tech, Media and
+                more
+              </p>
+            </div>
+            <!-- col-md-4  col-11 mt-2 mb-2 -->
+            <div class="rounded bgWhite card cardBoxDiv">
+              <div class="row mt-3 justify-content-start">
+                <div class="col-2 alignCenter cardIcon">
+                  <img
+                    src="static/assets/images/vector-2.png"
+                    class="img-fluid cardIcon"
+                  />
+                </div>
+                <div class="col-6 alignCenter">
+                  <h4 class="cardTitle">Technology</h4>
+                </div>
+              </div>
+
+              <br />
+              <p class="card-p">
+                AI/ML, Image processing, NPL , Business Analytics, Android/iOS,
+                Web Dev, DevOps
+              </p>
+            </div>
+          </div>
+          <!-- row justify-content-around -->
+          <div class="cardMargin" id="grid-block-2">
+            <!-- text data  -->
+            <div class="rounded bgWhite card cardBoxDiv">
+              <div class="row mt-3 justify-content-start">
+                <div class="col-2 alignCenter">
+                  <img
+                    src="static/assets/images/vector--3.png"
+                    class="img-fluid cardIcon"
+                  />
+                </div>
+                <div class="col-6 alignCenter">
+                  <h4 class="cardTitle">Design</h4>
+                </div>
+              </div>
+
+              <br />
+              <p class="card-p">
+                UI/UX, character desgin, animation, video content, and animated
+                explainer videos.
+              </p>
+            </div>
+
+            <div class="card rounded bgWhite cardBoxDiv">
+              <div class="row mt-3 justify-content-start">
+                <div class="col-2 alignCenter">
+                  <img
+                    src="static/assets/images/vector-4.png"
+                    class="img-fluid cardIcon"
+                  />
+                </div>
+                <div class="col-6 alignCenter">
+                  <h4 class="cardTitle">Marketing</h4>
+                </div>
+              </div>
+
+              <br />
+              <p class="card-p">
+                Improve CAC and conversions with A/B tesing, Brand storytelling
+                that customers remember.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="pastWork" class="row justify-content-center mb-3 mt-3">
+          <!-- ----normal heading -->
+          <div class="row justify-content-around">
+            <h3
+              class="heading text-center heroSection commonMargin allSectionHeading"
+            >
+              Past Work
+            </h3>
+          </div>
+
+          <!-- work card ------------ -->
+          <div class="row justify-content-center commonMargin" id="cardSlide">
+            <div class="col-3 me-md-4 rounded card cardPading cardTopBox">
+              <img
+                src="static/assets/images/work-1.png"
+                class="fluid-img cardBox"
+              />
+            </div>
+            <div class="col-3 ms-md-4 mb-4 rounded cardPading card cardTopBox">
+              <img
+                src="static/assets/images/work-2.png"
+                class="fluid-img cardBox"
+              />
+            </div>
+            <div class="col-3 ms-md-5 rounded card cardPading cardTopBox">
+              <img
+                src="static/assets/images/work-3.png"
+                class="fluid-img cardBox"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------------mobile view  -->
+        <h3
+          class="heading text-center heroSection commonMargin allSectionHeading mt-3"
+          id="pastWorkMob"
+        >
+          Past Work
+        </h3>
+        <div class="demo mb-3" id="mobileViewWork">
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="rounded card cardPading cardTopBox">
+                  <img
+                    src="static/assets/images/work-1.png"
+                    class="fluid-img cardBox"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="rounded card cardPading cardTopBox">
+                  <img
+                    src="static/assets/images/work-2.png"
+                    class="fluid-img cardBox"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="rounded card cardPading cardTopBox">
+                  <img
+                    src="static/assets/images/work-3.png"
+                    class="fluid-img cardBox"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="projects-root">
+          <h1 class="projects1">Projects</h1>
+          <div class="frame-parent2">
+            <div class="mealtime-gamification-group">
+          <button class="project-name-31">X-Scan TB AI
+            </button></div>
+          
+          <div class="project-name-2-container">
+            <button class="project-name-31">LatFlow AI</button>
+          </div>
+          <div class="project-name-3-container">
+            <button class="project-name-31">UriSense AI</button>
+          </div>
+          <div class="project-name-4-container">
+            <button class="project-name-31">FieldScope</button>
+          </div>
+          <div class="project-name-5-container">
+            <button class="project-name-31">DiaProx</button>
+          </div>
+        </div>
+          <div class="component-51">
+            <div class="group-parent7">
+              <img class="group-child4" alt="" src="./static/assets/images/bg-1.png">
+              <div class="lorem-ipsum-dolor-sit-amet-co-group">
+                <span class="mealtime-gamification3">X-Scan TB AI</span>
+                <p class="lorem-ipsum-dolor1">
+                  AI for X-Ray TB detection is a medical imaging software that uses AI algorithms to quickly and accurately analyze chest X-ray images and detect tuberculosis. It can help healthcare professionals detect TB early, reduce human error, and improve patient outcomes, particularly in areas with limited access to specialized equipment or radiologists.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ----clients block  -->
+        <h3
+          class="heading text-center mt-5 mb-2 commonMargin heroSection allSectionHeading"
+        >
+          Feedback
+        </h3>
+        <div class="row justify-content-center commonMargin mb-5">
+          <div
+            class="col-md-3 client-balance ms-md-4 col-11 mt-5 mb-4 rounded card"
+          >
+            <img
+              src="static/assets/images/face1.png"
+              class="fluid-img clientImg"
+            />
+            <div class="row justify-content-end">
+              <img
+                class="clientComa fluid-img"
+                src="static/assets/images/comma.svg"
+              />
+            </div>
+            <h6 class="card-p clent-position">
+              Alemeno delivered exceptional tech solutions to help us automate
+              our diagnostic tests. Communication was excellent throughout the
+              process, and we would highly recommend Alemeno to anyone in need
+              of top-notch technology support.
+            </h6>
+            <hr class="clent-position" />
+            <b class="clent-position">Saurabh Gupta</b>
+            <p class="clent-position card-p">Head of Strategy, MyLabs</p>
+          </div>
+          <div
+            class="col-md-3 ms-md-5 client-balance col-11 mt-5 mb-4 rounded card"
+          >
+            <img
+              src="static/assets/images/face2.png"
+              class="fluid-img clientImg"
+            />
+            <div class="row justify-content-end">
+              <img
+                class="clientComa fluid-img"
+                src="static/assets/images/comma.svg"
+              />
+            </div>
+            <h6 class="card-p clent-position">
+              Alemeno delivered excellent products and technology to scale our
+              business. It allowed us to focus on core strengths. Highly
+              recommended to solve your business and customers problems using
+              tech innovations.<br /><br />
+            </h6>
+            <hr class="clent-position" />
+            <b class="clent-position">Siddhartha Mandava</b>
+            <p class="clent-position card-p">Founder, Siddhaannam</p>
+          </div>
+        </div>
+
+        <!-- -----footer -->
+        <footer class="footerMainDiv mt-3">
+          <div class="row justify-content-center footer-bg-color mt-3">
+            <div class="col-md-3 me-md-4 col-11 mb-4">
+              <img
+                src="static/assets/images/footerLogo.png"
+                class="fluid-img"
+              />
+              <br />
+              <div class="mt-md-5"></div>
+              <p class="copyRight">
+                Copyright Alemeno Private Limited <br />©2022. All Rights
+                Reserved
+              </p>
+            </div>
+
+            <div class="col-md-3 ms-md-4 col-11 mb-4">
+              <div class="row justify-content-center">
+                <p class="mb-2">
+                  <u>About us</u>
+                </p>
+              </div>
+
+              <div class="row justify-content-center">
+                <p>
+                  <a
+                    id="footerLink"
+                    href="https://alemeno.com/meal-time-gamification"
+                    target="_blank"
+                    ><u>Mealtime gamification</u></a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-3 ms-md-5 col-11">
+              <div class="row justify-content-start">
+                <div class="col-1">
+                  <img
+                    class="fluid-img footer-icon"
+                    src="static/assets/images/locIcon.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="col-9">
+                  <p>
+                    101, Matis Villa, Majiwada,<br />
+                    Thane, Maharashtra, 400601
+                  </p>
+                </div>
+              </div>
+              <div class="row justify-content-start">
+                <div class="col-1">
+                  <img
+                    class="fluid-img footer-icon"
+                    src="static/assets/images/callIcon.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="col-9">
+                  <p>+91 7042835383.</p>
+                </div>
+              </div>
+              <div class="row justify-content-start">
+                <div class="col-1">
+                  <img
+                    class="fluid-img footer-icon"
+                    src="static/assets/images/mailIcon.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="col-9">
+                  <p>deepak@alemeno.com</p>
+                </div>
+              </div>
+              <div class="row justify-content-start mt-4">
+                <p id="copyRight-mob">
+                  Copyright Alemeno Private Limited ©2022. All Rights Reserved
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="static/projects.js"></script>
+    <script>
+
+      //handling the action of form
+      // function getAction(e) {
+      //   e.preventDefault();
+      //   var num = document.querySelector("#mobileNum").value;
+      //   if (digits_count(num) !== 10) {
+      //     return (
+      //       alert("hello")
+      //     )
+      //   } else {
+      //     return "{% url 'landing_view_save_mobile_number' %}"
+      //   }
+      // }
+
+      //main btn to active the form
+      document.querySelector("#banner-btn").addEventListener("click", () => {
+        document.querySelector(".formm").style.display = "block";
+        document.querySelector(".form-input").style.display = "block";
+      });
+      //cut btn of input form
+      document
+        .querySelector("#form-input-cut-btn")
+        .addEventListener("click", () => {
+          document.querySelector(".formm").style.display = "none";
+        });
+
+      //thanks-form-handler
+      function digits_count(n) {
+        var count = 0;
+        if (n >= 1) ++count;
+
+        while (n / 10 >= 1) {
+          n /= 10;
+          ++count;
+        }
+
+        return count;
+      }
+
+      // form-input-btn submit btn
+      document
+        .querySelector("#form-input-btn")
+        .addEventListener("click", () => {
+          var num = document.querySelector("#mobileNum").value;
+          var email = "email";
+          if (digits_count(num) != 10) {
+            // formdata = document.getElementById("myForm");
+            // formdata.action = "";
+            document.querySelector(".error").style.display = "block";
+          } else {
+            //post request - to server
+            var url = "https://alemeno.com/main-landing-page-save-mobile_num";
+
+            fetch(url, {
+              method: "POST",
+              body: JSON.stringify({
+                num: num,
+                email: "",
+              }),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log(data.success); // Prints "Success!"
+              })
+              .catch((error) => console.error(error));
+
+            document.querySelector(".form-input").style.display = "none";
+            document.querySelector(".error").style.display = "none";
+            document.querySelector(".form-input-thanks").style.display =
+              "block";
+          }
+        });
+
+      //form success cut btn
+      document
+        .querySelector("#form-thanks-cut-btn")
+        .addEventListener("click", () => {
+          // document.querySelector(".form-input").style.display = "none";
+          document.querySelector(".form-input-thanks").style.display = "none";
+          document.querySelector(".formm").style.display = "none";
+        });
+
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+
+        slidesPerView: 1.5,
+        spaceBetween: 18,
+        speed: 500,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        autoplay: {
+          delay: 1000,
+          disableOnInteraction: false,
+        },
+
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

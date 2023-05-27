@@ -1,0 +1,131 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% block title %}Report Card{% endblock %}</title>
+
+    <!-- CDNs -->
+    <link href="https://cdn.jsdelivr.net/gh/brainspoof/fosterio@0.1.0Beta/styles/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,400&display=swap"
+          rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="{% static 'assets/js/survey.js' %}" type="text/javascript"></script>
+
+</head>
+<body>
+
+
+<div class="row">
+    <div class="col-lg-4 col-md-3 col-sm-0"></div>
+    <div class="main col-lg-4 col-md-6 col-sm-12">
+        <div style="padding: 1.5rem;">
+
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4 align-horizontal"><img alt="Alemeno" class="fit-img"
+                                                         src="/static/assets/images/Logo1.png"></div>
+                <div class="col-4"></div>
+            </div>
+
+            <!-- User Information -->
+            <div class="card icon-show dairy-icon-show title">
+                <span class="font-weight-light title">Eating Habit Report</span>
+                <div class="row">
+                    <div class="col-4"><p>Kid's Age: {{ age }}</p></div>
+                    <div class="col-2"></div>
+                    <div class="col-6 align-vertical"><p style="text-align: right;"> {{ phone_number }}</p></div>
+                </div>
+            </div>
+
+            <!-- Food Portion breakdown -->
+            <div class="card title font-weight-light icon-show protein-icon-show">
+                <div class="row">
+                    <div class="col-7">
+                        <div
+                                class="ldBar label-center"
+                                data-preset="circle"
+                                data-stroke="#01a13d" data-stroke-trail-width="4" data-stroke-width="4"
+                                data-value={{score}}
+                        ></div>
+                    </div>
+
+                    <div class="col-5 pl-10 align-vertical">
+                        <div class="score-breakdown">
+                            <div class="score-detail"><i data-feather={{veg}}></i>Vegetables</div>
+                            <div class="score-detail"><i data-feather={{fruit}}></i> Fruits</div>
+                            <div class="score-detail"><i data-feather={{protein}}></i> Proteins</div>
+                            <div class="score-detail"><i data-feather={{self_eating}}></i> Self-Eating</div>
+                            <div class="score-detail"><i data-feather={{eats_quickly}}></i> Eats Quickly</div>
+                            <div class="score-detail"><i data-feather={{without_tv}}></i> Without TV</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kid Type -->
+            <div class="card title font-weight-light align-horizontal">
+                <p>Your kid is </p>
+                <span class="font-size-huge accent-text">{{ result }}</span>
+            </div>
+
+            <!-- Export Assesment -->
+            <div class="card title icon-show grain-icon-show">
+                <span class="font-weight-light title">Expert's Assessment</span> <br>
+                {{ assessment }}
+            </div>
+
+            <!-- Tips for your kid -->
+            <div class="card title icon-show vegies-icon-show">
+                <span class="font-weight-light title">Tips for your Kid</span>
+                <p> {{ tips | linebreaks}} </p>
+            </div>
+
+            <div class="card icon-show fruits-icon-show">
+                <div class="row mt-15">
+                    <div class="col-3"></div>
+                    <div class="col-6 align-horizontal"><img alt="Alemeno" class="fit-img"
+                                                             src="/static/assets/images/Logo1.png"></div>
+                    <div class="col-3"></div>
+                </div>
+                <p class="mt-15" style="text-align: center;">We created a FREE app to inculcate life-long healthy eating
+                    habits in kids</p>
+                <br>
+                <div class="row mt-15">
+                    <div class="col-1"></div>
+                    <div class="col-10 align-horizontal">
+                        <button class="btn btn-lg solid-primary" id='download-button'
+                                onclick="location.href='https://play.google.com/store/apps/details?id=com.alemeno.alemeno22&referrer=utm_source%3Dreport-card'">
+                            Download App
+                        </button>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-1 opacity-0">a</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="cmd btn btn-md glow-primary download" id="cmd" onclick="printPdf('report-card.pdf')">Download Report PDF
+</div>
+
+<!-- Script CDN -->
+<script src="https://cdn.jsdelivr.net/gh/brainspoof/fosterio@0.1.0Beta/scripts/main.min.js"></script>
+<link href="{% static 'reportcard.css' %}" rel="stylesheet" type="text/css">
+
+<script src="{% static 'loading-bar.js' %}"></script>
+<script>
+    feather.replace({'stroke-width': 1.5, height: 18, width: 18})
+
+</script>
+</body>
+</html>

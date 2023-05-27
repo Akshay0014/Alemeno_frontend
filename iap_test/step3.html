@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	{% block content %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../static/step.css" />
+    <link rel="stylesheet" href="../../static/iap.css" />
+
+    <title>Alemeno</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="inner-box" style="flex-direction: column">
+        <div class="head">
+          <div class="step-count">STEP 3/5</div>
+          <div class="step-progress">
+            <div class="step-progress-completed" style="width: 60%"></div>
+          </div>
+        </div>
+        <div class="body">
+          <div class="question main-heading">What is the height of your kid?</div>
+          <div class="answer answer3">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 80%;
+              "
+            >
+              <div>HEIGHT</div>
+              <div>
+                <span id="height-value">50</span>
+                <span class="unit-display">CM</span>
+              </div>
+            </div>
+            <div style="width: 80%">
+              <input
+                type="range"
+                min="0"
+                max="200"
+                value="100"
+                style="width: 100%"
+                id="height-input"
+                oninput="handleHeightChange(value,min,max)"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <button id="go-button" class="btn-next button">Next</button>
+        </div>
+      </div>
+    </div>
+    <script src="../../static/assets/js/iap.js"></script>
+  </body>
+<script>
+    const url = new URL(window.location.href)
+
+    var urlParams = url.searchParams;
+    utmSource = urlParams.get('utm_source');
+    document.getElementById("go-button").addEventListener('click', onGoButtonClick);
+
+
+    function onGoButtonClick() {
+        console.log("ongobutton");
+        document.getElementById("go-button").removeEventListener('click', onGoButtonClick);
+        const url = new URL(window.location.href)
+
+        var urlParams = url.searchParams;
+        email = urlParams.get('email');
+        utmSource = urlParams.get('utm_source');
+        urlParams.set('utm_source', utmSource);
+        url.search = urlParams.toString();
+        var new_url = url.toString();
+
+        new_url = new_url.replace('healthy-height-weight-test-for-kids-step3', 'healthy-height-weight-test-for-kids-step4')
+        submitAnswer()
+
+        window.location.href = new_url;
+
+    }
+
+
+        function submitAnswer() {
+        var request = new XMLHttpRequest();
+        request.open('POST', "/survey/set-answer?", true);
+        request.onload = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                var res = JSON.parse(request.response);
+                console.log(res)
+            }
+        }
+        request.setRequestHeader("Content-Type", "application/json");
+        score = 1;
+        const data = {
+            "question_number": 5,
+            "email": email,
+            "text_answer": document.getElementById("height-value").innerText,
+            "survey_id": 2
+        };
+        console.log(data);
+        request.send(JSON.stringify(data));
+    }
+
+
+</script>
+{% endblock %}
+
+</html>

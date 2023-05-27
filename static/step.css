@@ -1,0 +1,153 @@
+.head {
+  height: 80px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.body {
+  width: 400px;
+  height: 360px;
+  padding: 40px 0px;
+  text-align: center;
+}
+.foot {
+  width: 400px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-next {
+  font-size: larger;
+  font-weight: bold;
+  color: white;
+  background-color: #3e8b3a;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 70px;
+  cursor: pointer;
+  margin-top: 250px;
+}
+.step-count {
+  text-align: center;
+  margin: 10px;
+  color: gray;
+  font-size: larger;
+}
+.step-progress {
+  width: 80%;
+  height: 5px;
+  border-radius: 10px;
+  background-color: rgba(192, 192, 192, 0.3);
+}
+.step-progress-completed {
+  width: 20%;
+  height: 100%;
+  background-color: #3e8b3a;
+  border-radius: 10px;
+}
+.question {
+  font-size: x-large;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+.answer {
+  height: 200px;
+  width: 100%;
+}
+.answer1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+}
+.s1-option {
+  border: solid gray 1px;
+  border-radius: 5px;
+  color: gray;
+  height: 50px;
+  line-height: 50px;
+  font-size: larger;
+  cursor: pointer;
+}
+.answer2,
+.answer3 {
+  box-shadow: rgb(219, 219, 219) 1px 1px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#weight-value,
+#height-value {
+  font-size: x-large;
+  font-weight: bold;
+}
+.s4-option,
+.s5-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: large;
+  margin-top: 30px;
+  text-align: left;
+}
+.s4-option input,
+.s5-option input {
+  height: 20px;
+  width: 20px;
+  accent-color: #3e8b3a;
+  cursor: pointer;
+}
+.s4-option label,
+.s5-option label {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 460px) {
+  .head,
+  .body,
+  .foot {
+    width: 90%;
+  }
+}
+
+#height-input,
+#weight-input {
+  background: linear-gradient(
+    to right,
+    rgb(109 211 104) 0%,
+    rgb(109 211 104) 50%,
+    rgb(228 228 230) 50%,
+    rgb(228 228 230) 100%
+  );
+  border-radius: 8px;
+  height: 7px;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  width: 30px;
+  -webkit-appearance: none;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: silver 1px 1px 10px;
+  cursor: pointer;
+}
+.CM,
+.FT {
+  font-size: larger;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1px;
+}
+.CM {
+  background-color: white;
+  box-shadow: silver 1px 1px 10px;
+}

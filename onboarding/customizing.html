@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+
+
+{% block meta %}
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        name="description">
+<meta content="" name="author">
+
+<title>A fun way inculcate healthy eating habits in kids</title>
+<!-- Facebook MetaTags -->
+
+<meta content="A fun way inculcate healthy eating habits in kids" property="og:title">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+<body class="register-background">
+<div class="container h-100">
+    <div class="d-none d-sm-block" style="margin-top: 2em;"></div>
+    <div class="row justify-content-center main-container">
+        <div class="col-lg-5 col-md-6 col-sm-8 shadow" style="background-color: white;">
+            <div class="justify-content-center mt-3 row"
+                 style="height: 10%; position: absolute; top: 0;left: 0; right: 0;">
+                <a href="/general/landing">
+                    <img alt="" class="nav-height my-2 " src="/static/assets/images/Logo1.png"
+
+                         style="height: 32px; width: 122px"></a>
+
+            </div>
+            <div class="container justify-content-center h-100">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <div class="justify-content-center" style="width: 100%;">
+                        <img class="apple bounce" src="/static/assets/images/apple.png"
+                             style="height: max-content; width: max-content;">
+                    </div>
+                    <div class="customizing_text" id="customizing_text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+
+    .apple {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    @-webkit-keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            -webkit-transform: translateY(0);
+        }
+        40% {
+            -webkit-transform: translateY(-30px);
+        }
+        60% {
+            -webkit-transform: translateY(-15px);
+        }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+
+    .bounce {
+        -webkit-animation-name: bounce;
+        animation-name: bounce;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    .logo-top-kidname {
+        margin-top: 2em
+    }
+
+    @media only screen and (max-height: 700px) {
+        .main-container {
+            height: 100%;
+        }
+    }
+
+    @media only screen and (min-height: 700px) {
+        .main-container {
+            height: 80%;
+        }
+    }
+
+    .container {
+        font-family: 'Andika', sans-serif;
+    }
+
+    .head-text {
+        font-size: 1.5em;
+    }
+
+    .green-circle {
+        margin: 3em 0.5em 0 0.5em;
+        height: 1em;
+        width: 1em;
+        border-radius: 0.5em;
+        background-color: #D8F0CE;
+    }
+
+    label {
+        font-size: 1.2em;
+        margin-left: 0.5em;
+    }
+
+    .customizing_text {
+        text-align: center;
+        font-size: 1.5em;
+    }
+</style>
+
+<script>
+    $(".base-header").hide();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    var data = urlParams.get('data');
+    const prefs = JSON.parse(data)
+    mixpanel.track('RegisterUserCustomizingPage', prefs);
+    document.getElementById('customizing_text').innerHTML = "Customizing a solution for " + prefs['kid_name'] + "'s needs..."
+    setTimeout(openNutritionAnalyst, 2 * 1000)
+
+    function openNutritionAnalyst() {
+        const url = new URL(window.location.href)
+        var search_params = url.searchParams
+        search_params.set('data', JSON.stringify(prefs))
+        url.search = search_params.toString()
+        var new_url = url.toString()
+        new_url = new_url.replace('customizing', 'nutrition_analyst')
+        window.location.href = new_url;
+        webView.saveUrl();
+    }
+</script>
+
+{% endblock %}
+
+
+</html>

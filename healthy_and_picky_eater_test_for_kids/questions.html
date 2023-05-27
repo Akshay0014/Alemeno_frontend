@@ -1,0 +1,336 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="description" content="">-->
+<!--<meta name="keywords" content="">-->
+<!--<meta name="author" content=>-->
+<!--<title> </title>-->
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--</head>-->
+
+{% block meta %}
+
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+      name="description">
+<meta content="" name="author">
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" name="title">
+
+<title>Find out if your kid has healthy eating habits or if your kid is a picky eater</title>
+<!-- Facebook MetaTags -->
+
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" property="og:title">
+<meta content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+      property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+
+<body style="background-color: white; height: 100vh; overflow: scroll;">
+<div class="scroll make-invisible container-fluid h-100" id="questions-container">
+    <div class="row">
+        <div class="d-none d-md-block col-lg-4 col-md-3 col-sm-0">
+            <div class="vertical-center" style="height: 100%;">
+                <div style="width: 100%; padding: 1em;">
+                    <button class="toggle-button vertical-center" id="prev_question2"
+                            style="float: right; opacity: 30%;">
+                            <span class="material-icons">
+                                chevron_left
+                            </span></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4" style="display: flex; flex-direction: column; margin-top: -1.5rem;">
+            <div class="timer vertical-center mb-5 mt-5" id="timer" style=" margin-top:1em;">
+                    <span class="timer_text" id="timer_text" style="margin-right: 0.1em; color: var(--primaryColor);">
+                        01:59
+                    </span>
+                <i class="material-icons" style="color: var(--primaryColor);">
+                    schedule
+                </i>
+            </div>
+            <div class="vertical-center mb-2" style="flex-grow: 1; flex-direction: column;">
+                <div class="vertical-center" id="question-progress" style="width: 100%; margin-top: -2rem">
+                    <div class="progress-container" id="progress_container">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <span class="progress_text" id="progress_text"></span>
+                </div>
+                <div class="question-box-container mb-5 mt-1" id="question-box-container">
+                    <div class="mb-3 Question-text" id="question_text"></div>
+                    <center>
+                        <form class="input-option-container answerradio" id="input-option-container">
+                            <input class="input-option" id="input-option0" name="option" onclick="next()" type="radio"
+                                   value="0">
+                            <label for="input-option0">Always</label><br>
+                            <input class="input-option" id="input-option1" name="option" onclick="next()" type="radio"
+                                   value="1">
+                            <label for="input-option1">Often</label><br>
+                            <input class="input-option" id="input-option2" name="option" onclick="next()" type="radio"
+                                   value="2">
+                            <label for="input-option2">Half the time</label><br>
+                            <input class="input-option" id="input-option3" name="option" onclick="next()" type="radio"
+                                   value="3">
+                            <label for="input-option3">Rarely</label><br>
+                            <input class="input-option" id="input-option4" name="option" onclick="next()" type="radio"
+                                   value="4">
+                            <label for="input-option4">Never</label><br>
+                        </form>
+                    </center>
+
+                </div>
+                </center>
+
+                <div class="d-md-none mb-5" style="width: 60%; padding: 1em;">
+                    <button class="toggle-button vertical-center" id="prev_question"
+                            style="float: left; opacity: 30%;">
+                            <span class="material-icons">
+                                chevron_left
+                            </span></button>
+                    <button class="toggle-button vertical-center" id="next_question" style="float: right;">
+                            <span class="material-icons">
+                                chevron_right
+                            </span></button>
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-md-block col-2">
+            <div class="vertical-center" style="height: 100%;">
+                <div style="width: 100%; padding: 1em;">
+                    <button class="toggle-button vertical-center" id="next_question2" style="float: left;">
+                            <span class="material-icons">
+                                chevron_right
+                            </span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<style type="text/css">
+
+    #question_text {
+        font-size: 1.2rem;
+    }
+
+    .answerradio label {
+        width: 100%;
+        border: 1px #5ea451 solid;
+        padding: 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+
+        background-color: #fff;
+    }
+
+    input[type="radio"]:checked + label {
+        background: #5ea451;
+        color: white;
+        font-weight: bold;
+    }
+
+    .answerradio input[type="radio"] {
+        display: none;
+    }
+</style>
+
+<script>
+    mixpanel.track('HealthyEatingCalculatorQuestionsVisit');
+    getQuestions();
+
+    function setProgress(current, total) {
+        console.log(current)
+        p = Math.round(current * 10 / total)
+        p = p;
+        p = p * 10;
+        p = p + 10;
+        document.getElementById("progress").classList.add("w-" + p)
+        document.getElementById("progress").classList.remove("w-" + (p - 10))
+    }
+
+    function setProgressText(current, total) {
+        document.getElementById("progress_text").innerHTML = current + " of " + total;
+    }
+
+    function displayQuestion(index) {
+        startTimer();
+        setProgressText(index + 1, questions.length);
+        if (index == questions.length) {
+            getDetails();
+        } else {
+            document.getElementById("question_text").innerHTML = questions[index].question_text;
+        }
+        changeSelectedOption()
+    }
+
+    function getDetails() {
+        const url = new URL(window.location.href)
+        var search_params = url.searchParams;
+        search_params.set('selected_answers', setlectedAnswers);
+        search_params.set('email', email);
+        search_params.set('score', score);
+        url.search = search_params.toString();
+        var new_url = url.toString();
+        new_url = new_url.replace('questions', 'details')
+        window.location.href = new_url;
+    }
+
+    function getQuestions() {
+        email = (Math.random()).toString(36).substring(2);
+        var request = new XMLHttpRequest();
+        request.open('GET', "/survey/get-questions?survey_id=" + survey_id, true);
+        request.onload = function () {
+            res = JSON.parse(request.response);
+            console.log(res);
+            questions = res.results;
+            displayQuestion(0);
+            setToggleListners();
+            setProgressText(1, questions.length);
+            document.getElementById('questions-container').classList.remove('make-invisible');
+        }
+        request.send();
+    }
+
+    function changeSelectedOption() {
+        if (setlectedAnswers[currentQuestion] != undefined) {
+            document.getElementById("input-option" + setlectedAnswers[currentQuestion]).checked = true;
+        } else {
+            if (currentQuestion != 0) {
+                document.getElementById("input-option" + setlectedAnswers[currentQuestion - 1]).checked = false;
+            }
+        }
+    }
+
+    function next() {
+        setTimeout(
+            () => {
+                showNextQuestion();
+            },
+            300
+        )
+    }
+
+    function setToggleListners() {
+        document.getElementById("next_question").addEventListener('click', function () {
+            showNextQuestion();
+        })
+        document.getElementById("next_question2").addEventListener('click', function () {
+            showNextQuestion();
+        })
+    }
+
+    function showNextQuestion() {
+        if (getSelectedOption() != -1) {
+            setlectedAnswers[currentQuestion] = getSelectedOption();
+            submitAnswer();
+            setProgress(currentQuestion + 1, questions.length);
+            currentQuestion = currentQuestion + 1;
+            displayQuestion(currentQuestion);
+            $("#question_text").css({"margin-left": "150px", "margin-right": "-150px"})
+            $("#question_text").animate({
+                    "margin-left": "0px",
+                    "margin-right": "0px"
+                }, 500
+            );
+            // for (let i = 0; i < 5; ++i) {
+            $("#input-option-container").css({"margin-left": "150px", "margin-right": "-150px"})
+            $("#input-option-container").animate({
+                    "margin-left": "0px",
+                    "margin-right": "0px"
+                }, 500
+            );
+            // }
+        } else {
+            alert("please select an option");
+        }
+    }
+
+    function submitAnswer() {
+        var request = new XMLHttpRequest();
+        request.open('POST', "/survey/set-answer?", true);
+        request.onload = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                var res = JSON.parse(request.response);
+                console.log(res)
+            }
+        }
+        request.setRequestHeader("Content-Type", "application/json");
+        score = (setlectedAnswers[currentQuestion] + 1) + score;
+        data = {
+            "question_number": questions[currentQuestion].question_number,
+            "email": email,
+            "selected_answer": (setlectedAnswers[currentQuestion] + 1),
+            "survey_id": survey_id
+        };
+        console.log("data");
+        console.log(data);
+        request.send(JSON.stringify(data));
+    }
+
+
+    function startTimer() {
+        count = 119;
+
+        clearInterval(interval);
+        interval = setInterval(run, 1000);
+
+        function run() {
+            if (count == 0) {
+                clearInterval(interval);
+                if (getSelectedOption() != -1) {
+                    setlectedAnswers[currentQuestion] = getSelectedOption();
+                } else {
+                    setlectedAnswers[currentQuestion] = 0;
+                }
+                submitAnswer();
+                setProgress(currentQuestion + 1, questions.length);
+                if (currentQuestion == questions.length - 1) {
+                    getDetails();
+                } else {
+                    currentQuestion = currentQuestion + 1;
+                    displayQuestion(currentQuestion);
+                }
+            }
+            let m = 0;
+            let s = count;
+            if (count > 60) {
+                m = 1;
+                s = count - 60;
+            }
+            if (s < 10) {
+                if (document.getElementById("timer_text")) {
+                    document.getElementById("timer_text").innerHTML = ("0" + m + ":" + "0" + s);
+                }
+            } else {
+                if (document.getElementById("timer_text")) {
+                    document.getElementById("timer_text").innerHTML = ("0" + m + ":" + s);
+                }
+            }
+            console.log(m)
+            count--;
+        }
+    }
+
+    function getSelectedOption() {
+        for (i = 0; i < 5; ++i) {
+            if (document.getElementById("input-option" + i).checked) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+</script>
+{% endblock %}
+
+</html>

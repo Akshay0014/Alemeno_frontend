@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+
+
+{% block meta %}
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        name="description">
+<meta content="" name="author">
+
+<title>A fun way inculcate healthy eating habits in kids</title>
+<!-- Facebook MetaTags -->
+
+<meta content="A fun way inculcate healthy eating habits in kids" property="og:title">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+<body class="register-background">
+<div class="container">
+    <div class="d-none d-sm-block" style="margin-top: 2em;"></div>
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-8 shadow" id="visible-container" style="background-color: white;">
+            <div class="row mx-3 mt-3 justify-content-center ">
+                <a href="/general/landing">
+                    <img alt="" class="nav-height my-2 " src="/static/assets/images/Logo1.png"
+                         style="height: 32px; width: 122px"></a>
+
+
+            </div>
+            <div class="justify-content-center row">
+                <div class="lilita green" style="font-size: 2.5em; margin-top: 1em;">Congratulations</div>
+            </div>
+            <div class="justify-content-center row">
+                <div style="font-size: 1.2em; margin-top: 0.3em;">You are just a step away!</div>
+            </div>
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide justify-content-center feedback" id="feedback1">
+                        <img alt="" class="logo-top-kidname" href="/general/landing" id="feed_back_img"
+                             src="/static/assets/images/feed_back1.png">
+                    </div>
+                    <div class="swiper-slide justify-content-center feedback" id="feedback2">
+                        <img alt="" class="logo-top-kidname" href="/general/landing" id="feed_back_img"
+                             src="/static/assets/images/feed_back2.png">
+                    </div>
+                    <div class="swiper-slide justify-content-center feedback" id="feedback3">
+                        <img alt="" class="logo-top-kidname" href="/general/landing" id="feed_back_img"
+                             src="/static/assets/images/feed_back3.png">
+                    </div>
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev green"></div>
+                <div class="swiper-button-next green"></div>
+
+            </div>
+
+            <div class="justify-content-center row">
+                <div class="green-circle highlighted" id="c-1"></div>
+                <div class="green-circle" id="c-2"></div>
+                <div class="green-circle" id="c-3"></div>
+            </div>
+            <div class="text-center row justify-content-center mx-0" style="margin-bottom: 2em;">
+                <button class="download-button button justify-content-center text-white" click="openKidAge()"
+                        id="next_button" style="font-size: 1.8em;">Download App
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<style>
+    .logo-top-kidname {
+        margin-top: 2em
+    }
+
+    .feedback {
+        min-width: 100%;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0;
+        /* Remove scrollbar space */
+        background: transparent;
+        /* Optional: just make scrollbar invisible */
+    }
+
+    .container {
+        font-family: 'Andika', sans-serif;
+    }
+
+    .download-button {
+        margin-bottom: 3em;
+    }
+
+    .highlighted {
+        background-color: #5EA451 !important;
+    }
+
+    .green-circle {
+        margin: 3em 0.5em 0 0.5em;
+        height: 1em;
+        width: 1em;
+        border-radius: 0.5em;
+        background-color: #D8F0CE;
+    }
+
+    .lilita {
+        font-family: 'Lilita One', cursive;
+    }
+
+    @media only screen and (max-height: 700px) {
+        .download-button {
+            margin-top: 1.5em;
+        }
+
+        .feedback {
+            margin-top: 00.5em;
+        }
+    }
+
+    @media only screen and (min-height: 700px) {
+        .download-button {
+            margin-top: 2em;
+        }
+
+        .feedback {
+            margin-top: 1em;
+        }
+    }
+
+    .swiper {
+        width: 100%;
+    }
+
+    .green {
+        color: #5EA451;
+    }
+
+    .download-button {
+        font-family: 'Andika', sans-serif !important;
+        font-style: normal;
+        padding: 0 1em 0 1em !important;
+        font-size: 1.8em;
+        background-color: #5EA451;
+        border: none;
+        height: 2em;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+        width: max-content;
+        border-radius: 2em;
+        text-align: center;
+        color: white;
+    }
+</style>
+
+<script>
+    imgSrc = "/static/assets/images/feed_back";
+    $(".base-header").hide();
+    const urlParams = new URLSearchParams(window.location.search);
+    var data = urlParams.get('data');
+    const prefs = JSON.parse(data);
+    mixpanel.track('RegisterUserCongratulationsPage', prefs);
+    mobile_app = urlParams.get("mobile_app");
+    if (prefs == null) {
+        window.location.pathname = "register"
+    }
+    if (prefs['kid_name'] == null) {
+        window.location.pathname = "kid_name"
+    }
+    if (prefs['age'] == null) {
+        window.location.pathname = "kid_age"
+    }
+    if (prefs['phone_number'] == null) {
+        window.location.pathname = "get_phone_number"
+    }
+
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
+
+    var currentIndex = 1;
+    swiper.on('slideChange', function () {
+        document.getElementById('c-' + currentIndex).classList.remove('highlighted');
+        if (swiper.activeIndex % 3 != 0) {
+            currentIndex = swiper.activeIndex % 3;
+        } else {
+            currentIndex = swiper.activeIndex;
+        }
+        document.getElementById('c-' + currentIndex).classList.add('highlighted');
+    });
+
+    document.getElementById('next_button').addEventListener('click', downloadClick);
+
+    function downloadClick() {
+        prefs['download'] = true;
+        var phoneNumber = prefs['phone_number'];
+        var baseUrl = 'https://play.google.com/store/apps/details?id=com.alemeno.alemeno22';
+        var utmSource = encodeURIComponent(window.location.search.slice(1) + '&phone_number=' + phoneNumber);
+        window.location.href = baseUrl + '&referrer=' + utmSource;
+
+    }
+</script>
+
+{% endblock %}
+
+
+</html>

@@ -1,0 +1,25 @@
+.andika {
+    font-family: 'Andika', sans-serif;
+}
+
+.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+.onboarding-select-input {
+    height: 1em;
+    width: 1em;
+}
+
+label > input[type="checkbox"]:checked + *::before {
+    content: "✓";
+    color: white;
+    text-align: center;
+    background: teal;
+    border-color: teal;
+}
+
+label > input[type="checkbox"]:checked + * {
+    color: teal;
+}

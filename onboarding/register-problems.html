@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+
+
+{% block meta %}
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+      name="description">
+<meta content="" name="author">
+
+<title>A fun way inculcate healthy eating habits in kids</title>
+<!-- Facebook MetaTags -->
+
+<meta content="A fun way inculcate healthy eating habits in kids" property="og:title">
+<meta content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+      property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+
+<body class="register-background">
+
+
+<div class="container pt-0 pt-sm-1" style="display: block;overflow: visible;">
+    <div class="d-none d-sm-block" style="margin-top: 2em;"></div>
+    <div class=" row justify-content-center" role="document">
+        <div class="col-lg-5 col-md-6 col-sm-8 shadow survey-text border-0 survey-dialog h-only-xs-100"
+             style="background: #FFF;height: max-content; min-height: 750px;">
+
+            <div class="row mx-3 mt-3 justify-content-center ">
+                <a href="/general/landing">
+                    <img alt="" class="nav-height my-2 " src="/static/assets/images/Logo1.png"
+                         style="height: 32px; width: 122px"></a>
+
+            </div>
+
+
+            <form id="surveyLandingForm" name="surveyLandingForm">
+                <div class="container rounded pt-0">
+
+                    <div class="card border-0 mt-3" style="
+                                            padding: 0px 10px;outline: none;">
+
+                        <div class="mb-3 mt-3" style="font-size: 1.2em; color: #000;">
+                            Which of the following challenges describe the eating behavior of your kid?
+                        </div>
+
+
+                    </div>
+
+                    <div>
+
+                        <div class="ml-4" style="font-size: 1.2em; color: #000;">
+
+                            <div class="mb-2 mt-3" style="font-size: 1.4em;">
+                                My kid does not eat
+
+                            </div>
+                            <div class="checkbox-container">
+                                <input class="ml-3 checkbox" id="1" name="enoughPortion" type="checkbox" value="1">
+
+                                <label class="ml-2 pb-0" for="1">Sufficient quantity of food</label>
+                            </div>
+                            <div class="checkbox-container">
+                                <input class="ml-3" id="2" name="enoughVariety" type="checkbox" value="2">
+                                <label class="ml-2 pb-0" for="2">Variety of food</label>
+                            </div>
+                            <div class="checkbox-container">
+                                <input class="ml-3" id="3" name="ownHand" type="checkbox" value="3">
+                                <label class="ml-2 pb-0" for="3">With their own hands</label>
+                            </div>
+                            <div class="checkbox-container">
+                                <input class="ml-3" id="4" name="finishTime" type="checkbox" value="4">
+                                <label class="ml-2 pb-0" for="4">In desired time duration</label>
+                            </div>
+                            <div class="checkbox-container">
+                                <input class="ml-3" id="5" name="other" type="checkbox" value="5">
+                                <label class="ml-2 pb-0" for="5">Other</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+
+                    <div class="text-center row justify-content-center mx-0">
+                        <button class="register-button
+                                    button justify-content-center text-white" style="font-size: 1.3em;
+    padding-bottom: 15px!important;    height: 55px;" type="submit">Customize your program
+                        </button>
+                    </div>
+                    <div id="sign-in-block">
+                        <div class="row justify-content-center">
+                            <div style="font-size: 1.5em; margin-top: 2.5em;">I already have a program.</div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div id="sign_in_button"
+                                 style="font-size: 1.5em; margin-top: 0.5em; color: #5EA451; margin-bottom: 2em;">
+                                Sign me in.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</body>
+<style>
+    .checkbox-container {
+        margin-left: 2em;
+    }
+
+    input {
+        -webkit-appearance: none;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 2px solid var(--primaryColor);
+        border-radius: 1px;
+        vertical-align: sub;
+        position: absolute;
+        /* top: 50%; */
+        transform: translateY(35%);
+        left: 3em;
+        outline: none;
+    }
+
+    input:checked {
+        background-color: var(--primaryColor);
+        border-color: var(--primaryColor);
+    }
+
+    input:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCI+PHRpdGxlPmljb25fYnlfUG9zaGx5YWtvdjEwPC90aXRsZT48ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz48ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmZmZmIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNi4wMDAwMDAsIDI2LjAwMDAwMCkiPjxwYXRoIGQ9Ik0xNy45OTk5ODc4LDMyLjQgTDEwLjk5OTk4NzgsMjUuNCBDMTAuMjI2Nzg5MSwyNC42MjY4MDE0IDguOTczMTg2NDQsMjQuNjI2ODAxNCA4LjE5OTk4Nzc5LDI1LjQgTDguMTk5OTg3NzksMjUuNCBDNy40MjY3ODkxNCwyNi4xNzMxOTg2IDcuNDI2Nzg5MTQsMjcuNDI2ODAxNCA4LjE5OTk4Nzc5LDI4LjIgTDE2LjU4NTc3NDIsMzYuNTg1Nzg2NCBDMTcuMzY2ODIyOCwzNy4zNjY4MzUgMTguNjMzMTUyOCwzNy4zNjY4MzUgMTkuNDE0MjAxNCwzNi41ODU3ODY0IEw0MC41OTk5ODc4LDE1LjQgQzQxLjM3MzE4NjQsMTQuNjI2ODAxNCA0MS4zNzMxODY0LDEzLjM3MzE5ODYgNDAuNTk5OTg3OCwxMi42IEw0MC41OTk5ODc4LDEyLjYgQzM5LjgyNjc4OTEsMTEuODI2ODAxNCAzOC41NzMxODY0LDExLjgyNjgwMTQgMzcuNzk5OTg3OCwxMi42IEwxNy45OTk5ODc4LDMyLjQgWiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvc3ZnPg==");
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    input:focus,
+    input:hover {
+        /* box-shadow: 0 0 0 3px #ebebeb; */
+        border-color: var(--primaryColor);
+    }
+
+    label {
+        /* padding: 0.75rem 1rem 0.75rem calc(1.2rem * 2.25); */
+        display: inline-block;
+        font-size: 17px;
+        width: 100%;
+        user-select: none;
+        /* border-bottom: 2px solid #ededed; */
+        cursor: pointer;
+    }
+</style>
+
+<script src="{% static 'assets/js/jquery.min.js' %}" type="text/javascript"></script>
+<script>
+
+
+    var data = new Object();
+    $(".base-header").hide();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    mobile_app = urlParams.get("mobile_app");
+    mixpanel.track('RegisterUserFirstPage', {
+        'is_on_mobile': mobile_app
+    });
+    var problems = 0;
+    console.log(mobile_app);
+    if (mobile_app != "true") {
+        document.getElementById("sign-in-block").style.display = "none";
+    }
+    $('#surveyLandingForm').submit(function (e) {
+        e.preventDefault();
+        var array = $(this).serializeArray();
+        for (var i in array) {
+
+            problems = problems * 10 + parseInt(array[i].value);
+            // data[array[i].name] = array[i].value;
+        }
+        // Add UTM Source
+        var self = window.location.toString();
+        var querystring = self.split("?");
+        // if (querystring.length > 1) {
+        //     var pairs = querystring[1].split("&");
+        //     for (i in pairs) {
+        //         var keyval = pairs[i].split("=");
+        //         data[keyval[0]] = keyval[1];
+        //     }
+        // }
+        data["problems"] = problems;
+        const prefs = data;
+        var keyList = Object.keys(data);
+        if (problems != 0) {
+            // if (keyList.includes("other") || keyList.includes("enoughPortion") || keyList.includes("enoughVariety") ||
+            //     keyList.includes("ownHand") || keyList.includes("finishTime")) {
+            data['os'] = window.navigator.platform;
+            const url = new URL(window.location.href)
+            var search_params = url.searchParams;
+            search_params.set('data', JSON.stringify(prefs))
+            url.search = search_params.toString();
+            var new_url = url.toString();
+            new_url = new_url.replace('register', 'kid_name')
+            window.location.href = new_url;
+            webView.saveUrl();
+
+        } else {
+            alert("Please select an option!")
+        }
+    });
+
+    document.getElementById("sign_in_button").addEventListener('click', function () {
+
+        if (mobile_app != null) {
+            webView.signIn();
+        } else {
+            downloadClick();
+        }
+    })
+
+    function downloadClick() {
+        data['download'] = true;
+        console.log(data);
+        var phoneNumber = data['phone_number'];
+        var baseUrl = 'https://play.google.com/store/apps/details?id=com.alemeno.alemeno22';
+        var utmSource = encodeURIComponent(window.location.search.slice(1) + '&phone-number=' + phoneNumber);
+        window.location.href = baseUrl + '&referrer=' + utmSource;
+    }
+
+
+</script>
+
+{% endblock %}
+
+
+</html>

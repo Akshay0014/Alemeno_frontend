@@ -1,0 +1,269 @@
+{% extends "annotate/home.html" %}
+{% load static %}
+{% block title %} Food Item Approval {% endblock %}
+{% block body %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .tg {
+            border-collapse: collapse;
+            border-color: #aaa;
+            border-spacing: 0;
+            margin: 0px auto;
+        }
+
+        .tg td {
+            background-color: #fff;
+            border-bottom-width: 1px;
+            border-color: #aaa;
+            border-style: solid;
+            border-top-width: 1px;
+            border-width: 0px;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg th {
+            background-color: #5ea451;
+            border-bottom-width: 1px;
+            border-color: #aaa;
+            border-style: solid;
+            border-top-width: 1px;
+            border-width: 0px;
+            color: #fff;
+            font-family: 'Andika', sans-serif !important;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg .tg-a3uk {
+            background-color: #dae8fc;
+            border-color: #ecf4ff;
+            text-align: center;
+            vertical-align: top;
+            font-weight: bold;
+        }
+
+        .tg .tg-63q1 {
+            background-color: #dae8fc;
+            border-color: #ecf4ff;
+            position: -webkit-sticky;
+            position: sticky;
+            text-align: center;
+            top: -1px;
+            vertical-align: top;
+            will-change: transform
+        }
+
+        .tg .tg-lx8u {
+            background-color: #dae8fc;
+            border-color: #ecf4ff;
+            font-family: "Comic Sans MS", cursive, sans-serif !important;
+            position: -webkit-sticky;
+            position: sticky;
+            text-align: center;
+            top: -1px;
+            vertical-align: top;
+            will-change: transform
+        }
+
+        .tg .tg-kre9 {
+            background-color: #dae8fc;
+            border-color: #ecf4ff;
+            text-align: center;
+            vertical-align: top
+        }
+
+        input[type="number"] {
+            all: unset;
+            max-width: 50px
+        }
+
+        input[type="text"] {
+            all: unset;
+        }
+
+        .save {
+            margin: 3px;
+        }
+
+        .delete {
+            margin: 3px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .tg {
+                width: auto !important;
+            }
+
+            .tg col {
+                width: auto !important;
+            }
+
+            .tg-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin: auto 0px;
+            }
+        }
+
+
+        h2 {
+            text-align: center;
+            font-family: 'Andika', sans-serif !important;
+            margin: revert;
+        }
+    </style>
+    <h2>Food Item Aproval</h2>
+    <div class="tg-wrap">
+        <table id="table" class="tg">
+            <thead>
+            <tr>
+                <th class="tg-dtxx" scope="col">ID</th>
+                <th class="tg-dtxx" scope="col">Created On</th>
+                <th class="tg-dtxx" scope="col">Food Name</th>
+                <th class="tg-dtxx" scope="col"><img src="{% static 'assets/images/foodgroup/Broccoli.svg' %}" alt="">
+                </th>
+                <th class="tg-dtxx" scope="col"><img src="{% static 'assets/images/foodgroup/Fruit.svg' %}" alt=""></th>
+                <th class="tg-dtxx" scope="col"><img src="{% static 'assets/images/foodgroup/Bread.svg' %}" alt=""></th>
+                <th class="tg-dtxx" scope="col"><img src="{% static 'assets/images/foodgroup/Protein.svg' %}" alt="">
+                </th>
+
+                <th class="tg-dtxx" scope="col"><img src="{% static 'assets/images/foodgroup/Dairy.svg' %}" alt=""></th>
+                <th class="tg-dtxx" scope="col"><img src="{% static 'assets/images/foodgroup/water.svg' %}"
+                                                     style="width: 40px" alt=""></th>
+                <th class="tg-dtxx" scope="col"><img src="{% static 'assets/images/foodgroup/confectionery.svg' %}"
+                                                     style="width: 40px"
+                                                     alt=""></th>
+                <th class="tg-dtxx" scope="col"><img src="{% static 'assets/images/foodgroup/unknown.svg' %}"
+                                                     style="width: 50px" alt="">
+                </th>
+                <th class="tg-dtxx" scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for fooditem in fooditems %}
+                <tr id="{{ fooditem.id }}">
+                    <th class="tg-a3uk">{{ fooditem.id }}</th>
+                    <td class="tg-a3uk">{{ fooditem.created_on }}</td>
+                    <td class="tg-a3uk "><label>
+                        <input class="food_name" value="{{ fooditem.food_name }}" type="text"/>
+                    </label></td>
+                    <td class="tg-a3uk "><label>
+                        <input class="veg" value="{{ fooditem.veg_percentage }}" min="0.0" max="4" step="0.25"
+                               type="number"/>
+                    </label></td>
+                    <td class="tg-a3uk "><label>
+                        <input class="fruit" value="{{ fooditem.fruit_percentage }}" min="0.0" max="4" step="0.25"
+                               type="number"/>
+                    </label>
+                    </td>
+                    <td class="tg-a3uk "><label>
+                        <input class="grain" value="{{ fooditem.grain_percentage }}" min="0.0" max="4" step="0.25"
+                               type="number"/>
+                    </label>
+                    </td>
+                    <td class="tg-a3uk "><label>
+                        <input class="protein" value="{{ fooditem.protein_percentage }}"
+                               min="0.0" max="4" step="0.25" type="number"/>
+                    </label></td>
+
+                    <td class="tg-a3uk "><label>
+                        <input class="dairy" value="{{ fooditem.dairy_percentage }}" min="0.0" max="4" step="0.25"
+                               type="number"/>
+                    </label>
+                    </td>
+                    <td class="tg-a3uk "><label>
+                        <input class="water" value="{{ fooditem.water_percentage }}" min="0.0" max="4" step="0.25"
+                               type="number"/>
+                    </label>
+                    </td>
+                    <td class="tg-a3uk "><label>
+                        <input class="confectionery"
+                               value="{{ fooditem.confectionery_percentage }}"
+                               min="0.0" max="4" step="0.25" type="number"/>
+                    </label></td>
+                    <td class="tg-a3uk"><label>
+                        <input class="unknown" value="{{ fooditem.unknown_percentage }}"
+                               min="0.0" max="4" step="0.25" type="number"/>
+                    </label></td>
+                    <td class="tg-a3uk">
+                        <div class="save">
+                            <button class="button text-white" onclick="approveFoodItem({{ fooditem.id }})"> Save
+                            </button>
+                        </div>
+                        <div class="delete">
+                            <button class="button text-white" onclick="deleteFoodItem({{ fooditem.id }})">Delete
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+        async function approveFoodItem(id) {
+            const row = document.getElementById(id);
+            const html_button = row.getElementsByClassName('save')[0].innerHTML;
+            row.getElementsByClassName('save')[0].innerHTML = '<i class="fa fa-spinner fa-spin"></i>'
+            const data = {
+                "action": "approve",
+                "id": id,
+                "food_name": row.getElementsByClassName("food_name")[0].value.replace(/^\s+|\s+$/gm, ''),
+                "veg": parseFloat(row.getElementsByClassName("veg")[0].value),
+                "fruit": parseFloat(row.getElementsByClassName("fruit")[0].value),
+                "grain": parseFloat(row.getElementsByClassName("grain")[0].value),
+                "protein": parseFloat(row.getElementsByClassName("protein")[0].value),
+                "confectionery": parseFloat(row.getElementsByClassName("confectionery")[0].value),
+                "dairy": parseFloat(row.getElementsByClassName("dairy")[0].value),
+                "water": parseFloat(row.getElementsByClassName("water")[0].value),
+                "unknown": parseFloat(row.getElementsByClassName("unknown")[0].value)
+            }
+            console.log(data)
+            const response = await fetch(window.location.href, {
+                method: 'POST', headers: {
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest', //Necessary to work with request.is_ajax()
+                    "x-CSRFToken": "{{csrf_token}}",
+                }, body: JSON.stringify(data),
+            })
+            if (response.status === 200) {
+                row.getElementsByClassName('save')[0].innerHTML = '<i class="fa fa-check fa-check"></i>'
+                row.remove()
+                console.log(data)
+                console.log("Above data sent!")
+            } else {
+                console.log(('Problem'))
+                row.getElementsByClassName('save')[0].innerHTML = html_button
+            }
+        }
+
+        async function deleteFoodItem(id) {
+            row = document.getElementById(id)
+            html_button = row.getElementsByClassName('delete')[0].innerHTML
+            row.getElementsByClassName('delete')[0].innerHTML = '<i class="fa fa-spinner fa-spin" style="color:red"></i>'
+            const data = {"action": "delete", "id": id}
+            const response = await fetch('http://127.0.0.1:8000/general/food-item-approval/', {
+                method: 'POST', headers: {
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest', //Necessary to work with request.is_ajax()
+                }, body: JSON.stringify(data),
+            })
+            if (response.status === 200) {
+                row.getElementsByClassName('save')[0].innerHTML = '<i class="fa fa-check fa-check" style="color:red></i>'
+                row.remove()
+            } else {
+                row.getElementsByClassName('save')[0].innerHTML = html_button
+            }
+        }
+
+        </script>
+{% endblock %}

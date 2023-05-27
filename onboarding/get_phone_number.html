@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+
+
+{% block meta %}
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        name="description">
+<meta content="" name="author">
+
+<title>A fun way inculcate healthy eating habits in kids</title>
+<!-- Facebook MetaTags -->
+
+<meta content="A fun way inculcate healthy eating habits in kids" property="og:title">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+<link href="/static/country-code-picker/css/intlTelInput.css" rel="stylesheet">
+<script src="/static/country-code-picker/js/intlTelInput.js"></script>
+
+<body class="register-background">
+<div class="container">
+    <div class="d-none d-sm-block" style="margin-top: 2em;"></div>
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-8 shadow" style="background-color: white;">
+
+            <div class="justify-content-center row">
+                <div class="lilita green" style="font-size: 2.5em; margin-top: 0.5em;">Confirm Booking</div>
+            </div>
+            <!-- <div class="row mx-3 mt-3 justify-content-center ">
+                <a href="/general/landing">
+                    <img class="nav-height my-2 " src="/static/assets/images/Logo1.png" alt=""
+
+                         style="height: 32px; width: 122px"></a>
+
+            </div> -->
+            <!-- <div class="justify-content-center row">
+                <img alt="" href="/general/landing"
+                     src="/static/assets/images/get_phone.png">
+            </div> -->
+
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide justify-content-center feedback" id="feedback1">
+                        <img alt="" class="logo-top-kidname" href="/general/landing" id="feed_back_img"
+                             src="/static/assets/images/feed_back1.png">
+                    </div>
+                    <div class="swiper-slide justify-content-center feedback" id="feedback2">
+                        <img alt="" class="logo-top-kidname" href="/general/landing" id="feed_back_img"
+                             src="/static/assets/images/feed_back2.png">
+                    </div>
+                    <div class="swiper-slide justify-content-center feedback" id="feedback3">
+                        <img alt="" class="logo-top-kidname" href="/general/landing" id="feed_back_img"
+                             src="/static/assets/images/feed_back3.png">
+                    </div>
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev green d-none d-lg-block"></div>
+                <div class="swiper-button-next green d-none d-lg-block"></div>
+
+            </div>
+
+            <div class="justify-content-center mt-2 row d-lg-none">
+                <div class="green-circle highlighted" id="c-1"></div>
+                <div class="green-circle" id="c-2"></div>
+                <div class="green-circle" id="c-3"></div>
+            </div>
+            <div class="row" style="padding-left: 3em; padding-right: 3em; margin-top: 0em;">
+                <div class="main-text" style="font-size: 1.2em;">Access on any device, anytime.
+                </div>
+                <input class="input-phone" id="phone" placeholder="Enter mobile number" type="tel">
+                <span class="hide" id="valid-msg" style="color: red;">✓ Valid</span>
+                <span class="hide" id="error-msg" style="color: red;"></span>
+            </div>
+            <div class="text-center row justify-content-center mx-0" style=" margin-bottom: 1em;">
+                <button class="register-button button justify-content-center text-white" id="next_button"
+                        style="font-size: 1.8em;">Confirm
+                </button>
+            </div>
+        </div>
+</body>
+
+<style>
+    .logo-top-kidname {
+        margin-top: 2em
+    }
+
+    .container {
+        font-family: 'Andika', sans-serif;
+    }
+
+    .lilita {
+        font-family: 'Lilita One', cursive;
+    }
+
+    @media only screen and (max-height: 700px) {
+        .main-container {
+            margin: 0.5em 0 0;
+        }
+
+        .register-button {
+            margin-top: 1.5em;
+        }
+
+        .main-text {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+    }
+
+    @media only screen and (min-height: 700px) {
+        .main-container {
+            margin: 1.5em;
+        }
+
+        .register-button {
+            margin-top: 2em;
+        }
+
+        .main-text {
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+    }
+
+    .register-button {
+        margin-bottom: 1em;
+    }
+
+    .green {
+        color: #5EA451;
+    }
+
+
+    .highlighted {
+        background-color: #5EA451 !important;
+    }
+
+    .swiper {
+        width: 100%;
+    }
+
+    .green-circle {
+        margin: 0em 0.5em 0 0.5em;
+        height: 1em;
+        width: 1em;
+        border-radius: 0.5em;
+        background-color: #D8F0CE;
+    }
+
+    .hide {
+        display: none;
+    }
+</style>
+<script>
+    $(".base-header").hide();
+    var input = document.querySelector("#phone");
+    var intl = intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {
+            }, "jsonp").always(function (resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "US";
+                success(countryCode);
+            });
+        },
+        utilsScript: "/static/country-code-picker/js/utils.js"
+    });
+    errorMsg = document.querySelector("#error-msg");
+    validMsg = document.querySelector("#valid-msg");
+
+
+    imgSrc = "/static/assets/images/feed_back";
+
+
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
+
+    var currentIndex = 1;
+    swiper.on('slideChange', function () {
+        document.getElementById('c-' + currentIndex).classList.remove('highlighted');
+        if (swiper.activeIndex % 3 != 0) {
+            currentIndex = swiper.activeIndex % 3;
+        } else {
+            currentIndex = swiper.activeIndex;
+        }
+        document.getElementById('c-' + currentIndex).classList.add('highlighted');
+    });
+
+    var reset = function () {
+        input.classList.remove("error");
+        errorMsg.innerHTML = "";
+        errorMsg.classList.add("hide");
+        validMsg.classList.add("hide");
+    };
+
+    // Validate on blur event
+    input.addEventListener('blur', function () {
+        reset();
+        if (input.value.trim()) {
+            if (intl.isValidNumber()) {
+                // validMsg.classList.remove("hide");
+            } else {
+                input.classList.add("error");
+                errorMsg.innerHTML = "Invalid input";
+                errorMsg.classList.remove("hide");
+            }
+        }
+    });
+
+    // Reset on keyup/change event
+    input.addEventListener('change', reset);
+    input.addEventListener('keyup', reset);
+    var urlParams = new URLSearchParams(window.location.search);
+    var data = urlParams.get('data');
+    var prefs = JSON.parse(data);
+
+    mixpanel.track('RegisterUserGetPhoneNumber', prefs);
+    if (prefs == null) {
+        window.location.pathname = "register"
+    }
+    if (prefs['kid_name'] == null) {
+        window.location.pathname = "kid_name"
+    }
+    if (prefs['age'] == null) {
+        window.location.pathname = "kid_age"
+    }
+
+    document.getElementById('next_button').addEventListener('click', openCongratulations);
+
+
+    function openCongratulations() {
+        var url = new URL(window.location.href);
+        if (!intl.isValidNumber()) {
+            alert("Enter valid input");
+            return;
+        }
+        if (typeof webView !== 'undefined') {
+            webView.verifyPhone('+' + intl.getSelectedCountryData().dialCode + input.value);
+        }
+        var search_params = url.searchParams;
+        prefs['phone_number'] = '+' + intl.getSelectedCountryData().dialCode + input.value;
+        submitData();
+        downloadClick();
+        // search_params.set('data', JSON.stringify(prefs));
+        // url.search = search_params.toString();
+        // var new_url = url.toString();
+        // new_url = new_url.replace('get_phone_number', 'congratulations');
+        // window.location.href = new_url;
+    }
+
+    function submitData() {
+        console.log(prefs);
+        $.ajax({
+            type: 'POST',
+            url: '/parent/start-trial',
+            data: JSON.stringify(prefs)
+        }).done(function (data) {
+            if (mobile_app != null) {
+                if (typeof webView !== 'undefined') {
+                    webView.saveUrl();
+                    webView.verifyPhone(prefs['phone_number'])
+                }
+
+            } else {
+                openCongratulations();
+            }
+        });
+    }
+
+    function downloadClick() {
+        prefs['download'] = true;
+        var phoneNumber = prefs['phone_number'];
+        var baseUrl = 'https://play.google.com/store/apps/details?id=com.alemeno.alemeno22';
+        var utmSource = encodeURIComponent(window.location.search.slice(1) + '&phone_number=' + phoneNumber);
+        window.location.href = baseUrl + '&referrer=' + utmSource;
+
+    }
+</script>
+
+{% endblock %}
+
+
+</html>

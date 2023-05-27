@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% block title %}Annotate Images{% endblock %}</title>
+
+    <!-- CDNs -->
+    <link href="https://cdn.jsdelivr.net/gh/brainspoof/fosterio@0.1.0Beta/styles/main.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+<div class="main">
+    <div style="padding: 1rem;">
+        {% block body %}
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+              rel="stylesheet">
+
+
+        <div class="card col-lg-6 col-sm-12 border">
+            <div class="row p-5">
+                <div class="col-4">
+                    <img alt="Placeholder text" class="fit-img" src="https://placehold.jp/400x500.png">
+                </div>
+                <div class="col-8 pl-10">
+                    <h3 class="font-weight-light">To Annotate</h3>
+                    <p>12:06 pm, 11 Feb, 2021</p>
+                    <button class="btn outlined-primary">Annotate</button>
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}
+    </div>
+</div>
+
+<!-- Script CDN -->
+<script src="https://cdn.jsdelivr.net/gh/brainspoof/fosterio@0.1.0Beta/scripts/main.min.js"></script>
+<link href="{% static 'annotate.css' %}" rel="stylesheet">
+</body>
+</html>

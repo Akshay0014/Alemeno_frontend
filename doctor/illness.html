@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+	{% block content %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="{% static 'doctor.css' %}" rel="stylesheet">
+      <link rel="stylesheet" href="../../static/step.css" />
+      <link rel="stylesheet" href="../../static/iap.css" />
+
+    <title>Doctor {{ doctors_name }}</title>
+  </head>
+  <body>
+    <section class="container" style="display: block;">
+      <section class="left">
+        <div class="middle my-5" style="height: 80vh;text-align: center;font-size: 18px;display: block;">
+        <div class="">
+            <p class="text">
+             Select illness 
+	    {% if slug != "healthy-eating-solution" %} 
+	     identified by  <br><span class="greened">Dr {{doctors_name}}</span>
+	     {% endif %}
+	    </p>
+            {% for illness in illness_map %}
+          <div class="answer answer4">
+            <div class="s4-option">
+              <label for="cb1">{{ illness.name }}</label>
+              <input type="checkbox" id="{{illness.id}}" />
+            </div>
+              {% endfor %}
+            <div class="s4-option">
+              <label for="cb1">None of the Above</label>
+              <input type="checkbox" id="-1" />
+            </div>
+
+          </div>
+        </div>
+          <div class="">
+            <button id="go-button" class="btn-inner details" style="width: 90%;">Next</button>
+          </div>
+
+
+        </div>
+      </section>
+      <section class="right">
+        <div class="imageText">
+        <img src="/static/assets/images/mb1.png" alt="doctor" />
+        </div>
+      </section>
+    </section>
+  </body>
+
+
+  <script src="{% static 'assets/js/jquery.min.js' %}" type="text/javascript"></script>
+<script>
+    const url = new URL(window.location.href)
+
+    var urlParams = url.searchParams;
+    utmSource = urlParams.get('utm_source');
+    document.getElementById("go-button").addEventListener('click', onGoButtonClick);
+
+
+    function onGoButtonClick() {
+        document.getElementById("go-button").removeEventListener('click', onGoButtonClick);
+        const url = new URL(window.location.href)
+
+        var urlParams = url.searchParams;
+        utmSource = urlParams.get('utm_source');
+        urlParams.set('utm_source', utmSource);
+        url.search = urlParams.toString();
+        var new_url = url.toString();
+
+        let number =urlParams.get('number');
+        let slug=urlParams.get('slug');
+
+        data = {}
+        data["illnesses"] = getSelectedOptions();
+        data["slug"] = urlParams.get('slug');
+        data["phone_number"] = urlParams.get('number');
+        $.ajax({
+            type: 'POST',
+            url: '/doctor/create-recommendation',
+            data: JSON.stringify(data)
+        }).done(function (data) {
+            console.log(data);
+            window.location.replace("program?number="+number+"&slug="+slug);
+    })
+    }
+
+
+        function getSelectedOptions() {
+            let illnessList = [];
+            for (i = 0; i < 100; ++i) {
+            if (document.getElementById(i) && document.getElementById(i).checked) {
+                  illnessList.push(i)
+            }
+        }
+        return illnessList;
+    }
+</script>
+{% endblock %}
+
+</html>

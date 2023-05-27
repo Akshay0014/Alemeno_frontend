@@ -1,0 +1,272 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% block title %}Nutrition Chart{% endblock %}</title>
+
+    <!-- CDNs -->
+    <link href="https://cdn.jsdelivr.net/gh/brainspoof/fosterio@0.1.0Beta/styles/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,400&display=swap"
+          rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script defer src="//unpkg.com/alpinejs"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="{% static 'assets/js/survey.js' %}" type="text/javascript"></script>
+</head>
+<body id="content">
+
+
+<div class="row">
+    <div class="col-lg-2 col-md-1 col-sm 0"></div>
+    <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="row p-10">
+            <div class="col-12 pl-8">
+                <div class="row">
+                    <div class="col-lg-10 col-sm-12">
+                        <h1 class="font-size-huge" style="font-weight: 400">Daily nutrition chart</h1>
+                        <span class="title font-weight-light mt-10 mr-15"
+                              style="font-size: 20px">Kid's Age: {{ age }}</span><span
+                            class="title font-weight-light mt-10 ml-15" style="font-size: 20px">
+                            <i data-feather="phone"></i>&nbsp;{{ phone_number }} </span>
+                    </div>
+                    <div class="col-lg-2 col-sm-0" style="display:flex; align-items: center;">
+                        <img alt="Aleneno" class="fit-img hide-on-mobile" src="/static/assets/images/Logo1.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-10">
+                <div class="row" style="justify-content: center;">
+                    <!-- Fist Card -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 p-8">
+                        <div class="card">
+                            <div class="groupname veggies">Veggies</div>
+                            <div class="quantity">{{ veg }} <span class="units">cups / day</span></div>
+                            <div class="equivalent">( or equivalent )</div>
+                            <div class="groupexamples">🍆 🍅 🥦</div>
+                        </div>
+                    </div>
+
+                    <!-- Fist Card -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 p-8">
+                        <div class="card">
+                            <div class="groupname fruits">Fruits</div>
+                            <div class="quantity">{{ fruit }} <span class="units">cups / day</span></div>
+                            <div class="equivalent">( or equivalent )</div>
+                            <div class="groupexamples">🍎 🍊 🍌</div>
+                        </div>
+                    </div>
+
+                    <!-- Fist Card -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 p-8">
+                        <div class="card">
+                            <div class="groupname grains">Grains</div>
+                            <div class="quantity">{{ grain }} <span class="units">cups / day</span></div>
+                            <div class="equivalent">( or equivalent )</div>
+                            <div class="groupexamples">🍞 🌽 🍚</div>
+                        </div>
+                    </div>
+
+                    <!-- Fist Card -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 p-8">
+                        <div class="card">
+                            <div class="groupname proteins">Proteins</div>
+                            <div class="quantity"> {{ protein }} <span class="units">cups / day</span></div>
+                            <div class="equivalent">( or equivalent )</div>
+                            <div class="groupexamples">🥜 🍗 🌰</div>
+                        </div>
+                    </div>
+
+                    <!-- Fist Card -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 p-8">
+                        <div class="card">
+                            <div class="groupname dairy">Dairy</div>
+                            <div class="quantity"> {{ dairy }} <span class="units">cups / day</span></div>
+                            <div class="equivalent">( or equivalent )</div>
+                            <div class="groupexamples">🍼 🧀 🧈</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="row">
+                    <div class="mt-10" style="text-align: center; width: 100%"> * &nbsp; All units are in regular size
+                        cups
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-5 col-sm-12 p-25"
+         style="display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 2rem;">
+    </div>
+</div>
+
+<div class="btn btn-md glow-primary download no-animation" id="cmd" onclick="printPdf('nutrition-chart.pdf')">Download
+    Nutrition Chart
+</div>
+
+<div class="whitespace"></div>
+
+<!-- Script CDN -->
+<script src="https://cdn.jsdelivr.net/gh/brainspoof/fosterio@0.1.0Beta/scripts/main.min.js"></script>
+<link href="{% static 'reportcard.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'loading-bar.js' %}"></script>
+<script>
+    feather.replace({'stroke-width': 1.5, height: 20, width: 20})
+</script>
+
+<style>
+    :root {
+        --font-family: Poppins;
+        --main-background: #F4F6F8;
+        --off-background: #ffffff;
+        --text-color: #3C3C3C;
+        --border-radius: 10px;
+        --title-size: 25px;
+        --huge-font-size: 30px;
+        --defualt-font-size: 15px;
+        --default-top-bottom-margin: 0rem;
+        --accent-color: #01a13d;
+        --small-border-radius: var(--border-radius);
+    }
+
+    .font-size-huge {
+        font-weight: var(--font-light-weight);
+        margin-top: 0rem;
+    }
+
+    svg.feather-phone {
+        stroke: var(--text-color);
+    }
+
+    .card {
+        background-color: var(--off-background);
+        width: 100%;
+        border-radius: var(--border-radius);
+        padding: 0rem;
+        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
+        margin-top: 0rem;
+        font-size: var(--default-font-size);
+        font-weight: var(--font-light-weight);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.9rem;
+    }
+
+    .groupname {
+        width: 130px;
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 0.3rem 1rem;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .veggies {
+        background: #e2ffe4;
+        color: #45b73d;
+    }
+
+    .fruits {
+        background: #ffe7c9;
+        color: #ff8c00;
+    }
+
+    .grains {
+        background: #fff1db;
+        color: #a68d66;
+    }
+
+    .proteins {
+        background: #ffdfc7;
+        color: #9e551c;
+    }
+
+    .dairy {
+        background: #e0eeff;
+        color: #1c76d9;
+    }
+
+    .quantity {
+        font-size: 1.6rem;
+        margin-top: -0.2rem;
+        font-weight: 400;
+    }
+
+    .units {
+        font-weight: 300;
+        font-size: 1.1rem;
+        /*margin-top: -1.3rem;*/
+    }
+
+    .groupexamples {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px lightgrey solid;
+        font-size: 1.3rem;
+        height: 45px;
+    }
+
+    .equivalent {
+        font-size: 0.9rem;
+        margin-top: -0.7rem;
+        font-weight: lighter;
+    }
+
+    .whitespace {
+        height: 80px;
+        width: 100px;
+    }
+
+    @media only screen and (min-width: 650px) {
+        .groupexamples {
+            font-size: 2rem;
+            height: 60px;
+            margin-top: 0.5rem;
+        }
+
+        .hide-on-mobile {
+            display: block;
+        }
+
+        .quantity {
+            font-size: 2.2rem;
+        }
+
+        .units {
+            font-size: 1.3rem;
+        }
+
+        .card {
+            gap: 1rem;
+        }
+    }
+</style>
+</body>
+
+<script>
+
+
+</script>
+</html>
+
+
+

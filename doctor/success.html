@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	{% block content %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="{% static 'doctor.css' %}" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+          <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+
+    <title>Doctor {{ doctors_name }}</title>
+  </head>
+  <body>
+    <section class="container">
+      <section class="left">
+        <div class="middle my-5" style="height: 80vh;text-align: center;font-size: 18px;display: block;">
+		<p class="my-5" style="font-weight:600; font-size:24px;color:#606060">Congratulations!</p>
+		<p class="my-5"> Your <span id="duration"> </span> healthy eating program
+		{% if slug != "healthy-eating-solution" %}
+		led by Dr. <span style="color:green;font-weight:600">{{ doctors_name }} </span>
+		{% endif %}
+		is ready. </p>
+		<p class="mt-5"> Install Alemeno app to get started.</p>
+
+                             <button class="mb-5 register-button button justify-content-center payment btn-inner mt-2"
+                                id="install" onclick="downloadClick();"
+                                style="font-size: 17px;max-width: 600px; min-width: 260px;height:max-content; width:100%;margin-left: 0px;display: initial; height: max-content;"
+                                type="button">
+                                <img id="appleLogo" class="d-none mb-2 mr-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/800px-Apple_logo_white.svg.png"
+                                width="20" height="20">
+                                Install now
+                             </button>
+
+
+        </div>
+      </section>
+      <section class="right">
+        <div class="imageText">
+        <img src="/static/assets/images/mb1.png" alt="doctor" />
+        </div>
+      </section>
+    </section>
+  </body>
+
+
+  <script src="{% static 'assets/js/jquery.min.js' %}" type="text/javascript"></script>
+
+<script>
+
+     var urlParams = new URLSearchParams(window.location.search);
+
+        duration = "3 months"
+         if (urlParams.get('slug') == "niravparmar") {
+            duration = "1 month"
+        } 
+       if (urlParams.get('slug') == "ganesh-sanku") {
+            duration = "3 months"
+        } 
+
+       if (urlParams.get('slug') == "healthy-eating-solution") {
+            duration = "15 day"
+        }
+ 
+
+    document.getElementById("duration").innerHTML = duration;
+
+
+    function checkIphone() {
+        return navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad');
+    }
+
+    var isIphone = checkIphone();
+    if (isIphone) {
+        document.getElementById('appleLogo').style.display = 'inline'
+    }
+
+
+    function downloadClick(action) {
+        var isIphone = checkIphone();
+        if (isIphone === false) {
+            window.open("https://play.google.com/store/apps/details?id=com.alemeno.alemeno22");
+	    //location.assign("https://alemeno.com/dr/instructions");
+	} else {
+            window.open("https://apps.apple.com/us/app/alemeno/id1601278574");
+            
+        }
+    }
+
+
+
+
+</script>
+{% endblock %}
+
+</html>

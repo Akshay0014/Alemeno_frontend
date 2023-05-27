@@ -1,0 +1,841 @@
+{% extends "social/home.html" %}
+{% load static %}
+
+
+{% block meta %}
+
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta content="{{ og_description }}" name="description">
+<meta content="{{ og_title }}" name="title">
+
+<title>{{ og_title }} </title>
+<!-- Facebook MetaTags -->
+
+<meta property="og:description" content="{{ og_description }}">
+<meta property="og:image:secure_url" content="{{ og_image }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:url" content= "{{ og_url }}">
+<meta content="article" property="og:type"/>
+
+
+{% endblock %}
+
+{% block body %}
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #ECF6F0;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 3rem;
+        }
+
+        .share-card {
+            margin: auto;
+            border-radius: 20px;
+            height: 370px;
+            width: 780px;
+            position: relative;
+            max-width: 85%;
+        }
+
+        @media screen and (min-width: 300px) and (max-width: 400px) {
+            .share-card {
+                zoom: 40%;
+            }
+        }
+
+        @media screen and (min-width: 400px) and (max-width: 600px) {
+            .share-card {
+                zoom: 60%;
+            }
+        }
+
+        @media screen  and (min-width: 600px ) {
+            .share-card {
+                zoom: 0.8;
+            }
+        }
+    </style>
+    <div>
+        <div style="margin-left: 15px; margin-top: 20px;">
+            <img src="{% static '/assets/images/social-logo.png' %}" alt="">
+        </div>
+    </div>
+    {% if display %}
+        <div>
+            <p style=" display: flex;
+                    padding: 0px 15px;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 30px;
+                    color: #2A2F2C;
+                    font-size: 1.2rem;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    margin-top: 5em">{{ kid_name }} has shared a new achievement with you.
+            </p>
+        </div>
+    {% else %}
+        <p style=" display: flex;
+                    padding: 0px 15px;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 30px;
+                    color: #2A2F2C;
+                    font-size: 1.2rem;
+                    text-align: center;
+                    margin-bottom: 20px;">Sorry! Achievement not found.
+        </p>
+    {% endif %}
+
+    <!-- ACHIEVEMENT CARD ------------------------------------------------------------------------------------->
+    {% if card_type == 'Fifty Points' %}
+
+        <div class="share-card" style="
+               background: linear-gradient(90deg, #DCE35B 0%, #C9DD55 14.29%, #B5D751 28.57%, #A1D14D 42.86%, #8CCA4B 57.14%, #77C449 71.43%, #60BD49 85.71%, #45B649 100%);
+
+   ">
+
+            {% if display %}
+
+                <div style="
+      display: flex;
+      flex-direction: row-reverse; padding: 40px 30px;">
+                    <div style="font-size: 25px;
+                "> {{ time }}   </div>
+                </div>
+
+                <div style="
+      display: flex;
+      flex-direction: row;
+      padding:0px 30px;
+      margin-top:-60px;
+      ">
+                    <div style="display: flex;flex-direction: column; align-items: center;">
+                        <div>
+                            {% if profile %}
+                                <img style="
+               box-shadow: inset 0px 0px 0px 10px #0abbb3;
+               width: 150px;
+               height: 150px;
+               object-fit: cover;
+               border-radius: 100%;
+               "
+                                     src="{{ profile }}"
+                                     alt=""/>
+                            {% else %}
+                                <img style="
+               box-shadow: inset 0px 0px 0px 10px #0abbb3;
+               width: 150px;
+               height: 150px;
+               object-fit: cover;
+               border-radius: 100%;
+               "
+                                     src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+                                     alt=""/>
+                            {% endif %}
+                        </div>
+                        <div style="margin-top: 15px">
+                            <p style="
+               font-family: 'Poppins',serif;
+               font-style: normal;
+               font-weight: 500;
+               font-size:30px;
+               line-height: 14px;
+               letter-spacing: -0.01em;
+               color: rgba(23, 62, 54, 0.8);
+               "
+                            >
+                                {{ kid_name }}
+                            </p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column;align-items: center;justify-content: center;     margin-top: 55px;
+    margin-left: 85px;">
+                        <p style="font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 14px;
+            /* identical to box height, or 131% */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;padding-bottom:15px;
+            color: #173E36;">
+                            DAILY ACHIEVEMENT
+                        </p>
+                        <div
+                                style="
+            font-size: 60px;
+            font-family: 'Poppins', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 60px;
+            color: #173E36;
+            ">
+                            {{ score }}
+                            <span style="font-family: 'Poppins',serif;
+               font-weight: 500;
+               font-size: 25px;
+               line-height: 14px;
+               /* identical to box height, or 131% */
+               letter-spacing: 0.08em;
+               ">POINTS</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="
+      display: flex;
+      flex-direction: row; justify-content: space-between; padding: 20px 30px;">
+                    <div style="">
+                        <svg width="100" height="45" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.2911 1.6675C12.6969 -0.492478 16.4146 -0.420786 18.7323 1.90101C21.049 4.22383 21.1289 7.92314 18.974 10.3361L10.289 19.0334L1.60611 10.3361C-0.548746 7.92314 -0.467836 4.21769 1.84782 1.90101C4.16757 -0.417713 7.87814 -0.49555 10.2911 1.6675Z"
+                                  fill="#F20808"></path>
+                        </svg>
+                        <p style="margin: -56px 0px 0px 84px;
+                            color: rgba(23, 62, 54, 0.8);
+                            font-family: 'Poppins',serif;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 35px;
+                        ">{{ likes }}</p>
+
+                    </div>
+                    <div>
+
+                        <svg width="100" height="45" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.576 14.7999L6.46596 12.0129C5.97545 12.4998 5.35177 12.8306 4.67355 12.9635C3.99532 13.0965 3.29292 13.0257 2.65488 12.76C2.01685 12.4944 1.47175 12.0457 1.08831 11.4707C0.704863 10.8957 0.500244 10.2201 0.500244 9.52892C0.500244 8.83779 0.704863 8.16212 1.08831 7.58711C1.47175 7.0121 2.01685 6.56348 2.65488 6.29782C3.29292 6.03216 3.99532 5.96134 4.67355 6.09429C5.35177 6.22725 5.97545 6.55802 6.46596 7.04492L11.576 4.25792C11.4007 3.43565 11.5273 2.57778 11.9326 1.84117C12.3378 1.10457 12.9947 0.53845 13.7831 0.246353C14.5714 -0.0457455 15.4386 -0.0443068 16.226 0.250405C17.0134 0.545118 17.6683 1.11341 18.0712 1.85136C18.474 2.5893 18.5977 3.44759 18.4197 4.26927C18.2418 5.09095 17.7739 5.82111 17.1019 6.32622C16.4298 6.83133 15.5983 7.07764 14.7596 7.02012C13.9208 6.96259 13.1308 6.60506 12.534 6.01292L7.42396 8.79992C7.52589 9.28057 7.52589 9.77726 7.42396 10.2579L12.534 13.0449C13.1308 12.4528 13.9208 12.0953 14.7596 12.0377C15.5983 11.9802 16.4298 12.2265 17.1019 12.7316C17.7739 13.2367 18.2418 13.9669 18.4197 14.7886C18.5977 15.6102 18.474 16.4685 18.0712 17.2065C17.6683 17.9444 17.0134 18.5127 16.226 18.8074C15.4386 19.1021 14.5714 19.1036 13.7831 18.8115C12.9947 18.5194 12.3378 17.9533 11.9326 17.2167C11.5273 16.4801 11.4007 15.6222 11.576 14.7999Z"
+                                  fill="#173E36" fill-opacity="0.8"></path>
+                        </svg>
+
+                    </div>
+                    <div>
+                        <svg width="100" height="45" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.1771V20.6329H2.58457e-07C-0.000310114 19.4578 0.278921 18.2983 0.816299 17.2431C1.35368 16.188 2.13494 15.2652 3.10022 14.5455C4.0655 13.8258 5.18918 13.3283 6.38515 13.0911C7.58113 12.8539 8.81766 12.8833 10 13.1771ZM8 11.9723C4.685 11.9723 2 9.38853 2 6.19854C2 3.00855 4.685 0.424805 8 0.424805C11.315 0.424805 14 3.00855 14 6.19854C14 9.38853 11.315 11.9723 8 11.9723ZM14 15.8214V12.9346H16V15.8214H19V17.746H16V20.6329H14V17.746H11V15.8214H14Z"
+                                  fill="#173E36" fill-opacity="0.8"></path>
+                        </svg>
+
+                    </div>
+
+                </div>
+                <div style="position: absolute; bottom: 0; left:350px;  ">
+                    <img height="290px" width="430px" src="{% static '/assets/images/achivement-bg.png' %}">
+                </div>
+            {% else %}
+                <div style=" text-align: center; font-size: 40px;
+                "> Not Found
+                </div>
+
+                </div>
+            {% endif %}
+        </div>
+        <!-- MEAL CARD ----------------------------------------------------------------------------------------------->
+    {% elif card_type == 'Meal' %}
+        <div class="share-card" style="
+                    background: #e7ffe5;
+
+
+                  ">
+            {% if display %}
+
+                <div style="
+                          display: flex;
+                          flex-direction: row;
+                          justify-content: space-between;
+                          padding: 40px 30px;
+                        ">
+                    <div style="display: flex">
+                        <div>
+                            {% if profile %}
+                                <img style="
+                                    margin-right: 40px;
+                                    box-shadow: inset 0px 0px 0px 10px #0abbb3;
+                                    width: 100px;
+                                    height: 100px;
+                                    object-fit: cover;
+                                    object-position: 50% 50%;
+                                    border-radius: 100%;
+                                  "
+                                     src="{{ profile }}"
+                                     alt=""/>
+                            {% else %}
+                                <img style="
+                                    margin-right: 40px;
+                                    box-shadow: inset 0px 0px 0px 10px #0abbb3;
+                                    width: 100px;
+                                    height: 100px;
+                                    object-fit: cover;
+                                    border-radius: 100%;
+                                  "
+                                     src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+                                     alt=""/>
+                            {% endif %}
+
+                        </div>
+
+
+                        <div style="margin-top: 15px">
+                            <p
+                                    style="
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                font-size: 40px;
+                                                line-height: 21px;
+                                                margin-top: 10px;
+                                                color: rgba(23, 62, 54, 0.8);
+                                                "
+                            >
+                                {{ kid_name }}
+                            </p>
+                            <p
+                                    style="
+                                                font-weight: 600;
+                                                margin-top: -30px;
+                                                font-size: 20px;
+                                                color: #696666;
+                                              "
+                            >
+                                {{ time }}
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img
+                                style="
+                              margin-top: -50px;
+                              margin-right: 30px;
+
+                            "
+                                src="{{ animal_photo }}"
+                                alt="" width="200" height="200"
+                        />
+
+                    </div>
+                </div>
+
+
+
+                <div style="display: flex;     justify-content: center;   margin: -25px;">
+                    <img style="
+                           margin-top: 6px;
+                /* margin-right: 0px; */
+                width: 46px;
+                height: 46px;
+                object-fit: cover;
+                      "
+                         src="{% static 'assets/images/spoon.svg' %}"
+                         alt=""
+                    />
+                    <div
+                            style="
+                          font-size: 60px;
+                margin-right: 20px;
+                margin-left: 10px;
+                font-family: 'Poppins', sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 60px;
+                color: #173E36;
+                      "
+                    >
+                        {{ score }}
+
+                    </div>
+
+                    <p
+                            style="
+                    border-right: 1px solid #174022;
+                    height: 60px;
+                    margin-top: 0px;
+                    margin-right: 30px;
+                    width:0px
+                  "
+                    ></p>
+
+                    <div style="position: relative; text-align: center">
+                        <img
+                                style="
+                          margin-top: -15px;
+                          margin-right: 20px;
+                          width: 75px;
+                          height: 85px;
+                        "
+                                src="{% static 'assets/images/star.svg' %} "
+                                alt=""
+                        />
+                        <div
+                                style="
+                          position: absolute;
+                          top: 50%;
+                          left: 50%;
+                          transform: translate(-50%, -50%);
+                          font-style: normal;
+                          font-weight: 700;
+                          font-size: 30px;
+                          color: white;
+                          margin: -24px 0px 0px -10px;
+                          font-family: 'Poppins', sans-serif;
+                        "
+                        >
+                            {{ currency }}
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div style="
+      display: flex;
+      flex-direction: row; justify-content: space-between; padding: 20px 30px;">
+                    <div style="">
+                        <svg width="100" height="45" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.2911 1.6675C12.6969 -0.492478 16.4146 -0.420786 18.7323 1.90101C21.049 4.22383 21.1289 7.92314 18.974 10.3361L10.289 19.0334L1.60611 10.3361C-0.548746 7.92314 -0.467836 4.21769 1.84782 1.90101C4.16757 -0.417713 7.87814 -0.49555 10.2911 1.6675Z"
+                                  fill="#F20808"></path>
+                        </svg>
+                        <p style="margin: -56px 0px 0px 84px;
+                            color: rgba(23, 62, 54, 0.8);
+                            font-family: 'Poppins',serif;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 35px;
+                        ">{{ likes }}</p>
+
+                    </div>
+                    <div>
+
+                        <svg width="100" height="45" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.576 14.7999L6.46596 12.0129C5.97545 12.4998 5.35177 12.8306 4.67355 12.9635C3.99532 13.0965 3.29292 13.0257 2.65488 12.76C2.01685 12.4944 1.47175 12.0457 1.08831 11.4707C0.704863 10.8957 0.500244 10.2201 0.500244 9.52892C0.500244 8.83779 0.704863 8.16212 1.08831 7.58711C1.47175 7.0121 2.01685 6.56348 2.65488 6.29782C3.29292 6.03216 3.99532 5.96134 4.67355 6.09429C5.35177 6.22725 5.97545 6.55802 6.46596 7.04492L11.576 4.25792C11.4007 3.43565 11.5273 2.57778 11.9326 1.84117C12.3378 1.10457 12.9947 0.53845 13.7831 0.246353C14.5714 -0.0457455 15.4386 -0.0443068 16.226 0.250405C17.0134 0.545118 17.6683 1.11341 18.0712 1.85136C18.474 2.5893 18.5977 3.44759 18.4197 4.26927C18.2418 5.09095 17.7739 5.82111 17.1019 6.32622C16.4298 6.83133 15.5983 7.07764 14.7596 7.02012C13.9208 6.96259 13.1308 6.60506 12.534 6.01292L7.42396 8.79992C7.52589 9.28057 7.52589 9.77726 7.42396 10.2579L12.534 13.0449C13.1308 12.4528 13.9208 12.0953 14.7596 12.0377C15.5983 11.9802 16.4298 12.2265 17.1019 12.7316C17.7739 13.2367 18.2418 13.9669 18.4197 14.7886C18.5977 15.6102 18.474 16.4685 18.0712 17.2065C17.6683 17.9444 17.0134 18.5127 16.226 18.8074C15.4386 19.1021 14.5714 19.1036 13.7831 18.8115C12.9947 18.5194 12.3378 17.9533 11.9326 17.2167C11.5273 16.4801 11.4007 15.6222 11.576 14.7999Z"
+                                  fill="#173E36" fill-opacity="0.8"></path>
+                        </svg>
+
+                    </div>
+                    <div>
+                        <svg width="100" height="45" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.1771V20.6329H2.58457e-07C-0.000310114 19.4578 0.278921 18.2983 0.816299 17.2431C1.35368 16.188 2.13494 15.2652 3.10022 14.5455C4.0655 13.8258 5.18918 13.3283 6.38515 13.0911C7.58113 12.8539 8.81766 12.8833 10 13.1771ZM8 11.9723C4.685 11.9723 2 9.38853 2 6.19854C2 3.00855 4.685 0.424805 8 0.424805C11.315 0.424805 14 3.00855 14 6.19854C14 9.38853 11.315 11.9723 8 11.9723ZM14 15.8214V12.9346H16V15.8214H19V17.746H16V20.6329H14V17.746H11V15.8214H14Z"
+                                  fill="#173E36" fill-opacity="0.8"></path>
+                        </svg>
+
+                    </div>
+
+                </div>
+            {% else %}
+
+                <div style="text-align:center;font-size:40px;">Not Found</div>
+
+            {% endif %}
+        </div>
+
+
+    <!-- STREAK CARD ----------------------------------------------------------------------------------------------->
+
+    {% elif card_type == 'Streak' %}
+
+        <div class="share-card" style="
+background: linear-gradient(90deg, #B4FF9F 0%, #B4FB9E 14.29%, #B5F69C 28.57%, #B5F29B 42.86%, #B5EE9A 57.14%, #B5E999 71.43%, #B4E598 85.71%, #B4E197 100%);   margin: auto;
+
+   ">
+
+            {% if display %}
+                <div style="
+      display: flex;
+      flex-direction: row-reverse; padding: 45px 85px;">
+                    <div style="font-size: 25px;
+                "> {{ time }}   </div>
+                </div>
+
+                <div style="
+                      display: flex;
+                      flex-direction: row;
+                      padding:0px 30px;
+                      margin-top:-90px;
+                      ">
+                    <div style="display: flex;flex-direction: column; align-items: center; padding-left :35px">
+                        <div style="padding-bottom:15px">
+                            {% if profile %}
+                                <img style="
+               box-shadow: inset 0px 0px 0px 10px #0abbb3;
+               width: 130px;
+               height: 130px;
+               object-fit: cover;
+               border-radius: 100%;
+               "
+                                     src="{{ profile }}"
+                                     alt=""/>
+                            {% else %}
+                                <img style="
+               box-shadow: inset 0px 0px 0px 10px #0abbb3;
+               width: 130px;
+               height: 130px;
+               object-fit: cover;
+               border-radius: 100%;
+               "
+                                     src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+                                     alt=""/>
+                            {% endif %}
+                        </div>
+                        <div style="margin-top: 15px">
+                            <p style="
+               font-family: 'Poppins',serif;
+               font-style: normal;
+               font-weight: 500;
+               font-size:30px;
+               line-height: 14px;
+               letter-spacing: -0.01em;
+               color: rgba(23, 62, 54, 0.8);
+               "
+                            >
+                                {{ kid_name }}
+                            </p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;align-items: center;justify-content: center;margin-top: 100px; margin-left: 80px;">
+                        <div>
+
+                            <svg width="50" height="50" viewBox="0 0 21 22" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path d="M0.0999994 21.456H20.9V0.655999H0.0999994V21.456Z"
+                                      fill="url(#pattern0)"></path>
+                                <defs>
+                                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_6289_3524" transform="scale(0.015625)"></use>
+                                    </pattern>
+                                    <image id="image0_6289_3524" width="64" height="64"
+                                           xlink:href="data:image/png;base64,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"></image>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p style="margin-top:39px;margin-left:10px; font-family: 'Space Mono';font-style: normal;font-weight: 700;font-size: 75px;line-height: 41px;text-align: center;color: #173E36;"> {{ score }}
+                            <span style="margin-left:-10px;font-family: 'Poppins';font-style: normal;font-weight: 500;font-size: 35px;line-height: 25px;text-align: center;color: rgba(23, 62, 54, 0.8);">days</span>
+                        </p>
+                        <p
+                                style="
+                    border-right: 1px solid #174022;
+                    height: 60px;
+                    margin:25px;
+                    width:0px
+                  "
+                        ></p>
+                        <div style="position: relative; text-align: center">
+                            <img
+                                    style="
+                          margin-top: -15px;
+                          margin-right: 20px;
+                          width: 75px;
+                          height: 85px;
+                        "
+                                    src="{% static 'assets/images/star.svg' %} "
+                                    alt=""
+                            />
+                            <div
+                                    style="
+                                            position: absolute;
+                                            top: 77%;
+                                            left: 48%;
+                                            transform: translate(-50%, -50%);
+                                            font-style: normal;
+                                            font-weight: 700;
+                                            font-size: 23px;
+                                            color: white;
+                                            margin: -24px 0px 0px -10px;
+                                            font-family: 'Poppins', sans-serif;
+                                            "
+                            >
+                                {{ currency }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div style="
+      display: flex;
+      flex-direction: row; justify-content: space-between; padding: 20px 30px; margin-top:10px">
+                    <div style="">
+                        <svg width="100" height="45" viewBox="0 0 21 20" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.2911 1.6675C12.6969 -0.492478 16.4146 -0.420786 18.7323 1.90101C21.049 4.22383 21.1289 7.92314 18.974 10.3361L10.289 19.0334L1.60611 10.3361C-0.548746 7.92314 -0.467836 4.21769 1.84782 1.90101C4.16757 -0.417713 7.87814 -0.49555 10.2911 1.6675Z"
+                                  fill="#F20808"></path>
+                        </svg>
+                        <p style="margin: -56px 0px 0px 84px;
+                            color: rgba(23, 62, 54, 0.8);
+                            font-family: 'Poppins',serif;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 35px;
+                        ">{{ likes }}</p>
+
+                    </div>
+                    <div>
+
+                        <svg width="100" height="45" viewBox="0 0 19 20" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.576 14.7999L6.46596 12.0129C5.97545 12.4998 5.35177 12.8306 4.67355 12.9635C3.99532 13.0965 3.29292 13.0257 2.65488 12.76C2.01685 12.4944 1.47175 12.0457 1.08831 11.4707C0.704863 10.8957 0.500244 10.2201 0.500244 9.52892C0.500244 8.83779 0.704863 8.16212 1.08831 7.58711C1.47175 7.0121 2.01685 6.56348 2.65488 6.29782C3.29292 6.03216 3.99532 5.96134 4.67355 6.09429C5.35177 6.22725 5.97545 6.55802 6.46596 7.04492L11.576 4.25792C11.4007 3.43565 11.5273 2.57778 11.9326 1.84117C12.3378 1.10457 12.9947 0.53845 13.7831 0.246353C14.5714 -0.0457455 15.4386 -0.0443068 16.226 0.250405C17.0134 0.545118 17.6683 1.11341 18.0712 1.85136C18.474 2.5893 18.5977 3.44759 18.4197 4.26927C18.2418 5.09095 17.7739 5.82111 17.1019 6.32622C16.4298 6.83133 15.5983 7.07764 14.7596 7.02012C13.9208 6.96259 13.1308 6.60506 12.534 6.01292L7.42396 8.79992C7.52589 9.28057 7.52589 9.77726 7.42396 10.2579L12.534 13.0449C13.1308 12.4528 13.9208 12.0953 14.7596 12.0377C15.5983 11.9802 16.4298 12.2265 17.1019 12.7316C17.7739 13.2367 18.2418 13.9669 18.4197 14.7886C18.5977 15.6102 18.474 16.4685 18.0712 17.2065C17.6683 17.9444 17.0134 18.5127 16.226 18.8074C15.4386 19.1021 14.5714 19.1036 13.7831 18.8115C12.9947 18.5194 12.3378 17.9533 11.9326 17.2167C11.5273 16.4801 11.4007 15.6222 11.576 14.7999Z"
+                                  fill="#173E36" fill-opacity="0.8"></path>
+                        </svg>
+
+                    </div>
+                    <div>
+                        <svg width="100" height="45" viewBox="0 0 19 21" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.1771V20.6329H2.58457e-07C-0.000310114 19.4578 0.278921 18.2983 0.816299 17.2431C1.35368 16.188 2.13494 15.2652 3.10022 14.5455C4.0655 13.8258 5.18918 13.3283 6.38515 13.0911C7.58113 12.8539 8.81766 12.8833 10 13.1771ZM8 11.9723C4.685 11.9723 2 9.38853 2 6.19854C2 3.00855 4.685 0.424805 8 0.424805C11.315 0.424805 14 3.00855 14 6.19854C14 9.38853 11.315 11.9723 8 11.9723ZM14 15.8214V12.9346H16V15.8214H19V17.746H16V20.6329H14V17.746H11V15.8214H14Z"
+                                  fill="#173E36" fill-opacity="0.8"></path>
+                        </svg>
+
+                    </div>
+
+                </div>
+            {% else %}
+                <div style=" text-align: center; font-size: 40px;
+                "> Not Found
+                </div>
+
+                </div>
+            {% endif %}
+        </div>
+
+            <!-- GIFT CARD ----------------------------------------------------------------------------------------------->
+
+    {% elif card_type == 'Gift' %}
+        <div class="share-card" style="
+background: linear-gradient(90deg, #FFE1E1 0%, #FEDEE5 14.29%, #FBDDEB 28.57%, #F4DCF2 42.86%, #EADCF8 57.14%, #DEDDFD 71.43%, #CFDEFF 85.71%, #BFE0FF 100%);   margin: auto;
+
+   ">
+
+            {% if display %}
+                <div style="
+      display: flex;
+      flex-direction: row-reverse; padding: 45px 85px;">
+                    <div style="font-size: 25px;
+                "> {{ time }}   </div>
+                </div>
+
+                <div style="
+                      display: flex;
+                      flex-direction: row;
+                      padding:0px 30px;
+                      margin-top:-90px;
+                      ">
+                    <div style="display: flex;flex-direction: column; align-items: center; padding-left :35px">
+                        <div style="padding-bottom:15px">
+                            {% if profile %}
+                                <img style="
+               box-shadow: inset 0px 0px 0px 10px #0abbb3;
+               width: 130px;
+               height: 130px;
+               object-fit: cover;
+               border-radius: 100%;
+               "
+                                     src="{{ profile }}"
+                                     alt=""/>
+                            {% else %}
+                                <img style="
+               box-shadow: inset 0px 0px 0px 10px #0abbb3;
+               width: 130px;
+               height: 130px;
+               object-fit: cover;
+               border-radius: 100%;
+               "
+                                     src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+                                     alt=""/>
+                            {% endif %}
+                        </div>
+                        <div style="margin-top: 15px">
+                            <p style="
+               font-family: 'Poppins',serif;
+               font-style: normal;
+               font-weight: 500;
+               font-size:30px;
+               line-height: 14px;
+               letter-spacing: -0.01em;
+               color: rgba(23, 62, 54, 0.8);
+               "
+                            >
+                                {{ kid_name }}
+                            </p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;align-items: center;justify-content: center;margin-top: 100px; margin-left: 80px;">
+                        <div>
+
+                            <svg width="50" height="50" viewBox="0 0 21 22" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path d="M0.0999994 21.456H20.9V0.655999H0.0999994V21.456Z"
+                                      fill="url(#pattern0)"></path>
+                                <defs>
+                                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_6289_3524" transform="scale(0.015625)"></use>
+                                    </pattern>
+                            </svg>
+                        </div>
+                        <div style="position: relative; text-align: center;font-size: 20px;     text-transform: uppercase; font-weight: 600;">
+                            <img
+                                    style="
+                          margin-top: -15px;
+                          margin-right: 0px;
+                          width: 125px;
+                          height: 135px;
+                        "
+                                    src="{{ reward_url }}"
+                                    alt=""
+                            />
+                            <div
+                                    style="
+                                            position: absolute;
+                                            top: 77%;
+                                            left: 48%;
+                                            transform: translate(-50%, -50%);
+                                            font-style: normal;
+                                            font-weight: 700;
+                                            font-size: 23px;
+                                            color: white;
+                                            margin: -24px 0px 0px -10px;
+                                            font-family: 'Poppins', sans-serif;
+                                            "
+				    >
+			    </div>
+                            <br> {{ reward_name }}
+                        </div>
+
+                    </div>
+
+                </div>
+                <div style="
+      display: flex;
+      flex-direction: row; justify-content: space-between; padding: 20px 30px; margin-top:10px">
+                    <div style="">
+                        <svg width="100" height="45" viewBox="0 0 21 20" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.2911 1.6675C12.6969 -0.492478 16.4146 -0.420786 18.7323 1.90101C21.049 4.22383 21.1289 7.92314 18.974 10.3361L10.289 19.0334L1.60611 10.3361C-0.548746 7.92314 -0.467836 4.21769 1.84782 1.90101C4.16757 -0.417713 7.87814 -0.49555 10.2911 1.6675Z"
+                                  fill="#F20808"></path>
+                        </svg>
+                        <p style="margin: -56px 0px 0px 84px;
+                            color: rgba(23, 62, 54, 0.8);
+                            font-family: 'Poppins',serif;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 35px;
+                        ">{{ likes }}</p>
+
+                    </div>
+                    <div>
+
+                        <svg width="100" height="45" viewBox="0 0 19 20" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.576 14.7999L6.46596 12.0129C5.97545 12.4998 5.35177 12.8306 4.67355 12.9635C3.99532 13.0965 3.29292 13.0257 2.65488 12.76C2.01685 12.4944 1.47175 12.0457 1.08831 11.4707C0.704863 10.8957 0.500244 10.2201 0.500244 9.52892C0.500244 8.83779 0.704863 8.16212 1.08831 7.58711C1.47175 7.0121 2.01685 6.56348 2.65488 6.29782C3.29292 6.03216 3.99532 5.96134 4.67355 6.09429C5.35177 6.22725 5.97545 6.55802 6.46596 7.04492L11.576 4.25792C11.4007 3.43565 11.5273 2.57778 11.9326 1.84117C12.3378 1.10457 12.9947 0.53845 13.7831 0.246353C14.5714 -0.0457455 15.4386 -0.0443068 16.226 0.250405C17.0134 0.545118 17.6683 1.11341 18.0712 1.85136C18.474 2.5893 18.5977 3.44759 18.4197 4.26927C18.2418 5.09095 17.7739 5.82111 17.1019 6.32622C16.4298 6.83133 15.5983 7.07764 14.7596 7.02012C13.9208 6.96259 13.1308 6.60506 12.534 6.01292L7.42396 8.79992C7.52589 9.28057 7.52589 9.77726 7.42396 10.2579L12.534 13.0449C13.1308 12.4528 13.9208 12.0953 14.7596 12.0377C15.5983 11.9802 16.4298 12.2265 17.1019 12.7316C17.7739 13.2367 18.2418 13.9669 18.4197 14.7886C18.5977 15.6102 18.474 16.4685 18.0712 17.2065C17.6683 17.9444 17.0134 18.5127 16.226 18.8074C15.4386 19.1021 14.5714 19.1036 13.7831 18.8115C12.9947 18.5194 12.3378 17.9533 11.9326 17.2167C11.5273 16.4801 11.4007 15.6222 11.576 14.7999Z"
+                                  fill="#173E36" fill-opacity="0.8"></path>
+                        </svg>
+
+                    </div>
+                    <div>
+                        <svg width="100" height="45" viewBox="0 0 19 21" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13.1771V20.6329H2.58457e-07C-0.000310114 19.4578 0.278921 18.2983 0.816299 17.2431C1.35368 16.188 2.13494 15.2652 3.10022 14.5455C4.0655 13.8258 5.18918 13.3283 6.38515 13.0911C7.58113 12.8539 8.81766 12.8833 10 13.1771ZM8 11.9723C4.685 11.9723 2 9.38853 2 6.19854C2 3.00855 4.685 0.424805 8 0.424805C11.315 0.424805 14 3.00855 14 6.19854C14 9.38853 11.315 11.9723 8 11.9723ZM14 15.8214V12.9346H16V15.8214H19V17.746H16V20.6329H14V17.746H11V15.8214H14Z"
+                                  fill="#173E36" fill-opacity="0.8"></path>
+                        </svg>
+
+                    </div>
+
+                </div>
+            {% else %}
+                <div style=" text-align: center; font-size: 40px;
+                "> Not Found
+                </div>
+
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" style="position: absolute; bottom: 2vh;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background: transparent; border: none">
+                <div class="modal-body">
+                    <div
+                            style="display: flex; justify-content: center; margin-top: 5vh; ">
+                        <div style="box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); font-weight: 600; background: #FFFFFF; height: auto; padding: 25px 50px;">
+                            <p style="text-align: center; margin-bottom:revert;">To like or share this post</p>
+                            <div style="display: flex; justify-content: center;">
+                                <button style="padding: 15px 30px; outline: none; background: #3E8B3A; border-radius: 16.3867px; color: #fff; border: none"
+                                        onclick="downloadClick('install');">
+                                    Download App
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkIphone() {
+            return navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad');
+        }
+
+
+        function downloadClick(action) {
+            var urlParams = new URLSearchParams(window.location.search);
+            var isIphone = checkIphone();
+
+            if (action === 'install' && isIphone === false) {
+                window.open("https://play.google.com/store/apps/details?id=com.alemeno.alemeno22");
+                {#window.open("https://play.google.com/store/apps/details?id=com.alemeno.alemeno22&referrer=utm_source%3Dtest_calculator_" +#}
+                {#    utmSource + "%26utm_medium%3D" + kidEaterType + "%26utm_campaign%3Dtest_calculator%26anid%3Dadmob" +#}
+                {#    "%26email%3D" + email + "%26phone_number%3D" + phone_number);#}
+            } else {
+                window.open("https://apps.apple.com/us/app/alemeno/id1601278574");
+            }
+        }
+
+        $('.share-card').on('click', () => {
+            $('#exampleModal').modal('show')
+        });
+
+    </script>
+    <script></script>
+
+    <div class="d-md-none" style="margin-top: 5vh; display: flex; justify-content: center;">
+        <div style="box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); position: absolute; font-weight: 600; bottom: 10vh; background: #ECF6F0; height: auto; padding: 25px 50px;
+      margin: 0px 20px;">
+            <p style="text-align: center; margin-bottom:revert;">Let your kids <span
+                    style="color: green">eat healthy</span> with Alemeno</p>
+            <div style="display: flex; justify-content: center;">
+                <button style="padding: 15px 30px; outline: none; background: #3E8B3A; border-radius: 16.3867px; color: #fff; border: none"
+                        onclick="downloadClick('install');">
+                    Download App
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer d-none d-md-block">
+        <div style="display: flex; justify-content: center; margin: 15px">
+            <div style="text-align: center; margin-top: 10px;font-weight: 550; font-size: 15px;">Alemeno is an app that
+                promotes <span
+                        style="color: green">healthy eating</span> amongst kids
+            </div>
+            <button style="padding: 10px 30px; outline: none; background: #3E8B3A; border-radius: 16.3867px; color: #fff;
+                border: none; margin-left: 100px; margin-right: 100px; font-size: 14px;"
+                    onclick="downloadClick('install');">
+                Download App
+            </button>
+        </div>
+    </div>
+{% endblock %}

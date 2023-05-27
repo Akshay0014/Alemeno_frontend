@@ -1,0 +1,439 @@
+{% extends "annotate/home.html" %}
+
+{% load static %}
+{% block title %} Detail Annotate {% endblock %}
+
+{% block body %}
+<link href="https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+      rel="stylesheet">
+
+<div class="row">
+    <div class="col-lg-4 col-md-2 col-sm-0"></div>
+    <div class="col-lg-4 col-md-8 col-sm-12">
+
+
+
+<div class="row">
+    <!-- User and Annotator Information -->
+    <div class="col-7">
+        <p class="font-weight-regular title">{{food_image.kid}}</p>
+        <p class="font-weight-light" style="margin-top: 0.2rem;">{{food_image.created_on}}</p>
+    </div>
+    <div class="col-5">
+	    <p class="font-weight-regular title icon-text" style="justify-content: right;">🕵️ {{food_image.updated_by}}</p>
+    </div>
+    <div id="username" style="display:none" >{{user.username}}</div> 
+    <!-- Food Details -->
+    <div class="col-8 mt-5" style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
+        <img src={{food_image.image_url}} alt="Food Image" class="fit-img">
+        <p class="font-weight-light" style="margin-top: 0.2rem;">{{food_image.description}}</p>
+
+        <!-- Checkbox for water, duplicate and confectionary -->
+        <div id="meal-checkbox" class="mealcheckbox fs-increase">
+            <input id="duplicate" type="checkbox" name="duplicate">
+            <label for="duplicate">🪞</label>
+
+            <input id="water" type="checkbox" name="water">
+            <label for="water">💧</label>
+
+            <input id="confectionery" type="checkbox" name="confectionery">
+            <label for="confectionery">🍩</label>
+        </div>
+
+        <!-- Checkbox for water, duplicate and confectionary -->
+        <div id="schedule-checkbox" class="schedulecheckbox fs-increase">
+            {%  for food in scheduled_foods %}
+                <input id="{{ food.food_item.id }}" type="checkbox" name="scheduled-food">
+                        <label for="{{ food.food_item.id }}">{{ food.food_item.food_name }}</label>
+            {%  endfor %}
+        </div>
+
+        <!-- Past Images -->
+        <div class="previmages">
+            <div>
+                {% if food_image2 != 0 %}
+                    <img src={{food_image2.image_url}}  width="125" alt="Food Image" >
+                {% else %}
+                    <img src="https://placehold.jp/400x500.png" alt="Food Image" class="fit-img">
+                {% endif %}
+            </div>
+            <div>
+                {% if food_image3 != 0 %}
+                    <img src={{food_image3.image_url}}  width="125" alt="Food Image" >
+                {% else %}
+                    <img src="https://placehold.jp/400x500.png" alt="Food Image" class="fit-img">
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Prev Scores -->
+        <div class="prevscores">
+            <p style="width: 100%; text-align: center;" class="font-weight-light">
+                {% if food_image2 != 0 %}
+                    {{ food_image2.image_score }} &nbsp; &nbsp; &nbsp;{{ food_image2.created_on|date:"d M P" }}
+                {% endif %}
+            </p>
+            <p style="width: 100%; text-align: center;" class="font-weight-light">
+                {% if food_image3 != 0 %}
+                    {{ food_image3.image_score }} &nbsp; &nbsp; &nbsp;{{ food_image3.created_on|date:"d M P" }}
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+    <!-- Meal Score Selection option, call, and score (right sidebar information) -->
+    <div class="col-4 mt-5 pl-5" style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
+        <!-- Meal Score -->
+        <p class="icon-text mb-5 align-vertical font-weight-light fs-increase">🪙
+            &nbsp; {{ food_image.image_score }}</p>
+
+        <!-- Call Parents -->
+        <a href="tel: {{ food_image.kid.parent.user.phone_number }}" class="full-width">
+            <p class="icon-text align-vertical font-weight-light fs-increase bg-grey"> 📞 &nbsp; Call</p>
+        </a>
+
+        <!-- You are reannotating -->
+
+        <!-- Food Score Select -->
+
+
+        <!-- Milk -->
+        <div class="row">
+
+            <div class="column">
+                <img src="{% static 'assets/images/foodgroup/Dairy.svg' %}" alt="">
+            </div>
+            <div class="foodgroupselect" style="width:65%">
+                <select id="dairy-portion" class="bg-grey border" name="dairy"
+                        style="padding: 2px; background:linear-gradient(to right, #4ae38fd6 {{ prediction.DAIRY }}%, #f4f4f4 {{ prediction.DAIRY }}%)">
+                    <option value="" disabled selected>Milk</option>
+                    <option value="0.00">0.00</option>
+                    <option value="0.10">0.10</option>
+                    <option value="0.25">0.25</option>
+                    <option value="0.33">0.33</option>
+                    <option value="0.50">0.50</option>
+                    <option value="0.66">0.66</option>
+                    <option value="0.75">0.75</option>
+                    <option value="1.00">1.00</option>
+                    <option value="1.25">1.25</option>
+                    <option value="1.50">1.50</option>
+                    <option value="1.75">1.75</option>
+                    <option value="2.00">2.00</option>
+                    <option value="2.25">2.25</option>
+                    <option value="2.50">2.50</option>
+                    <option value="3.00">3.00</option>
+                    <option value="3.50">3.50</option>
+                    <option value="4.00">4.00</option>
+                </select>
+
+            </div>
+        </div>
+        <!-- Protein -->
+        <div class="row">
+
+            <div class="column">
+                <img src="{% static 'assets/images/foodgroup/Protein.svg' %}" alt="">
+            </div>
+            <div class="foodgroupselect" style="width:65%">
+                <select id="protein-portion" class="bg-grey border" name="protein"
+                        style="padding: 2px;background:linear-gradient(to right, #4ae38fd6 {{ prediction.PROTEIN }}%, #f4f4f4 {{ prediction.PROTEIN }}%)">
+                    <option value="" disabled selected>Protein</option>
+                    <option value="0.00">0.00</option>
+                    <option value="0.10">0.10</option>
+                    <option value="0.25">0.25</option>
+                    <option value="0.33">0.33</option>
+                    <option value="0.50">0.50</option>
+                    <option value="0.66">0.66</option>
+                    <option value="0.75">0.75</option>
+                    <option value="1.00">1.00</option>
+                    <option value="1.25">1.25</option>
+                    <option value="1.50">1.50</option>
+                    <option value="1.75">1.75</option>
+                    <option value="2.00">2.00</option>
+                    <option value="2.25">2.25</option>
+                    <option value="2.50">2.50</option>
+                    <option value="3.00">3.00</option>
+                    <option value="3.50">3.50</option>
+                    <option value="4.00">4.00</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grain -->
+        <div class="row">
+
+            <div class="column">
+                <img src="{% static 'assets/images/foodgroup/Bread.svg' %}" alt="">
+            </div>
+            <div class="foodgroupselect" style="width:65%">
+                <select id="grain-portion" class="bg-grey border" name="grain"
+                        style="padding: 2px;background:linear-gradient(to right, #4ae38fd6 {{ prediction.GRAIN }}%, #f4f4f4 {{ prediction.GRAIN }}%)">
+                    <option value="" disabled selected>Grain</option>
+                    <option value="0.00">0.00</option>
+                    <option value="0.10">0.10</option>
+                    <option value="0.25">0.25</option>
+                    <option value="0.33">0.33</option>
+                    <option value="0.50">0.50</option>
+                    <option value="0.66">0.66</option>
+                    <option value="0.75">0.75</option>
+                    <option value="1.00">1.00</option>
+                    <option value="1.25">1.25</option>
+                    <option value="1.50">1.50</option>
+                    <option value="1.75">1.75</option>
+                    <option value="2.00">2.00</option>
+                    <option value="2.25">2.25</option>
+                    <option value="2.50">2.50</option>
+                    <option value="3.00">3.00</option>
+                    <option value="3.50">3.50</option>
+                    <option value="4.00">4.00</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Vegies -->
+
+        <div class="row">
+
+            <div class="column">
+                <img src="{% static 'assets/images/foodgroup/Broccoli.svg' %}" alt="">
+            </div>
+            <div class="foodgroupselect" style="width:65%">
+                <select id="veg-portion" class="bg-grey border" name="vegies"
+                        style="padding: 2px;background:linear-gradient(to right, #4ae38fd6 {{ prediction.VEG }}%, #f4f4f4 {{ prediction.VEG }}%)">
+                    <option value="" disabled selected>Vegies</option>
+                    <option value="0.00">0.00</option>
+                    <option value="0.10">0.10</option>
+                    <option value="0.25">0.25</option>
+                    <option value="0.33">0.33</option>
+                    <option value="0.50">0.50</option>
+                    <option value="0.66">0.66</option>
+                    <option value="0.75">0.75</option>
+                    <option value="1.00">1.00</option>
+                    <option value="1.25">1.25</option>
+                    <option value="1.50">1.50</option>
+                    <option value="1.75">1.75</option>
+                    <option value="2.00">2.00</option>
+                    <option value="2.25">2.25</option>
+                    <option value="2.50">2.50</option>
+                    <option value="3.00">3.00</option>
+                    <option value="3.50">3.50</option>
+                    <option value="4.00">4.00</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- fruits -->
+        <div class="row">
+
+            <div class="column">
+                <img src="{% static 'assets/images/foodgroup/Fruit.svg' %}" alt="">
+            </div>
+            <div class="foodgroupselect" style="width:65%">
+                <select id="fruits-portion" class="bg-grey border" name="fruits"
+                        style="padding: 2px;background:linear-gradient(to right, #4ae38fd6 {{ prediction.FRUIT }}%, #f4f4f4 {{ prediction.FRUIT }}%)">
+                    <option value="" disabled selected>Fruits</option>
+                    <option value="0.00">0.00</option>
+                    <option value="0.10">0.10</option>
+                    <option value="0.25">0.25</option>
+                    <option value="0.33">0.33</option>
+                    <option value="0.50">0.50</option>
+                    <option value="0.66">0.66</option>
+                    <option value="0.75">0.75</option>
+                    <option value="1.00">1.00</option>
+                    <option value="1.25">1.25</option>
+                    <option value="1.50">1.50</option>
+                    <option value="1.75">1.75</option>
+                    <option value="2.00">2.00</option>
+                    <option value="2.25">2.25</option>
+                    <option value="2.50">2.50</option>
+                    <option value="3.00">3.00</option>
+                    <option value="3.50">3.50</option>
+                    <option value="4.00">4.00</option>
+                </select>
+            </div>
+            <div class="row" style="justify-content: flex-end;">
+            <style>
+                .prediction {
+                    width: 100%;
+                    height: 100%;
+                    --text-color: white;
+                }
+
+                .prediction label {
+                    font-size: 1rem;
+                    width: auto;
+                    height: 2rem;
+                    padding: auto;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: var(--border-thickness) var(--border-color) var(--border-style);
+                    border-radius: var(--border-radius);
+                }
+
+                .food {
+                    background-color: rgb(38 222 129);
+                }
+
+                .nonfood {
+                    background-color: rgb(222, 38, 59);
+                }
+
+                .error {
+                    background-color: yellow;
+                    --text-color: black;
+                }
+            </style>
+            <div class="column">
+                <div class="prediction">
+                        {% if food_type == 1 %}
+                            <label class="food">FOOD</label>
+                        {% elif food_type == 0 %}
+                            <label class="nonfood">NON FOOD</label>
+                        {% else %}
+                            <label class="error">PENDING </label>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div class="actions">
+        <button id="ban-button"  class="btn btn-warning" onClick="saveImage(true)">✋&nbsp;Ban</button>
+        <button id="save-button" class="btn btn-success" onClick="saveImage(false)">💾 &nbsp; Save</button>
+</div>
+
+    </div>
+    <div class="col-lg-4 col-md-2 col-sm-0"></div>
+</div>
+
+
+<style>
+    :root {
+        --font-family: Oswald;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>
+    getRoundedVal(1.11);
+    if( {{is_duplicate}} == 1 ){
+        document.getElementById('duplicate').checked = true
+    };
+    var id = {{food_image.id}}
+    var veg = 0
+    var fruits = 0
+    var grain = 0
+    var protein = 0
+    var dairy = 0
+    var water = 0
+    var confectionery = 0
+    if({{fruit}} != 0) fruits = {{fruit}}
+    if({{veg}} != 0) veg = {{veg}}
+    if({{grain}} != 0) grain = {{grain}}
+    if({{protein}} != 0) protein = {{protein}}
+    if({{dairy}} != 0) dairy = {{dairy}}
+    if({{confectionery}} != 0) confectionery = {{confectionery}}
+    if({{water}} != 0) water = {{water}}
+    if(veg != 0) document.getElementById('veg-portion').value = getRoundedVal(veg)
+    if(fruits != 0) document.getElementById('fruits-portion').value = getRoundedVal(fruits)
+    if(grain != 0) document.getElementById('grain-portion').value = getRoundedVal(grain)
+    if(protein != 0) document.getElementById('protein-portion').value = getRoundedVal(protein)
+    if(dairy != 0) document.getElementById('dairy-portion').value = getRoundedVal(dairy)
+    if(confectionery != 0){
+        document.getElementById("confectionery").checked = true;
+    }
+    if(water != 0){
+        document.getElementById("water").checked = true;
+    }
+
+
+    function getRoundedVal(val){
+        // val = val * 100
+        // if(val % 25 > 12){
+        //     val += 25 - (val % 25)
+        // } else val -= val % 25
+        // val = val /100
+        // if(val > 8) val = 8
+        // val = parseFloat(val + (((val * 100) % 5) / 100)).toFixed(2)
+        return parseFloat(val).toFixed(2)
+    }
+
+    function saveImage(ban) {
+        data = new Object()
+        data["id"] = id
+        data["ban"] = ban
+        veg = document.getElementById("veg-portion").value;
+        fruits = document.getElementById("fruits-portion").value;
+        dairy = document.getElementById("dairy-portion").value;
+        protein = document.getElementById("protein-portion").value;
+        grain = document.getElementById("grain-portion").value;
+        confectionary = 0;
+        water = 0;
+        isDuplicate = false;
+        isNonFood = false;
+
+        if (fruits) {
+            data['fruit'] = fruits
+        }
+        if (veg) {
+            data['veg'] = veg
+        }
+        if (dairy) {
+            data['dairy'] = dairy
+        }
+        if (protein) {
+            data['protein'] = protein
+        }
+        if (grain) {
+            data['grain'] = grain
+        }
+        if (document.getElementById("confectionery").checked) {
+            confectionery = 1
+            data['confectionery'] = 1
+        }
+        if (document.getElementById("water").checked) {
+            water = 1
+            data['water'] = 1
+        }
+        isDuplicate = document.getElementById("duplicate").checked
+        data['duplicate'] = isDuplicate
+        if (ban == true) {
+            if (isDuplicate) {
+                data["ban"] = 1
+            } else {
+                data["ban"] = 2
+            }
+        }
+        food_check = {}
+        inputs = document.getElementById("schedule-checkbox").getElementsByTagName('input')
+        data["food_items"] = []
+        for(var i =0; i < inputs.length; i++)
+                {   if (inputs[i].checked) {
+                    data["food_items"].push(inputs[i].id)
+                  // whatever you want to do now.
+                }
+        }
+
+        data["user"] = document.getElementById("username").innerText
+        $.ajax({
+            type: 'POST',
+            url: '/food/approve-image',
+            data: JSON.stringify(data)
+        }).done(function (data) {
+            console.log(data);
+            location.href = "/admin/food/foodimage/"
+        })
+    }
+</script>
+{% endblock %}
+

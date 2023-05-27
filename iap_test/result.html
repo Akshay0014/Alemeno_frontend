@@ -1,0 +1,346 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	{% block content %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../static/step.css" />
+    <link rel="stylesheet" href="../../static/iap.css" />
+    <link rel="stylesheet" href="../../static/result.css" />
+    <title>Alemeno</title>
+  </head>
+  <body>
+
+  <div class="" style="flex-direction: column;     display: flex; align-items: center;max-width: 500px;">
+      <div class="dc-box" style=" text-align: center;">
+      <div style="font-size: x-large">Height & Weight Report</div>
+
+
+           <div style="
+              display: flex;
+              justify-content: space-between;
+              margin-top: 30px;
+              font-size: 16px;
+              color: gray;
+            ">
+		   <div>Age: {{ kids_age}}</div>
+		   <div>Gender: {{ gender }}</div>
+          </div>
+
+   </div>
+
+   <div class="chart-weight dc-box" >
+      <div
+        style="background-color: red; width: 90%; position: relative"
+      >
+        <div
+          id="chart-weight-value"
+          style="position: absolute; left: 47%; width: fit-content;font-size: 12px"
+        >
+          {{ weight }}Kg
+        </div>
+
+     </div>
+     <div style="width: 90%; position: relative">
+        <input
+          type="range"
+          min="{{ weight_min }}"
+          max="{{ weight_max }}"
+          value="{{ weight }}"
+          style="width: 100%"
+          id="chart-weight-input"
+        />
+        <div class="marker" style="left: 5%">|<br />{{ weight_min }} kg</div>
+        <div class="marker" style="left: 50%">|<br />{{ weight_mean }} kg</div>
+        <div class="marker" style="left: 85%">|<br />{{ weight_max }} kg</div>
+      </div>
+      <div style="font-size: medium;margin-top:10px">
+        Weight is more than 
+        <span id="weight-percentile" style="font-weight: bolder; color: #3e8b3a"> {{ weight_percentile }}%</span>
+        of peers 
+      </div>
+    </div>
+
+
+    <div class="chart-height dc-box" >
+      <div style="width: 90%; position: relative">
+        <div
+          id="chart-height-value"
+          style="position: absolute; left: 47%;font-size: 12px;width: fit-content;"
+        >
+          {{ height }}cm
+        </div>
+      </div>
+      <div style="width: 90%; position: relative">
+        <input
+          type="range"
+          min="{{ height_min }}"
+          max="{{ height_max }}"
+          value="{{ height }}"
+          style="width: 100%"
+          id="chart-height-input"
+        />
+
+        <div class="marker" style="left: 5%">|<br /> {{ height_min }} cm</div>
+        <div class="marker" style="left: 50%">|<br /> {{ height_mean }} cm</div>
+        <div class="marker" style="left: 85%">|<br /> {{ height_max }} cm</div>
+      </div>
+      <div style="font-size: medium;margin-top:10px">
+        Height is more than 
+        <span id="height-percentile" style="font-weight: bolder; color: #3e8b3a">{{ height_percentile }}%</span>
+        of peers
+      </div>
+    </div>
+    <div class="chart-bmi dc-box" >
+
+      <div style="width: 90%; position: relative">
+        <div
+          id="bmi-value"
+          style="position: absolute; left: 48%"
+        >
+            {{ bmi }}
+        </div>
+      </div>
+      <div style="width: 90%; position: relative">
+        <input
+          type="range"
+          min="12"
+          max="36"
+          value="{{ bmi }}"
+          style="width: 100%; margin-bottom: 30px; margin-top: 30px"
+          id="chart-bmi-input"
+        />
+        <div class="marker" style="left: 23%; top: 45px">18</div>
+        <div class="marker" style="left: 48%; top: 45px">24</div>
+        <div class="marker" style="left: 73%; top: 45px">30</div>
+      </div>
+        <div style="font-size: medium;">
+        BMI is
+        <span id="bmi-text" style="font-weight: bolder; color: #3e8b3a"></span>
+      </div>
+    </div>
+
+
+      <div class="dc-box" style="    text-align: center; width:100%">
+        Based on test inputs your kid is a <br>
+        <span style="color: #3e8b3a; font-weight: bolder"> {{ picky_result }}</span>
+
+      </div>
+
+	<div class="dc-box">
+         <div style="text-align: justify;font-size:16px">
+                 Balanced diet is essential to facilitate optimum growth and development and builds immunity against diseases. 
+          </div>
+        </div>
+        <div class="dc-box d-none" id="tips">
+          <div style="font-size: x-large">Tips for your kid</div>
+
+          <ol style="text-align: justify; margin-top:2rem;font-size:16px;padding-left: 20px;">
+            <li>Have a regular meal schedule for your kid</li>
+            <li>Avoid junk food or confectionery in between</li>
+            <li>Encourage kids to eat with their own hands</li>
+            <li>
+              Make an effort that your kid eats without any distraction of TV,
+              toys, mobile phones
+            </li>
+            <li>
+              Use positive reinforcement when they show improved behaviour
+            </li>
+          </ol>
+        </div>
+        <div class="dc-box chart-foot">
+
+
+          <div style="text-align: left; margin-bottom: 10px; font-size: 16px">
+		  Alemeno's award winning solution helps 
+		  <div class="mt-3 mb-3 ml-3">
+		<li>Reduce screen time while eating</li>
+		<li>Motivates kids to eat healthy</li>
+		<li>Makes mealtime fun and engaging</li>
+		</div>
+              <div style="font-size: 14px;font-weight:600;text-align: center;">
+	     Transform your kid into a healthy eater now
+               </div>
+          </div>
+
+
+
+          <!--<a ><button id="check-program" class="btn-next" style="margin-top: 10px;">Check Program</button></a
+		  >-->
+                        <button class=" register-button button justify-content-center text-white"
+                            onclick="downloadClick('install');"
+                            style="font-size: 17px;max-width: 600px; min-width: 260px;height:max-content; width:90%;margin-left: 0px;display: initial; height: max-content;"
+                            type="button">
+                            Install App to Start
+                        </button>
+
+        </div>
+      </div>
+    </div>
+    <script src="../../static/assets/js/iap.js"></script>
+  </body>
+<script>
+
+const url = new URL(window.location.href)
+      var urlParams = url.searchParams;
+      survey_id = urlParams.get('survey_id');
+      if (survey_id) {
+          document.getElementById("tips").classList.remove("d-none")
+      }
+
+
+value = document.getElementById("chart-bmi-input").value
+min = document.getElementById("chart-bmi-input").min
+max = document.getElementById("chart-bmi-input").max
+var v = ((value - min) / (max - min)) * 100;
+document.getElementById("bmi-value").style.left = v + "%";
+document.getElementById("bmi-value").style.transform =
+    "translate(" + -v + "%)";
+
+const height_percentile = document.getElementById("height-percentile").innerHTML.replace("%", "");
+document.getElementById("chart-height-value").style.left = height_percentile + "%";
+document.getElementById("chart-height-value").style.transform =
+    "translate(" + -height_percentile + "%)";
+document.getElementById("chart-height-input").style.background =
+    "linear-gradient(to right, rgb(109 211 104) 0%, rgb(109 211 104) " +
+    height_percentile +
+    "%, rgb(228 228 230) " +
+    height_percentile +
+    "%, rgb(228 228 230) 100%)";
+
+
+const weight_percentile = document.getElementById("weight-percentile").innerHTML.replace("%", "");
+document.getElementById("chart-weight-value").style.left = weight_percentile + "%";
+document.getElementById("chart-weight-value").style.transform =
+    "translate(" + -weight_percentile + "%)";
+document.getElementById("chart-weight-input").style.background =
+    "linear-gradient(to right, rgb(109 211 104) 0%, rgb(109 211 104) " +
+    weight_percentile +
+    "%, rgb(228 228 230) " +
+    weight_percentile +
+    "%, rgb(228 228 230) 100%)";
+
+
+
+
+function handleBMIResultChange() {
+    bmi = document.getElementById("chart-bmi-input").value
+    document.getElementById("bmi-text").innerHTML = "UnderWeight"
+    if (bmi > 18) {
+        document.getElementById("bmi-text").innerHTML = "Healthy"
+    }
+    if (bmi > 24) {
+        document.getElementById("bmi-text").innerHTML = "OverWeight"
+    }
+    if (bmi > 30) {
+        document.getElementById("bmi-text").innerHTML = "Obese"
+    }
+
+
+}
+handleBMIResultChange() 
+
+
+
+      // document.getElementById("check-program").addEventListener('click', onCheckProgramClick);
+
+
+    function onCheckProgramClick() {
+        console.log("check-program");
+        var request = new XMLHttpRequest();
+        request.open('POST', "/survey/check-program-clicked'?", true);
+        request.onload = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                var res = JSON.parse(request.response);
+                console.log(res)
+            }
+        }
+        request.setRequestHeader("Content-Type", "application/json");
+        const url = new URL(window.location.href)
+
+        var urlParams = url.searchParams;
+        email = urlParams.get('email');
+        const data = {
+            "email": email,
+        };
+        console.log(data);
+        request.send(JSON.stringify(data));
+
+
+
+
+
+        utmSource = urlParams.get('utm_source');
+        urlParams.set('utm_source', utmSource);
+        url.search = urlParams.toString();
+        var new_url = url.toString();
+
+        new_url = new_url.replace('healthy-height-weight-test-for-kids-result', 'healthy-height-weight-test-for-kids-program')
+
+        window.location.href = new_url;
+
+    }
+
+    function checkIphone() {
+        return navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad');
+    }
+
+
+    function downloadClick(action) {
+
+	var request = new XMLHttpRequest();
+        request.open('POST', "/survey/check-program-clicked'?", true);
+        request.onload = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                var res = JSON.parse(request.response);
+                console.log(res)
+            }
+        }
+        request.setRequestHeader("Content-Type", "application/json");
+        const url = new URL(window.location.href)
+
+        var urlParams = url.searchParams;
+        email = urlParams.get('email');
+        const data = {
+            "email": email,
+        };
+        console.log(data);
+        request.send(JSON.stringify(data));
+    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	var urlParams = new URLSearchParams(window.location.search);
+        var isIphone = checkIphone();
+
+        utmSource = urlParams.get('utm_source');
+        if (action === 'customize') {
+            window.open("https://www.alemeno.com/register?utm_source=test_calculator_" + utmSource + "&utm_medium="
+                + kidEaterType + "&utm_campaign=test_calculator&anid=admob" + "%26email%3D" + email + "%26phone%3D" + phone_number);
+        }
+        if (action === 'install' && isIphone == false) {
+            window.open("https://play.google.com/store/apps/details?id=com.alemeno.alemeno22&referrer=utm_source%3Dtest_calculator_" +
+                utmSource +  "%26utm_campaign%3Dtest_calculator%26anid%3Dadmob");
+        } else {
+            window.open("https://apps.apple.com/us/app/alemeno/id1601278574?ct=utm_source%3Dtest_calculator_" +
+                utmSource + "%26utm_campaign%3Dtest_calculator%26anid%3Dadmob");
+        }
+    }
+</script>
+{% endblock %}
+
+</html>

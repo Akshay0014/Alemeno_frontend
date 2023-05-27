@@ -1,0 +1,168 @@
+:root {
+    --font-family: Poppins;
+    --main-background: #F4F6F8;
+    --off-background: #ffffff;
+    --text-color: #3C3C3C;
+    --border-radius: 10px;
+    --title-size: 20px;
+    --huge-font-size: 30px;
+    --defualt-font-size: 13px;
+    --default-top-bottom-margin: 0.3rem;
+    --accent-color: #01a13d;
+    --small-border-radius: var(--border-radius);
+}
+
+.card {
+    background-color: var(--off-background);
+    width: 100%;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
+    margin-top: 1.5rem;
+    font-size: var(--default-font-size);
+    font-weight: var(--font-light-weight);
+}
+
+p {
+    display: inline-block;
+}
+
+.font-size-huge {
+    font-weight: var(--font-lighter-weight);
+    margin-top: -1rem;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+
+.score-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+svg.feather-check {
+    stroke: var(--accent-color);
+}
+
+svg.feather-x {
+    stroke: var(--color-desire-red);
+}
+
+.download {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+@media only screen and (max-width: 650px) {
+    .download {
+        bottom: 0rem;
+        right: 0rem;
+        width: 100%;
+        background: lightcoral;
+        border-radius: 0;
+        animation: none;
+    }
+}
+
+.glow-primary {
+    background: var(--main-background);
+}
+
+/*Loading Bar Js*/
+.ldBar {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.ldBar.label-center > .ldBar-label {
+    color: var(--accent-color);
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: 200;
+}
+
+.ldBar-label:after {
+    content: "%";
+    display: inline;
+}
+
+.ldBar-label:before {
+    color: var(--text-color);
+    font-weight: 300;
+    content: "Habit Score";
+    position: absolute;
+    top: 100%;
+    transform: translateX(-15%) translateY(-1rem);
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.ldBar.no-percent .ldBar-label:after {
+    content: "";
+}
+
+.mainline {
+    stroke-linecap: round;
+}
+
+
+/* Illustrations  */
+.icon-show {
+    position: relative;
+}
+
+.icon-show:before {
+    content: "";
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.dairy-icon-show:before {
+    right: 20px;
+    top: -50%;
+    background-image: url("/static/assets/images/foodgroup/Dairy.svg");
+    transform: scaleX(-1);
+}
+
+.protein-icon-show:before {
+    left: -10px;
+    top: -2rem;
+    background-image: url("/static/assets/images/foodgroup/Protein.svg");
+}
+
+.grain-icon-show:before {
+    right: 0px;
+    top: -3rem;
+    background-image: url("/static/assets/images/foodgroup/Bread.svg");
+}
+
+.vegies-icon-show:before {
+    height: 60px;
+    width: 60px;
+    left: -20px;
+    top: -2.5rem;
+    background-image: url("/static/assets/images/foodgroup/Broccoli.svg");
+    transform: rotateZ(-15deg);
+}
+
+.fruits-icon-show:before {
+    height: 90px;
+    width: 90px;
+    right: 0px;
+    top: -3rem;
+    background-image: url("/static/assets/images/foodgroup/Fruit.svg");
+}

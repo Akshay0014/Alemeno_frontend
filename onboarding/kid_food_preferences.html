@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+
+
+{% block meta %}
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        name="description">
+<meta content="" name="author">
+
+<title>A fun way inculcate healthy eating habits in kids</title>
+<!-- Facebook MetaTags -->
+
+<meta content="A fun way inculcate healthy eating habits in kids" property="og:title">
+<meta
+        content="Alemeno transforms kids’ picky or fussy eating behaviour and makes healthy eating a fun activity. It eases parents’ struggle to feed their kids."
+        property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+
+<body class="register-background">
+<div class="container">
+    <div class="d-none d-sm-block" style="margin-top: 2em;"></div>
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-8 shadow" style="background-color: white;">
+            <div class="row mx-3 mt-3 justify-content-center ">
+                <a href="/general/landing">
+                    <img alt="" class="nav-height my-2 " src="/static/assets/images/Logo1.png"
+
+                         style="height: 32px; width: 122px"></a>
+
+            </div>
+            <div class="justify-content-center row">
+                <img alt="" href="/general/landing"
+                     src="/static/assets/images/food_prefs.png">
+            </div>
+            <div class="justify-content-center row">
+                <div>
+                    <div class="head-text">Your food Preference:</div>
+                    <div class="veg mt-3 ml-3" onclick="selectPref(0)" style="margin-top: 1em;">
+                        <input checked="true" id="0" type="checkbox">
+                        <label for="veg_checkbox">Vegetarian</label>
+                    </div>
+                    <div class="egg mt-3 ml-3" onclick="selectPref(1)">
+                        <input id="1" type="checkbox">
+                        <label for="veg_checkbox">Eggitarian (Veg + Egg)</label>
+                    </div>
+                    <div class="n-veg mt-3 ml-3" onclick="selectPref(2)">
+                        <input id="2" type="checkbox">
+                        <label for="veg_checkbox">Non-vegetarian</label>
+                    </div>
+                </div>
+            </div>
+            <div class="justify-content-center row">
+                <div class="green-circle" style="background-color: #5EA451"></div>
+                <div class="green-circle" style="background-color: #5EA451"></div>
+                <div class="green-circle" style="background-color: #5EA451"></div>
+            </div>
+            <div class="text-center row justify-content-center mx-0">
+                <button class="register-button button justify-content-center text-white" id="next_button"
+                >Get your free program
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<style>
+    .logo-top-kidname {
+        margin-top: 2em
+    }
+
+
+    @media only screen and (max-height: 700px) {
+        .register-button {
+            margin-top: 1.5em;
+        }
+
+        .green-circle {
+            margin-top: 1em;
+        }
+    }
+
+    @media only screen and (min-height: 700px) {
+        .register-button {
+            margin-top: 3em;
+        }
+
+        .green-circle {
+            margin-top: 2em;
+        }
+    }
+
+    .register-button {
+        margin-bottom: 3em;
+        padding: 0 1em 0 1em !important;
+        font-size: 1.5em;
+    }
+
+    .container {
+        font-family: 'Andika', sans-serif;
+    }
+
+    .head-text {
+        font-size: 1.5em;
+    }
+
+    .green-circle {
+        margin-left: 00.5em;
+        margin-right: 00.5em;
+        height: 1em;
+        width: 1em;
+        border-radius: 0.5em;
+        background-color: #D8F0CE;
+    }
+
+    label {
+        font-size: 1.2em;
+        margin-left: 0.5em;
+        width: max-content !important;
+    }
+
+    .checkbox-container {
+        margin-left: 2em;
+    }
+
+    input {
+        -webkit-appearance: none;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 2px solid var(--primaryColor);
+        border-radius: 1px;
+        vertical-align: sub;
+        /* top: 50%; */
+        transform: translateY(1%);
+        outline: none;
+    }
+
+    input:checked {
+        background-color: var(--primaryColor);
+        border-color: var(--primaryColor);
+    }
+
+    /* input:checked + label {
+        text-decoration: line-through;
+        color: #b3b3b3;
+        background-color: #f7f7f7;
+   } */
+    /* input:checked:focus, input:checked:hover {
+        box-shadow: 0 0 0 3px #d9d9d9;
+        border-color: #666;
+   } */
+    input:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCI+PHRpdGxlPmljb25fYnlfUG9zaGx5YWtvdjEwPC90aXRsZT48ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz48ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmZmZmIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNi4wMDAwMDAsIDI2LjAwMDAwMCkiPjxwYXRoIGQ9Ik0xNy45OTk5ODc4LDMyLjQgTDEwLjk5OTk4NzgsMjUuNCBDMTAuMjI2Nzg5MSwyNC42MjY4MDE0IDguOTczMTg2NDQsMjQuNjI2ODAxNCA4LjE5OTk4Nzc5LDI1LjQgTDguMTk5OTg3NzksMjUuNCBDNy40MjY3ODkxNCwyNi4xNzMxOTg2IDcuNDI2Nzg5MTQsMjcuNDI2ODAxNCA4LjE5OTk4Nzc5LDI4LjIgTDE2LjU4NTc3NDIsMzYuNTg1Nzg2NCBDMTcuMzY2ODIyOCwzNy4zNjY4MzUgMTguNjMzMTUyOCwzNy4zNjY4MzUgMTkuNDE0MjAxNCwzNi41ODU3ODY0IEw0MC41OTk5ODc4LDE1LjQgQzQxLjM3MzE4NjQsMTQuNjI2ODAxNCA0MS4zNzMxODY0LDEzLjM3MzE5ODYgNDAuNTk5OTg3OCwxMi42IEw0MC41OTk5ODc4LDEyLjYgQzM5LjgyNjc4OTEsMTEuODI2ODAxNCAzOC41NzMxODY0LDExLjgyNjgwMTQgMzcuNzk5OTg3OCwxMi42IEwxNy45OTk5ODc4LDMyLjQgWiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvc3ZnPg==");
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    input:focus, input:hover {
+        /* box-shadow: 0 0 0 3px #ebebeb; */
+        border-color: var(--primaryColor);
+    }
+
+    label {
+        /* padding: 0.75rem 1rem 0.75rem calc(1.2rem * 2.25); */
+        display: inline-block;
+        font-size: 17px;
+        width: 100%;
+        user-select: none;
+        /* border-bottom: 2px solid #ededed; */
+        cursor: pointer;
+    }
+
+    label:hover {
+        /* border-bottom-color: #adadad; */
+    }
+
+</style>
+
+<script>
+    $(".base-header").hide();
+
+    var selectedPrefs = 0;
+
+    function selectPref(i) {
+        document.getElementById(selectedPrefs).checked = false;
+        document.getElementById(i).checked = true;
+        selectedPrefs = i;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    var data = urlParams.get('data');
+    const prefs = JSON.parse(data)
+    mixpanel.track('RegisterUserKidFoodPrefrences', prefs);
+    if (prefs == null) {
+        window.location.pathname = "register"
+    }
+    if (prefs['kid_name'] == null) {
+        window.location.pathname = "kid_name"
+    }
+    if (prefs['age'] == null) {
+        window.location.pathname = "kid_age"
+    }
+    console.log(prefs)
+    document.getElementById('next_button').addEventListener('click', openCustomizing)
+
+    function openCustomizing() {
+        const url = new URL(window.location.href)
+        var search_params = url.searchParams
+        prefs['food_preferences'] = selectedPrefs
+        search_params.set('data', JSON.stringify(prefs))
+        url.search = search_params.toString()
+        var new_url = url.toString()
+        new_url = new_url.replace('kid_food_preferences', 'program_details')
+        window.location.href = new_url;
+        webView.saveUrl();
+    }
+</script>
+
+{% endblock %}
+
+
+</html>

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+{% block content %}
+<head>
+    <title>Partners and Media</title>
+</head>
+
+<h3 class="text-center m-3" style="font-family: Poppins, sans-serif;color: var(--primaryColor);">Partners and Media</h3>
+
+<div class="container mt-5">
+
+    <div class="allmediandpartners">
+        <div class="logos">
+            <center>
+                <img alt="AIC" class="img-fluid" src="/static/assets/images/aic.png">
+                <img alt="Startup India" class="img-fluid" src="/static/assets/images/startindia.png">
+                <img alt="Razorpay Rize" class="img-fluid" src="/static/assets/images/razorpayrize.png.png">
+                <img alt="Hindustan times" class="img-fluid" src="/static/assets/images/hindustantimes.png">
+            </center>
+        </div>
+
+        <div class="names">
+            <center>
+                <h3>AIC-RNTU</h3>
+                <h3>Startup India</h3>
+                <h3>Razorpay Rize</h3>
+                <h3>Hindustan Times</h3>
+            </center>
+        </div>
+    </div>
+
+</div>
+
+<style type="text/css">
+    .allmediandpartners {
+        /*background: lightcoral;*/
+    }
+
+    .logos {
+        /*background: lightblue;*/
+    }
+
+    .logos img {
+        width: 200px;
+        margin: 1rem;
+    }
+
+    .names {
+        /*background: lightgreen;*/
+    }
+
+    .names h3 {
+        display: inline-block;
+        width: 200px;
+        margin: 1rem;
+        /*background: lightgoldenrodyellow;*/
+    }
+
+    @media only screen and (max-width: 991px) {
+        .names {
+            display: none;
+        }
+
+        .logos img {
+            margin: 2rem 1rem;
+        }
+    }
+</style>
+
+
+{% endblock %}
+
+
+</html>
+

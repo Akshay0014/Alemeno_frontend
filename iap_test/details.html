@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="description" content="">-->
+<!--<meta name="keywords" content="">-->
+<!--<meta name="author" content=>-->
+<!--<title> </title>-->
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--</head>-->
+
+{% block meta %}
+
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+      name="description">
+<meta content="" name="author">
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" name="title">
+
+<title>Find out if your kid has healthy eating habits or if your kid is a picky eater</title>
+<!-- Facebook MetaTags -->
+
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" property="og:title">
+<meta content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+      property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+<link href="/static/country-code-picker/css/intlTelInput.css" rel="stylesheet">
+<script src="/static/country-code-picker/js/intlTelInput.js"></script>
+    <link rel="stylesheet" href="../../static/step.css" />
+
+<body style="background-color: white; height: 100vh; overflow: scroll;">
+<div class="scroll container-fluid h-100" id="questions-container">
+    <div class="row h-100 justify-content-center">
+
+        <div class="col-12 col-md-5 px-4" style="margin-bottom: 8rem !important;display: flex; flex-direction: column;">
+            <div class="mt-5" style=" margin-top:100px" style="flex-grow: 1; flex-direction: column;">
+                <div class="" id="submit_div" style="width: 100%;">
+
+                    <h2 class="page-title mb-4">Test Completed. Great!<br></h2>
+
+                    <!-- <div>
+
+                        It includes <br>
+                    </div> -->
+                    <div class="" style="margin-left: 0.5em;margin-top: 50px; margin-bottom: 50px;">
+                        <!-- ✓ Customized report designed for your kid <br>
+                        ✓ Experts recommended tips to inculcate life-long healthy in your kid <br> -->
+                        Share your whatsapp number to get <br> <br>
+                        <span class="text-success"> ✓  </span>
+                        A copy of the healthy height & weight report <br>
+                        <span class="text-success"> ✓  </span>
+                        Doctor's assessment and tips for your healthy kid <br>
+                    </div>
+
+                    <div class="pt-sm-5 pb-5 mt-4"
+                         style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <input autofocus class="input-phone" id="phone" placeholder="Enter 10 digit number" type="number">
+
+                        <div class="row mt-5" style="width: 100%;">
+
+                            <div class="col-lg-2 col-sm-0"></div>
+                            <button style="padding-left: 0; padding-right: 0;" class="btn-next col-lg-8 col-sm-12 mt-0" id="submit_answers">Get detailed report
+                            </button>
+                            <div class="col-lg-4 col-sm-0"></div>
+                            <button class="btn col-lg-4 col-sm-12 mt-1" id="skip_this">Skip this</button>
+
+                        </div>
+
+                    </div>
+                    <!-- <div id="skip_this" class="skip-this mt-2"><u>Skip this</u></div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<style type="text/css">
+    .question_text {
+        font-size: 1.5rem;
+    }
+
+    .page-title {
+
+        font-size: 1.8rem;
+        max-width: 100%;
+    }
+
+    #input-email {
+        cursor: text;
+        width: 100%;
+        background: #f5f6f7;
+        border: 2px #5ea451 solid;
+    }
+
+    .input-email {
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+
+    .my-button {
+        display: block;
+        max-width: 100%;
+        border-radius: 3px;
+    }
+
+    #skip_this {
+        /*background: lightgrey;*/
+        cursor: pointer;
+        padding: 0.5em 0;
+        text-decoration: underline;
+        color: blue;
+        outline: none;
+    }
+
+    :focus:not(:focus-visible) {
+        outline: 0;
+        box-shadow: none;
+    }
+</style>
+
+<script src="{% static 'assets/js/survey.js' %}" type="text/javascript"></script>
+<script>
+
+    var input = document.querySelector("#phone");
+        const url = new URL(window.location.href)
+        var new_url = url.toString();
+    var intl = intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {
+            }, "jsonp").always(function (resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "US";
+                success(countryCode);
+            });
+        },
+        utilsScript: "/static/country-code-picker/js/utils.js"
+    });
+        // scroll up on input click
+        var myContainer = document.getElementById( "questions-container" );
+
+	input.addEventListener("click", function() {
+		$('html, body').animate({
+		    scrollTop: 600,
+		  });
+
+		console.log($(this).height());
+	}, true );
+
+	input.addEventListener( 'onblur', function() {
+		window.scrollTo(0, 0);
+	}, true );
+
+    mixpanel.track('HealthyEatingCalculatorGetUserDetailsVisit');
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // document.querySelector("#input-email").focus();
+    document.querySelector("#phone").focus();
+
+    document.getElementById("submit_answers").addEventListener('click', function () {
+
+        _phone_number = '+' + intl.getSelectedCountryData().dialCode + input.value;
+
+        if (!intl.isValidNumber()) {
+            alert("Enter valid input");
+            return;
+        } else {
+            new_url = new_url.replace('details', 'result')
+
+            update_survey_user();
+        }
+    });
+    document.getElementById("skip_this").addEventListener('click', function () {
+        new_url = new_url.replace('healthy-height-weight-test-for-kids-details', 'healthy-height-weight-test-for-kids-result')
+        update_survey_user();
+    })
+    d = {}
+    function update_survey_user() {
+        var urlParams = new URLSearchParams(window.location.search);
+        d["utm_source"] = urlParams.get('utm_source');
+        d["ip_alias_email"] = urlParams.get('email');
+        d["user_entered_phone_number"] = document.querySelector("#phone").value;
+        d['score'] = 0;
+        d['age'] = 0;
+        $.ajax({
+            type: 'POST',
+            url: '/survey/update-email-calculator',
+            data: JSON.stringify(d)
+        }).done(function (data) {
+
+        window.location.href = new_url;
+        });
+    }
+
+
+</script>
+{% endblock %}
+
+</html>

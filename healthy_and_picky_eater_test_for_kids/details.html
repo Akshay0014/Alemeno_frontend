@@ -1,0 +1,302 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html lang="en">
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="description" content="">-->
+<!--<meta name="keywords" content="">-->
+<!--<meta name="author" content=>-->
+<!--<title> </title>-->
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--</head>-->
+
+{% block meta %}
+
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<meta content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+      name="description">
+<meta content="" name="author">
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" name="title">
+
+<title>Find out if your kid has healthy eating habits or if your kid is a picky eater</title>
+<!-- Facebook MetaTags -->
+
+<meta content="Find out if your kid has healthy eating habits or if your kid is a picky eater" property="og:title">
+<meta content="A simple behavioral test to identify if your kids are picky eaters or if they have healthy eating habits."
+      property="og:description">
+<meta content="/static/assets/images/banner.png" property="og:image">
+<meta content="https://www.alemeno.com/" property="og:url">
+{% endblock %}
+
+{% block content %}
+<link href="/static/country-code-picker/css/intlTelInput.css" rel="stylesheet">
+<script src="/static/country-code-picker/js/intlTelInput.js"></script>
+
+<body style="background-color: white; height: 100vh; overflow: scroll;">
+<div class="scroll container-fluid h-100" id="questions-container">
+    <div class="row h-100 justify-content-center">
+
+        <div class="col-12 col-md-5 px-4" style="display: flex; flex-direction: column;">
+            <div class="mt-5; margin-top:100px" style="flex-grow: 1; flex-direction: column;">
+                <div id="kid_age" style="width: 100%;">
+                    <div class="mx-5 pt-sm-5 pl-sm-5 pr-sm-5 pb-5" style="margin-top: 150px">
+                        <div class="question_text mb-4">How old is your kid?</div>
+                        <select class="input-email" id="input-age" searchable="Search here.."
+                                style="color: var(--primaryColor);  -webkit-appearance: none;-moz-appearance: none;
+
+                            background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
+                            background-position-x: 90%;">
+                            <option disabled selected value="">Select Age</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <button class="my-button" id="get_kid_age">
+                            Next
+                        </button>
+                    </div>
+                </div>
+                <div class="make-invisible" id="submit_div" style="width: 100%;">
+
+                    <h2 class="page-title mb-4">Test Completed. Great!<br></h2>
+
+                    <h3>
+                        Share your whatsapp number to get <br>
+                    </h3>
+                    <!-- <div>
+
+                        It includes <br>
+                    </div> -->
+                    <div class="my-3" style="margin-left: 0.5em; margin-bottom: 0.3em;">
+                        <!-- ✓ Customized report designed for your kid <br>
+                        ✓ Experts recommended tips to inculcate life-long healthy in your kid <br> -->
+                        <span class="text-success"> ✓  </span>
+                        a copy of the report <br>
+                        <span class="text-success"> ✓  </span>
+                        expert tips and recommendations for your healthy kid <br>
+                    </div>
+
+                    <div class="pt-sm-5 pb-5 mt-4"
+                         style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <input autofocus class="input-phone" id="phone" placeholder="Enter mobile number" type="tel">
+
+                        <div class="row mt-5" style="width: 100%;">
+
+                            <div class="col-lg-2 col-sm-0"></div>
+                            <button class="my-button col-lg-8 col-sm-12 mt-0" id="submit_answers">Get detailed report &
+                                tips
+                            </button>
+                            <div class="col-lg-4 col-sm-0"></div>
+                            <button class="btn col-lg-4 col-sm-12 mt-1" id="skip_this">Skip this</button>
+
+                        </div>
+
+                    </div>
+                    <!-- <div id="skip_this" class="skip-this mt-2"><u>Skip this</u></div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<style type="text/css">
+    .question_text {
+        font-size: 1.5rem;
+    }
+
+    .page-title {
+
+        font-size: 1.8rem;
+        max-width: 100%;
+    }
+
+    #input-email {
+        cursor: text;
+        width: 100%;
+        background: #f5f6f7;
+        border: 2px #5ea451 solid;
+    }
+
+    .input-email {
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+
+    .my-button {
+        display: block;
+        max-width: 100%;
+        border-radius: 3px;
+    }
+
+    #skip_this {
+        /*background: lightgrey;*/
+        cursor: pointer;
+        padding: 0.5em 0;
+        text-decoration: underline;
+        color: blue;
+        outline: none;
+    }
+
+    :focus:not(:focus-visible) {
+        outline: 0;
+        box-shadow: none;
+    }
+</style>
+
+<script src="{% static 'assets/js/survey.js' %}" type="text/javascript"></script>
+<script>
+
+    var input = document.querySelector("#phone");
+    var intl = intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {
+            }, "jsonp").always(function (resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "US";
+                success(countryCode);
+            });
+        },
+        utilsScript: "/static/country-code-picker/js/utils.js"
+    });
+
+
+    mixpanel.track('HealthyEatingCalculatorGetUserDetailsVisit');
+    const urlParams = new URLSearchParams(window.location.search);
+    if (email == undefined) {
+        window.location = "healthy_and_picky_eater_test_for_kids";
+    }
+
+    document.getElementById("get_kid_age").addEventListener('click', function () {
+        var _age = document.getElementById("input-age").value;
+        if (_age != '') {
+            showSubmtitButton();
+            age = _age;
+        } else {
+            alert("Please enter your kids age");
+        }
+    })
+
+
+    function showSubmtitButton() {
+        document.getElementById("submit_div").classList.add("make-visible");
+        document.getElementById("submit_div").classList.remove("make-invisible");
+        document.getElementById("kid_age").classList.remove("make-visible");
+        document.getElementById("kid_age").classList.add("make-invisible");
+
+        // document.querySelector("#input-email").focus();
+        document.querySelector("#phone").focus();
+
+
+        document.getElementById("submit_answers").addEventListener('click', function () {
+
+            // _email = document.getElementById("input-email").value;
+            _phone_number = '+' + intl.getSelectedCountryData().dialCode + input.value;
+            // console.log(_email);
+
+
+            // if (_email == "") {
+            //     alert("Please enter your email");
+            //     return;
+            // }
+            if (!intl.isValidNumber()) {
+                alert("Enter valid input");
+
+                return;
+            } else {
+                const url = new URL(window.location.href)
+                var search_params = url.searchParams;
+                search_params.set('_email', _email);
+                search_params.set('_phone_number', _phone_number);
+                search_params.set('age', age);
+                search_params.set('utm_source', urlParams.get("utm_source"));
+                var new_url = url.toString();
+                new_url = new_url.replace('details', 'result')
+
+
+                selectedAnswers = urlParams.get("selected_answers");
+                selectedAnswers = selectedAnswers.split(",");
+
+                var eater;
+                var count = 0;
+                for (var i = 0; i < selectedAnswers.length; ++i) {
+                    if (selectedAnswers[i] < 3) {
+                        count++;
+                    }
+                }
+                if (count == 0) {
+                eater = eaterTypes[0];
+                } else if (count == 1) {
+                eater = eaterTypes[1];
+                } else if (count == 2) {
+                eater = eaterTypes[2];
+                } else if (count == 3 || count == 4) {
+                eater = eaterTypes[3];
+                } else if (count > 4) {
+                eater = eaterTypes[4];
+                }
+
+                kidEaterType = eater.type;
+
+                score = parseInt(urlParams.get("score"));
+                var scorePercent = Math.round(
+                    (score * 100) / (selectedAnswers.length * 5)
+                );
+
+
+                const d = {
+                    user_entered_phone_number: _phone_number,
+                    ip_alias_email: urlParams.get("email"),
+                    user_entered_email: urlParams.get("_email"),
+                    utm_source: urlParams.get("utm_source"),
+                    kidEaterType: kidEaterType,
+                    score: scorePercent,
+                    age: age,
+                    survey_id: survey_id,
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/survey/update-email-calculator',
+                    data: JSON.stringify(d)
+                }).done(function (data) {
+                    if(data.survey_id){
+                        window.location.href = `${url.origin}/report-card-pdf/${data.survey_id}`;
+                    }else {
+                        window.location.href = new_url;
+                    }
+                });
+            }
+        });
+        document.getElementById("skip_this").addEventListener('click', function () {
+            const url = new URL(window.location.href)
+            var search_params = url.searchParams;
+            search_params.set('age', age);
+
+
+            var new_url = url.toString();
+            new_url = new_url.replace('details', 'result')
+            window.location.href = new_url;
+        })
+    }
+</script>
+{% endblock %}
+
+</html>
