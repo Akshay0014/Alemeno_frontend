@@ -16,7 +16,7 @@
   margin-left: 5%;
   align-items: left;
   height: 21.75rem; /* 348px / 16px = 21.75rem */
-  width: 33.846317916335rem;
+  width: 33.846317916335rem; /* 541.5410766601562px / 16px = 33.846317916335rem */
   left: 0px;
   top: 90px;
   border-radius: 12px;
@@ -51,7 +51,7 @@
   margin-top: 20px;
   margin-left: 5%;
   margin-right: 5%;
-  gap: 10px;
+  gap: 2rem;
 }
 
 .project-name-31 {
@@ -100,15 +100,14 @@ margin-bottom: 10px;
       margin-left: 20px; /* Reset text alignment for mobile */
     }
     .frame-parent2 {
-      flex-direction: row;
-      gap: 20px;
-      justify-content: space-between;
-      /* margin-top: 0; */
-      margin-top: 20px;
-      margin-left: 5%;
-      margin-right: 5%; /* Remove top margin for desktop layout */
-      align-items: flex-start; 
-    }
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: flex-start; 
+  }
 
   /* Position the image on the left */
   .group-parent7 {
@@ -123,13 +122,24 @@ margin-bottom: 10px;
       flex-direction: column;
       align-items: center;
     }
+    .group-child4 {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10 12px;
+      margin-left: 111px;
+      margin-right: 101px;
+      box-sizing: border-box;
+  }
 }
 @media (max-width: 495px) {
   .frame-parent2 {
     margin-top: 20px;
-  margin-left: 5%;
-  margin-right: 5%;
-    gap: 20px; /* Add gap between buttons */
+    margin-left: 5%;
+    margin-right: 5%;
+    gap: 2rem; /* Add gap between buttons */
   }
     .project-name-31 {
       flex-wrap: wrap;
