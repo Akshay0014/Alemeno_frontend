@@ -15,10 +15,14 @@
   border-radius: 12px;
   margin-left: 5%;
   align-items: left;
-  width: 40%; /* Adjust the width as per your preference */
-  height: auto; 
-margin-right: 3.75rem;  /* Add some spacing between the image and text */
+  height: 21.75rem; /* 348px / 16px = 21.75rem */
+  width: 33.846317916335rem;
+  left: 0px;
+  top: 90px;
+  border-radius: 12px;
+  margin-right: 3.75rem;  /* Add some spacing between the image and text */
 }
+
 .mealtime-gamification3 {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
@@ -37,7 +41,6 @@ margin-right: 3.75rem;  /* Add some spacing between the image and text */
   line-height: 36px;
   letter-spacing: 0em;
   margin-bottom: 20px;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
   color: #C53F00;
 }
 .frame-parent2 {
