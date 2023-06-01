@@ -8,7 +8,9 @@
   padding-right: 3%;
 }
 .lorem-ipsum-dolor-sit-amet-co-group {
-  text-align: justify; /* Add this line to center the heading horizontally */
+  text-align: justify; 
+  text-align: left;
+  margin-left: 1rem;/* Add this line to center the heading horizontally */
 }
 
 .group-child4 {
@@ -51,7 +53,7 @@
   margin-top: 20px;
   margin-left: 5%;
   margin-right: 5%;
-  gap: 2rem;
+  gap: 1rem;
 }
 .project-name-31 {
   font-family: 'Poppins', sans-serif;
@@ -112,7 +114,7 @@ margin-bottom: 10px;
     }
     .frame-parent2 {
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: space-between;
     margin-top: 20px;
     margin-left: 5%;
@@ -150,7 +152,7 @@ margin-bottom: 10px;
     margin-top: 20px;
     margin-left: 5%;
     margin-right: 5%;
-    gap: 2rem; /* Add gap between buttons */
+    gap: 1rem; /* Add gap between buttons */
   }
     .project-name-31 {
       flex-wrap: wrap;
@@ -158,10 +160,10 @@ margin-bottom: 10px;
       white-space: nowrap;
     }
   .lorem-ipsum-dolor-sit-amet-co-group {
-    text-align: center;
-    margin-left: 20px;
-    padding-left: 2%;
-    padding-right: 2%; /* Reset text alignment for mobile */
+    text-align: left;
+    margin-left: 1rem;
+    /* padding-left: 2%;
+    padding-right: 2%;  */
   }
 }
 /* Justify the project description */
@@ -174,7 +176,6 @@ margin-bottom: 10px;
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
-
 }
 .project-name-31:after {
   content: ''; /* Add content for the line */
