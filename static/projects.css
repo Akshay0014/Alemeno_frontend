@@ -53,7 +53,6 @@
   margin-right: 5%;
   gap: 2rem;
 }
-
 .project-name-31 {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
@@ -63,10 +62,24 @@
   color: #707070;
   background-color: transparent;
   margin-bottom: 10px; /* Add space between buttons in column layout */
-  border: none; /* Remove border */
-padding: 0; /* Remove any padding */
-margin-bottom: 10px;
+  border: none; /* Remove default button border */
+  padding: 0; /* Remove any padding */
+  margin-bottom: 10px;
+  position: relative; /* Add relative positioning */
 }
+/* .project-name-31 {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #707070;
+  background-color: transparent;
+  margin-bottom: 10px;
+  border: none;
+padding: 0; 
+margin-bottom: 10px;
+} */
 .lorem-ipsum-dolor1 {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
@@ -162,6 +175,22 @@ margin-bottom: 10px;
   letter-spacing: 0em;
   text-align: left;
 
+}
+.project-name-31:after {
+  content: ''; /* Add content for the line */
+  position: absolute; /* Position the line absolutely */
+  left: 0; /* Align the line with the left edge of the button */
+  bottom: -2px; /* Position the line below the button */
+  width: 100%; /* Set the line width to cover the button */
+  height: 2px; /* Set the height of the line */
+  background-color: #00887B; /* Set the color of the line */
+  visibility: hidden; /* Initially hide the line */
+  transition: visibility 0s, width 0.3s; /* Add transition for smooth effect */
+}
+
+.project-name-31.clicked:after {
+  visibility: visible; /* Show the line when the button is clicked */
+  width: 100%; /* Set the line width to cover the button */
 }
 .project-name-31.clicked {
   color: #00887B;
