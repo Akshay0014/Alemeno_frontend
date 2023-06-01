@@ -85,9 +85,7 @@ margin-bottom: 10px;
 .project-name-5-container {
   margin-right: 10px; /* Add margin on the right side */
 }
-.mealtime-gamification-group {
-  margin-left: 10px; /* Add margin on the right side */
-}
+
 .component-51 {
   margin-bottom: 20px; /* Add margin at the bottom of the image and text container */
   gap:10px;
@@ -167,4 +165,5 @@ margin-bottom: 10px;
 }
 .project-name-31.clicked {
   color: #00887B;
+  white-space: nowrap;
 }
