@@ -44,7 +44,7 @@
   font-weight: 600;
   line-height: 36px;
   letter-spacing: 0em;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
   color: #C53F00;
 }
 .frame-parent2 {
@@ -186,7 +186,7 @@ margin-bottom: 10px;
   .projects-root {
     margin-left: -12px;
     margin-right: -12px;
-    padding-top: 60px;
+    padding-top: 40px;
     background-color: rgba(63, 0, 111, 0.06);
     padding-bottom: 40px;
     padding-right: 3%;
