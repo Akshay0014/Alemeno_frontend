@@ -2,9 +2,9 @@
 .projects-root {
   margin-left: -12px;
   margin-right: -12px;
-  padding-top: 1.5%;
+  padding-top: 60px;
   background-color: rgba(63, 0, 111, 0.06);
-  padding-bottom: 1.5%;
+  padding-bottom: 40px;
   padding-right: 3%;
 }
 .lorem-ipsum-dolor-sit-amet-co-group {
@@ -182,6 +182,14 @@ margin-bottom: 10px;
   }
 }
 @media (max-width: 495px) {
+  .projects-root {
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-top: 60px;
+    background-color: rgba(63, 0, 111, 0.06);
+    padding-bottom: 40px;
+    padding-right: 3%;
+  }
   .mealtime-gamification-group {
     padding-right: 1rem;
   }
