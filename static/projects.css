@@ -2,9 +2,10 @@
 .projects-root {
   margin-left: -12px;
   margin-right: -12px;
-  padding-top: 60px;
+  padding-top: 68px;
+  padding-bottom: 67px;
+  margin-bottom: 100px;
   background-color: rgba(63, 0, 111, 0.06);
-  padding-bottom: 40px;
   padding-right: 3%;
 }
 .lorem-ipsum-dolor-sit-amet-co-group {
@@ -43,7 +44,7 @@
   font-weight: 600;
   line-height: 36px;
   letter-spacing: 0em;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
   color: #C53F00;
 }
 .frame-parent2 {
@@ -213,7 +214,7 @@ margin-bottom: 10px;
   }
   .frame-parent2 {
     margin-top: 20px;
-    margin-left: 5%;
+    margin-left: 2.5rem;
     margin-right: 2%;
     gap: 1rem; /* Add gap between buttons */
   }
