@@ -2,8 +2,8 @@
 .projects-root {
   margin-left: -12px;
   margin-right: -12px;
-  padding-top: 68px;
-  padding-bottom: 67px;
+  padding-top: 5%;
+  padding-bottom: 4%;
   margin-bottom: 100px;
   background-color: rgba(63, 0, 111, 0.06);
   padding-right: 3%;
@@ -110,6 +110,16 @@ margin-bottom: 10px;
 /* Adjust layout for desktop and tablet */
 @media (min-width: 768px) {
   /* Align buttons in a row */
+  .projects-root {
+    padding-left: 3.5rem;
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-top: 5%;
+    padding-bottom: 4%;
+    margin-bottom: 100px;
+    background-color: rgba(63, 0, 111, 0.06);
+    padding-right: 3%;
+  }
   .lorem-ipsum-dolor-sit-amet-co-group {
       text-align: left;
       margin-left: 20px;
