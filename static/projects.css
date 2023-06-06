@@ -228,6 +228,7 @@ margin-bottom: 10px;
     gap: 1rem; /* Add gap between buttons */
   }
     .project-name-31 {
+      margin-right: -10px;
       flex-wrap: wrap;
       align-items: left;
       /* white-space: nowrap; */
