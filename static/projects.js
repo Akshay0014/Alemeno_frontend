@@ -8,13 +8,14 @@ const projectImage = document.querySelector('.group-child4');
 const projectNameHeading = document.querySelector('.mealtime-gamification3');
 const projectDescription = document.querySelector('.lorem-ipsum-dolor1');
 let previousButton = null;
-const forPaddding = document.getElementsByClassName("lorem-ipsum-dolor-sit-amet-co-group");
-console.log(forPaddding)
+const forPadding = document.querySelector(".lorem-ipsum-dolor-sit-amet-co-group");
+console.log(forPadding)
 var buttons = document.getElementsByClassName("project-name-31");
 
 function defaultButton(){
   buttons[0].classList.add("clicked");
         previousButton = buttons[0];
+  forPadding.classList.add('addpadding123');
 }
 defaultButton()
 // Add click event listeners to the buttons
@@ -28,14 +29,12 @@ mealtimeGamificationButton.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
-  for (let i = 0; i < forPaddding.length; i++) {
-    const element = forPaddding[i];
-    if (element.classList.contains("addpadding")) {
-      element.classList.remove('addpadding');
-    }
+  if (forPadding.classList.contains("addpadding45")) {
+    forPadding.classList.remove('addpadding45');
   }
-  
-
+  if (!forPadding.classList.contains("addpadding123")) {
+    forPadding.classList.add('addpadding123');
+  }
 });
 
 project2Button.addEventListener('click', function() {
@@ -47,11 +46,11 @@ project2Button.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
-  for (let i = 0; i < forPaddding.length; i++) {
-    const element = forPaddding[i];
-    if (element.classList.contains("addpadding")) {
-      element.classList.remove('addpadding');
-    }
+  if (forPadding.classList.contains("addpadding45")) {
+    forPadding.classList.remove('addpadding45');
+  }
+  if (!forPadding.classList.contains("addpadding123")) {
+    forPadding.classList.add('addpadding123');
   }
 
 });
@@ -65,11 +64,11 @@ project3Button.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
-  for (let i = 0; i < forPaddding.length; i++) {
-    const element = forPaddding[i];
-    if (element.classList.contains("addpadding")) {
-      element.classList.remove('addpadding');
-    }
+  if (forPadding.classList.contains("addpadding45")) {
+    forPadding.classList.remove('addpadding45');
+  }
+  if (!forPadding.classList.contains("addpadding123")) {
+    forPadding.classList.add('addpadding123');
   }
 });
 
@@ -82,14 +81,12 @@ project4Button.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
-  for (let i = 0; i < forPaddding.length; i++) {
-    const element = forPaddding[i];
-    if (element.classList.contains("addpadding")) {
-      element.classList.remove('addpadding');
-    }
+  if (forPadding.classList.contains("addpadding123")) {
+    forPadding.classList.remove('addpadding123');
   }
-  
-  forPaddding[0].classList.add('addpadding');
+  if (!forPadding.classList.contains("addpadding45")) {
+    forPadding.classList.add('addpadding45');
+  }
 });
 
 project5Button.addEventListener('click', function() {
@@ -101,12 +98,10 @@ project5Button.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
-  for (let i = 0; i < forPaddding.length; i++) {
-    const element = forPaddding[i];
-    if (element.classList.contains("addpadding")) {
-      element.classList.remove('addpadding');
-    }
+  if (forPadding.classList.contains("addpadding123")) {
+    forPadding.classList.remove('addpadding123');
   }
-  
-  forPaddding[0].classList.add('addpadding');
+  if (!forPadding.classList.contains("addpadding45")) {
+    forPadding.classList.add('addpadding45');
+  }
 });
