@@ -8,6 +8,8 @@ const projectImage = document.querySelector('.group-child4');
 const projectNameHeading = document.querySelector('.mealtime-gamification3');
 const projectDescription = document.querySelector('.lorem-ipsum-dolor1');
 let previousButton = null;
+const forPaddding = document.getElementsByClassName("lorem-ipsum-dolor-sit-amet-co-group");
+console.log(forPaddding)
 var buttons = document.getElementsByClassName("project-name-31");
 
 function defaultButton(){
@@ -26,6 +28,14 @@ mealtimeGamificationButton.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
+  for (let i = 0; i < forPaddding.length; i++) {
+    const element = forPaddding[i];
+    if (element.classList.contains("addpadding")) {
+      element.classList.remove('addpadding');
+    }
+  }
+  
+
 });
 
 project2Button.addEventListener('click', function() {
@@ -37,6 +47,13 @@ project2Button.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
+  for (let i = 0; i < forPaddding.length; i++) {
+    const element = forPaddding[i];
+    if (element.classList.contains("addpadding")) {
+      element.classList.remove('addpadding');
+    }
+  }
+
 });
 
 project3Button.addEventListener('click', function() {
@@ -48,6 +65,12 @@ project3Button.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
+  for (let i = 0; i < forPaddding.length; i++) {
+    const element = forPaddding[i];
+    if (element.classList.contains("addpadding")) {
+      element.classList.remove('addpadding');
+    }
+  }
 });
 
 project4Button.addEventListener('click', function() {
@@ -59,6 +82,14 @@ project4Button.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
+  for (let i = 0; i < forPaddding.length; i++) {
+    const element = forPaddding[i];
+    if (element.classList.contains("addpadding")) {
+      element.classList.remove('addpadding');
+    }
+  }
+  
+  forPaddding[0].classList.add('addpadding');
 });
 
 project5Button.addEventListener('click', function() {
@@ -70,4 +101,12 @@ project5Button.addEventListener('click', function() {
   button = this.querySelector("button");
   button.classList.add("clicked")
   previousButton=button;
+  for (let i = 0; i < forPaddding.length; i++) {
+    const element = forPaddding[i];
+    if (element.classList.contains("addpadding")) {
+      element.classList.remove('addpadding');
+    }
+  }
+  
+  forPaddding[0].classList.add('addpadding');
 });

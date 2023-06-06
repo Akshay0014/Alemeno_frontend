@@ -124,7 +124,7 @@ margin-bottom: 10px;
       text-align: left;
       margin-left: 20px;
       margin-right: 6.75rem; /* Reset text alignment for mobile */
-      margin-bottom: 10%;
+      margin-bottom: 10% !important;
     }
     .frame-parent2 {
       flex-direction: row;
@@ -199,7 +199,7 @@ margin-bottom: 10px;
     padding-top: 40px;
     background-color: rgba(63, 0, 111, 0.06);
     padding-bottom: 40px;
-    padding-right: 3%;
+    padding-right: 6%;
   }
   .mealtime-gamification-group {
     padding-right: 1rem;
@@ -217,14 +217,14 @@ margin-bottom: 10px;
     padding-right: 1rem;
   }
   .group-child4 {
-     width: calc(100% - 50px); /* Adjust the width to accommodate the margins */
-    margin-left: 30px; /* Add left margin */
+     width: calc(100% - 22px); /* Adjust the width to accommodate the margins */
+    margin-left: 10%; /* Add left margin */
     margin-right: 20px;
     padding-bottom: 4%;
   }
   .frame-parent2 {
+    margin-left: 1.5rem;
     margin-top: 20px;
-    margin-left: 2.5rem;
     margin-right: 2%;
     gap: 1rem; /* Add gap between buttons */
   }
@@ -235,8 +235,8 @@ margin-bottom: 10px;
     }
   .lorem-ipsum-dolor-sit-amet-co-group {
     text-align: left;
-    margin-left: 1.5rem;
-    padding-left: 2%;
+    margin-left: 0.5rem;
+    padding-left: 4%;
     padding-right: 2%; 
   }
 }
@@ -270,4 +270,8 @@ margin-bottom: 10px;
 .project-name-31.clicked {
   color: #00887B;
   white-space: nowrap;
+}
+
+.addpadding {
+  padding-bottom: 600%;
 }
