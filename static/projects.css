@@ -127,12 +127,12 @@ margin-bottom: 10px;
     }
     .frame-parent2 {
       flex-direction: row;
-      justify-content: space-around;
-      grid-gap: 9em;
+      justify-content: flex-start;
+      grid-gap: 7em;
       grid-row-gap: 1em;
-      gap:1rem;
+      /* gap:1rem; */
       margin-top: 20px;
-      margin-left: 13%;
+      margin-left: 21%;
       margin-right: 20%;
       align-items: flex-start;
   }
