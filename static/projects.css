@@ -99,9 +99,9 @@ margin-bottom: 10px;
   justify-content: center; /* Add this line to center the image horizontally */
   margin-top: 20px;
 }
-.project-name-5-container {
-  margin-right: 10px; /* Add margin on the right side */
-}
+/* .project-name-5-container {
+  margin-right: 10px; 
+} */
 
 .component-51 {
   margin-bottom: 20px; /* Add margin at the bottom of the image and text container */
@@ -193,6 +193,15 @@ margin-bottom: 10px;
     padding-right: 1rem;
   }
   .project-name-5-container {
+    padding-right: 1rem;
+  }
+  .project-name-6-container {
+    padding-right: 1rem;
+  }
+  .project-name-7-container {
+    padding-right: 1rem;
+  }
+  .project-name-8-container {
     padding-right: 1rem;
   }
 }
