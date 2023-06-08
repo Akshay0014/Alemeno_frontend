@@ -33,6 +33,7 @@ function sourceHandler(btn) {
     const image = document.createElement('img');
     image.src = mediaSource;
     image.alt = '';
+    image.classList.add('group-child4');
     projectContainer.appendChild(image);
   } else if (mediaType === 'video') {
     const video = document.createElement('iframe');
