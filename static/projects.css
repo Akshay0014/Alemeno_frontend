@@ -229,9 +229,18 @@ margin-bottom: 10px;
   .project-name-5-container {
     padding-right: 1rem;
   }
+  .project-name-6-container {
+    padding-right: 1rem;
+  }
+  .project-name-7-container {
+    padding-right: 1rem;
+  }
+  .project-name-8-container {
+    padding-right: 1rem;
+  }
   .group-child4 {
      width: calc(100% - 22px); /* Adjust the width to accommodate the margins */
-    margin-left: 10%; /* Add left margin */
+    margin-left: 5%; /* Add left margin */
     margin-right: 20px;
     padding-bottom: 4%;
   }

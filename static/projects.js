@@ -7,7 +7,7 @@ const project5Button = document.querySelector('.project-name-5-container');
 const project6Button = document.querySelector('.project-name-6-container');
 const project7Button = document.querySelector('.project-name-7-container');
 const project8Button = document.querySelector('.project-name-8-container');
-const projectContainer = document.querySelector('.group-child4');
+const projectContainer = document.querySelector('.group-child5');
 const projectNameHeading = document.querySelector('.mealtime-gamification3');
 const projectDescription = document.querySelector('.lorem-ipsum-dolor1');
 let previousButton = null;
@@ -41,6 +41,7 @@ function sourceHandler(btn) {
     video.allow = "autoplay; fullscreen";
     projectContainer.appendChild(video);
     video.style.borderRadius ='12px';
+    video.style.marginLeft = "5%";
     video.style.width = '400px'; // Set the width of the iframe
     video.style.height = '400px'; // Set the height of the iframe
     console.log(projectContainer);
