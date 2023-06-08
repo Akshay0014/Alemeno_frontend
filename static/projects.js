@@ -43,7 +43,7 @@ function sourceHandler(btn) {
     video.classList.add('group-child4');
     video.style.borderRadius ='12px';
     // video.style.marginLeft = "5%";
-    video.style.width = '400px'; // Set the width of the iframe
+    video.style.width = '550px'; // Set the width of the iframe
     video.style.height = '400px'; // Set the height of the iframe
     console.log(projectContainer);
   }
