@@ -122,6 +122,8 @@ margin-bottom: 10px;
   }
   .lorem-ipsum-dolor-sit-amet-co-group {
       text-align: left;
+      align-items: flex-start;
+      margin-top: 0.5em;
       margin-left: 20px;
       margin-right: 6.75rem; /* Reset text alignment for mobile */
     }
@@ -139,8 +141,9 @@ margin-bottom: 10px;
 
   /* Position the image on the left */
   .group-parent7 {
+    align-items: flex-start;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
   }
 }
 
