@@ -129,7 +129,8 @@ margin-bottom: 10px;
       flex-direction: row;
       justify-content: space-around;
       grid-gap: 9em;
-      /* gap:1rem; */
+      grid-row-gap: 1em;
+      gap:1rem;
       margin-top: 20px;
       margin-left: 13%;
       margin-right: 20%;
