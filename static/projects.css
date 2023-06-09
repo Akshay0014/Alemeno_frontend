@@ -125,6 +125,7 @@ margin-bottom: 10px;
       align-items: flex-start;
       margin-top: 0.5em;
       margin-left: 20px;
+      padding-left: 4em;
       margin-right: 6.75rem; /* Reset text alignment for mobile */
     }
     .frame-parent2 {
@@ -180,10 +181,6 @@ margin-bottom: 10px;
       margin-right: 25px;
       box-sizing: border-box;
   }
-  .group-child6 { /* Adjust the width to accommodate the margins */
-     margin-left: 12%; /* Add left margin */
-     padding-bottom: 4%;
-   }
   .mealtime-gamification-group {
     padding-right: 1rem;
   }
@@ -248,11 +245,6 @@ margin-bottom: 10px;
     margin-right: 20px;
     padding-bottom: 4%;
   }
-  .group-child6 {
-  width: calc(100% - 22px); /* Adjust the width to accommodate the margins */
-   margin-left: 5%; /* Add left margin */
-   padding-bottom: 4%;
- }
   .frame-parent2 {
     margin-left: 1.5rem;
     margin-top: 20px;
@@ -306,7 +298,9 @@ margin-bottom: 10px;
 
 .addpadding1 {
   padding-bottom: 0.75%;
+  margin-left: 4%;
 }
 .addpadding23 {
   padding-bottom: 5%;
+  margin-left: 4%;
 }

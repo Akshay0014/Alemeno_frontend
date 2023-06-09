@@ -40,11 +40,20 @@ function sourceHandler(btn) {
     video.src = mediaSource;
     video.allow = "autoplay; fullscreen";
     projectContainer.appendChild(video);
+    const screenWidth = window.innerWidth;
     video.classList.add('group-child4');
+    if (screenWidth < 495) {
+    video.style.marginLeft="5%";
+    video.style.width = 'calc(100% + 20)';
+    video.style.height = '25rem' // Set the width of the iframe
+   }
+    else {
+      video.style.marginLeft = "12%";
+      video.style.width = 'calc(100% + 5)'; // Set the width of the iframe
+      video.style.height = '30rem';
+    }
     video.style.borderRadius ='12px';
-    // video.style.marginLeft = "5%";
-    video.style.width = '550px'; // Set the width of the iframe
-    video.style.height = '400px'; // Set the height of the iframe
+     // Set the height of the iframe
     console.log(projectContainer);
   }
 }
